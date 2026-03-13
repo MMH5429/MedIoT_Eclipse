@@ -1,0 +1,31 @@
+device_id,change_point_detected,change_point_timestamp,cusum_metric
+0.0.0.0,False,,none
+192.168.2.1,False,,none
+fe80::80e6:50ff:fe12:1464,True,2018-09-21 13:00:00,connection_count
+169.254.15.115,True,2018-09-21 13:00:00,connection_count
+::,False,,insufficient_data
+fe80::4eef:c0ff:fe27:561e,False,,insufficient_windows
+192.168.2.3,False,,none
+fe80::82e6:50ff:fe21:867c,False,,insufficient_data
+fe80::482:6d20:b3e:adf4,False,,insufficient_windows
+192.168.69.129,False,,insufficient_data
+fe80::ad:a9ad:1b82:2e67,False,,insufficient_data
+fe80::1060:27a7:f64c:dec9,False,,insufficient_data
+192.168.69.192,False,,insufficient_data
+192.168.69.73,False,,insufficient_data
+fe80::14c5:8f26:563a:f0cb,False,,insufficient_data
+fe80::1847:a1bd:8d13:f43c,False,,insufficient_data
+192.168.69.136,False,,insufficient_data
+192.168.69.200,False,,insufficient_data
+fe80::106c:9e5b:3af8:9cf,False,,insufficient_data
+192.168.69.17,False,,insufficient_data
+192.168.69.178,False,,insufficient_data
+fe80::183b:7564:dbcc:3eca,False,,insufficient_data
+192.168.69.241,False,,insufficient_data
+fe80::1c5c:213d:7cf8:890,False,,insufficient_data
+192.168.1.132,False,,none
+192.168.1.1,False,,insufficient_data
+192.168.1.195,True,2018-12-22 05:20:00,bytes_sent
+192.168.1.197,True,2019-01-10 17:10:00,connection_count
+185.244.25.183,False,,insufficient_data
+192.168.1.199,True,2019-01-10 21:50:00,bytes_sent

@@ -1,0 +1,178 @@
+{
+  "what": {
+    "total_connections": 29634,
+    "total_malicious": 21254,
+    "malicious_pct": 71.72,
+    "attack_types": [
+      {
+        "attack_type": "DDoS",
+        "readable_name": "DDoS Attack",
+        "count": 14395,
+        "percentage": 48.58
+      },
+      {
+        "attack_type": "C&C",
+        "readable_name": "Command & Control",
+        "count": 6720,
+        "percentage": 22.68
+      },
+      {
+        "attack_type": "PartOfAHorizontalPortScan",
+        "readable_name": "Horizontal Port Scan",
+        "count": 122,
+        "percentage": 0.41
+      },
+      {
+        "attack_type": "C&C-FileDownload",
+        "readable_name": "C&C File Download",
+        "count": 14,
+        "percentage": 0.05
+      },
+      {
+        "attack_type": "FileDownload",
+        "readable_name": "Malicious File Download",
+        "count": 3,
+        "percentage": 0.01
+      }
+    ]
+  },
+  "how": [
+    {
+      "attack_type": "C&C",
+      "readable_name": "Command & Control",
+      "category": "c&c",
+      "narrative": "Command & Control traffic maintains communication between compromised devices and an attacker's server. Typically long-lived connections with periodic beaconing and moderate data exchange.",
+      "stats": {
+        "count": 6720,
+        "avg_duration": 18.7689,
+        "avg_bytes_sent": 20.6,
+        "avg_bytes_received": 69.7,
+        "top_ports": {
+          "6667": 6706,
+          "80": 13,
+          "23": 1
+        },
+        "top_conn_states": {
+          "S0": 5078,
+          "S3": 1584,
+          "RSTR": 53,
+          "S1": 5
+        }
+      }
+    },
+    {
+      "attack_type": "PartOfAHorizontalPortScan",
+      "readable_name": "Horizontal Port Scan",
+      "category": "scan",
+      "narrative": "Scanning involves rapid probing of many ports/IPs to discover open services. Characterized by short-lived connections, high failure rates, and many unique destinations.",
+      "stats": {
+        "count": 122,
+        "avg_duration": 0.3035,
+        "avg_bytes_sent": 24139.5,
+        "avg_bytes_received": 0.0,
+        "top_ports": {
+          "63798": 121,
+          "256": 1
+        },
+        "top_conn_states": {
+          "S0": 122
+        }
+      }
+    },
+    {
+      "attack_type": "DDoS",
+      "readable_name": "DDoS Attack",
+      "category": "ddos",
+      "narrative": "Distributed Denial-of-Service floods a target with traffic to exhaust resources. Marked by high volume, short durations, and repeated connections to few destinations.",
+      "stats": {
+        "count": 14395,
+        "avg_duration": 0.0253,
+        "avg_bytes_sent": 126459.0,
+        "avg_bytes_received": 0.0,
+        "top_ports": {
+          "80": 14394,
+          "5376": 1
+        },
+        "top_conn_states": {
+          "OTH": 14260,
+          "S0": 135
+        }
+      }
+    },
+    {
+      "attack_type": "C&C-FileDownload",
+      "readable_name": "C&C File Download",
+      "category": "c&c",
+      "narrative": "Command & Control traffic maintains communication between compromised devices and an attacker's server. Typically long-lived connections with periodic beaconing and moderate data exchange.",
+      "stats": {
+        "count": 14,
+        "avg_duration": 1.9336,
+        "avg_bytes_sent": 149.4,
+        "avg_bytes_received": 128613.2,
+        "top_ports": {
+          "80": 14
+        },
+        "top_conn_states": {
+          "SF": 14
+        }
+      }
+    },
+    {
+      "attack_type": "FileDownload",
+      "readable_name": "Malicious File Download",
+      "category": "exfiltration",
+      "narrative": "Data exfiltration transfers stolen data to external servers. Characterized by high outbound byte volume with connections to external IPs.",
+      "stats": {
+        "count": 3,
+        "avg_duration": 1.8953,
+        "avg_bytes_sent": 83.3,
+        "avg_bytes_received": 64982.0,
+        "top_ports": {
+          "80": 3
+        },
+        "top_conn_states": {
+          "SF": 3
+        }
+      }
+    }
+  ],
+  "where": {
+    "compromised_sources": [
+      "192.168.1.195",
+      "192.168.1.197",
+      "192.168.1.199"
+    ],
+    "num_compromised": 3,
+    "top_destinations": {
+      "123.59.209.185": 14260,
+      "185.244.25.235": 6706,
+      "71.61.66.148": 133,
+      "66.67.61.168": 121,
+      "46.101.251.172": 25
+    },
+    "top_dst_ports": {
+      "80": 14424,
+      "6667": 6706,
+      "63798": 121,
+      "256": 1,
+      "5376": 1
+    },
+    "external_destinations": 10,
+    "internal_destinations": 0
+  },
+  "when": {
+    "first_malicious_ts": 1545404132.353979,
+    "first_malicious_readable": "2018-12-21 14:55:32 UTC",
+    "last_malicious_ts": 1547157068.286878,
+    "last_malicious_readable": "2019-01-10 21:51:08 UTC",
+    "attack_duration_seconds": 1752935.93,
+    "cusum_change_points": [
+      "2018-09-21 13:00:00",
+      "2018-09-21 13:00:00",
+      "2018-12-22 05:20:00",
+      "2019-01-10 17:10:00",
+      "2019-01-10 21:50:00"
+    ],
+    "total_malicious_connections": 21254
+  }
+}
