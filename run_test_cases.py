@@ -200,7 +200,7 @@ def export_to_ui(results_df, tc_df):
             'failedConnectionRatio': round(float(row['failed_connection_ratio']), 4),
             'externalIpRatio': round(float(row['external_ip_ratio']), 4),
             'avgConnectionDuration': round(float(row['avg_connection_duration']), 6),
-            'cusumShift': False,
+            'cusumShift': None,  # CUSUM not run on test cases
         })
     _write(devices, 'devices.json')
 
@@ -232,7 +232,7 @@ def export_to_ui(results_df, tc_df):
             'metrics': {
                 'if_score': round(float(row['if_score']), 2),
                 'xgb_score': round(float(row['xgb_score']), 2),
-                'cusum_shift': False,
+                'cusum_shift': None,
             },
             'deviatingFeatures': [],
         })

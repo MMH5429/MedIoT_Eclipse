@@ -18,7 +18,6 @@ export function Navigation() {
     { href: '/devices', label: 'Devices', icon: '🖥️' },
     { href: '/alerts', label: 'Alerts', icon: '🚨' },
     { href: '/analytics', label: 'Analytics', icon: '📈' },
-    { href: '/security-overview', label: 'Network Map', icon: '🌐' },
     { href: '/architecture', label: 'Architecture', icon: '🏗️' },
   ];
 

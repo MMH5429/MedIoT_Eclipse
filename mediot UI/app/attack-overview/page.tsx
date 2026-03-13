@@ -323,9 +323,9 @@ export default function AttackOverviewPage() {
                       <XAxis type="number" tick={{ fill: '#94a3b8', fontSize: 12 }} />
                       <YAxis dataKey="name" type="category" width={130} tick={{ fill: '#94a3b8', fontSize: 12 }} />
                       <Tooltip contentStyle={tooltipStyle}
-                        formatter={(v: number, name: string, props: { payload: { avg_bytes: number; avg_duration: number } }) => {
-                          if (name === 'count') {
-                            return [`${v.toLocaleString()} connections | Avg bytes: ${props.payload.avg_bytes.toFixed(0)} | Avg dur: ${props.payload.avg_duration.toFixed(3)}s`, 'Details'];
+                        formatter={(v: number, name: string, props: { payload?: { avg_bytes?: number; avg_duration?: number } }) => {
+                          if (name === 'count' && props.payload) {
+                            return [`${v.toLocaleString()} connections | Avg bytes: ${(props.payload.avg_bytes ?? 0).toFixed(0)} | Avg dur: ${(props.payload.avg_duration ?? 0).toFixed(3)}s`, 'Details'];
                           }
                           return [v, name];
                         }} />

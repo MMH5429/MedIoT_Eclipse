@@ -9,7 +9,7 @@
     "trafficVolume": 387,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.150175",
+    "lastActivity": "2026-03-13T23:35:41.042980",
     "riskLevel": "Medium",
     "ifScore": 68.11,
     "xgbScore": 99.81,
@@ -21,7 +21,7 @@
     "failedConnectionRatio": 0.0,
     "externalIpRatio": 0.1,
     "avgConnectionDuration": 1.408333,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC002",
@@ -33,7 +33,7 @@
     "trafficVolume": 600,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.150477",
+    "lastActivity": "2026-03-13T23:35:41.043435",
     "riskLevel": "Medium",
     "ifScore": 68.28,
     "xgbScore": 99.8,
@@ -45,7 +45,7 @@
     "failedConnectionRatio": 0.0,
     "externalIpRatio": 0.1,
     "avgConnectionDuration": 0.487245,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC003",
@@ -57,7 +57,7 @@
     "trafficVolume": 432,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.150643",
+    "lastActivity": "2026-03-13T23:35:41.043659",
     "riskLevel": "Medium",
     "ifScore": 69.89,
     "xgbScore": 99.81,
@@ -69,7 +69,7 @@
     "failedConnectionRatio": 0.0,
     "externalIpRatio": 0.1,
     "avgConnectionDuration": 0.298494,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC004",
@@ -81,7 +81,7 @@
     "trafficVolume": 179,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.150783",
+    "lastActivity": "2026-03-13T23:35:41.043769",
     "riskLevel": "Medium",
     "ifScore": 70.09,
     "xgbScore": 99.81,
@@ -93,7 +93,7 @@
     "failedConnectionRatio": 0.0,
     "externalIpRatio": 0.1,
     "avgConnectionDuration": 1.060678,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC005",
@@ -105,7 +105,7 @@
     "trafficVolume": 602,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.151023",
+    "lastActivity": "2026-03-13T23:35:41.043871",
     "riskLevel": "Medium",
     "ifScore": 67.11,
     "xgbScore": 99.8,
@@ -117,7 +117,7 @@
     "failedConnectionRatio": 0.0,
     "externalIpRatio": 0.1,
     "avgConnectionDuration": 1.997734,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC006",
@@ -129,7 +129,7 @@
     "trafficVolume": 436,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.151258",
+    "lastActivity": "2026-03-13T23:35:41.043973",
     "riskLevel": "Medium",
     "ifScore": 71.4,
     "xgbScore": 99.81,
@@ -141,7 +141,7 @@
     "failedConnectionRatio": 0.0,
     "externalIpRatio": 0.1,
     "avgConnectionDuration": 1.702922,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC007",
@@ -153,7 +153,7 @@
     "trafficVolume": 648,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.151529",
+    "lastActivity": "2026-03-13T23:35:41.044074",
     "riskLevel": "Medium",
     "ifScore": 67.64,
     "xgbScore": 99.81,
@@ -165,7 +165,7 @@
     "failedConnectionRatio": 0.0,
     "externalIpRatio": 0.1,
     "avgConnectionDuration": 1.425161,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC008",
@@ -177,7 +177,7 @@
     "trafficVolume": 144,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.151729",
+    "lastActivity": "2026-03-13T23:35:41.044170",
     "riskLevel": "Medium",
     "ifScore": 72.41,
     "xgbScore": 99.81,
@@ -189,7 +189,7 @@
     "failedConnectionRatio": 0.0,
     "externalIpRatio": 0.1,
     "avgConnectionDuration": 0.441432,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC009",
@@ -201,7 +201,7 @@
     "trafficVolume": 246,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.151950",
+    "lastActivity": "2026-03-13T23:35:41.044329",
     "riskLevel": "Medium",
     "ifScore": 71.11,
     "xgbScore": 99.81,
@@ -213,7 +213,7 @@
     "failedConnectionRatio": 0.0,
     "externalIpRatio": 0.1,
     "avgConnectionDuration": 0.766823,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC010",
@@ -225,7 +225,7 @@
     "trafficVolume": 402,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.152119",
+    "lastActivity": "2026-03-13T23:35:41.044432",
     "riskLevel": "Medium",
     "ifScore": 67.87,
     "xgbScore": 99.8,
@@ -237,7 +237,7 @@
     "failedConnectionRatio": 0.0,
     "externalIpRatio": 0.1,
     "avgConnectionDuration": 1.338336,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC011",
@@ -249,7 +249,7 @@
     "trafficVolume": 325,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.152273",
+    "lastActivity": "2026-03-13T23:35:41.044529",
     "riskLevel": "Medium",
     "ifScore": 70.29,
     "xgbScore": 99.81,
@@ -261,7 +261,7 @@
     "failedConnectionRatio": 0.0,
     "externalIpRatio": 0.1,
     "avgConnectionDuration": 0.760354,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC012",
@@ -273,7 +273,7 @@
     "trafficVolume": 195,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.152422",
+    "lastActivity": "2026-03-13T23:35:41.044624",
     "riskLevel": "Medium",
     "ifScore": 70.85,
     "xgbScore": 99.81,
@@ -285,7 +285,7 @@
     "failedConnectionRatio": 0.0,
     "externalIpRatio": 0.1,
     "avgConnectionDuration": 0.752347,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC013",
@@ -297,7 +297,7 @@
     "trafficVolume": 338,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.152568",
+    "lastActivity": "2026-03-13T23:35:41.044809",
     "riskLevel": "Medium",
     "ifScore": 67.98,
     "xgbScore": 99.81,
@@ -309,7 +309,7 @@
     "failedConnectionRatio": 0.0,
     "externalIpRatio": 0.1,
     "avgConnectionDuration": 1.62281,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC014",
@@ -321,7 +321,7 @@
     "trafficVolume": 358,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.152713",
+    "lastActivity": "2026-03-13T23:35:41.045094",
     "riskLevel": "Medium",
     "ifScore": 71.86,
     "xgbScore": 99.81,
@@ -333,7 +333,7 @@
     "failedConnectionRatio": 0.0,
     "externalIpRatio": 0.1,
     "avgConnectionDuration": 1.098838,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC015",
@@ -345,7 +345,7 @@
     "trafficVolume": 254,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.152856",
+    "lastActivity": "2026-03-13T23:35:41.045294",
     "riskLevel": "Medium",
     "ifScore": 70.01,
     "xgbScore": 99.81,
@@ -357,7 +357,7 @@
     "failedConnectionRatio": 0.0,
     "externalIpRatio": 0.1,
     "avgConnectionDuration": 0.760068,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC016",
@@ -369,7 +369,7 @@
     "trafficVolume": 436,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.152992",
+    "lastActivity": "2026-03-13T23:35:41.045483",
     "riskLevel": "Medium",
     "ifScore": 72.2,
     "xgbScore": 99.81,
@@ -381,7 +381,7 @@
     "failedConnectionRatio": 0.0,
     "externalIpRatio": 0.1,
     "avgConnectionDuration": 0.151751,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC017",
@@ -393,7 +393,7 @@
     "trafficVolume": 539,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.153121",
+    "lastActivity": "2026-03-13T23:35:41.045628",
     "riskLevel": "Medium",
     "ifScore": 68.01,
     "xgbScore": 99.81,
@@ -405,7 +405,7 @@
     "failedConnectionRatio": 0.0,
     "externalIpRatio": 0.1,
     "avgConnectionDuration": 1.690861,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC018",
@@ -417,7 +417,7 @@
     "trafficVolume": 107,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.153251",
+    "lastActivity": "2026-03-13T23:35:41.045778",
     "riskLevel": "Medium",
     "ifScore": 73.51,
     "xgbScore": 99.81,
@@ -429,7 +429,7 @@
     "failedConnectionRatio": 0.0,
     "externalIpRatio": 0.1,
     "avgConnectionDuration": 0.94235,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC019",
@@ -441,7 +441,7 @@
     "trafficVolume": 146,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.153382",
+    "lastActivity": "2026-03-13T23:35:41.045957",
     "riskLevel": "Medium",
     "ifScore": 71.56,
     "xgbScore": 99.81,
@@ -453,7 +453,7 @@
     "failedConnectionRatio": 0.0,
     "externalIpRatio": 0.1,
     "avgConnectionDuration": 1.669994,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC020",
@@ -465,7 +465,7 @@
     "trafficVolume": 609,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.153511",
+    "lastActivity": "2026-03-13T23:35:41.046072",
     "riskLevel": "Medium",
     "ifScore": 69.03,
     "xgbScore": 99.8,
@@ -477,7 +477,7 @@
     "failedConnectionRatio": 0.0,
     "externalIpRatio": 0.1,
     "avgConnectionDuration": 0.295248,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC021",
@@ -489,7 +489,7 @@
     "trafficVolume": 530,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.153638",
+    "lastActivity": "2026-03-13T23:35:41.046231",
     "riskLevel": "Medium",
     "ifScore": 68.66,
     "xgbScore": 99.8,
@@ -501,7 +501,7 @@
     "failedConnectionRatio": 0.0,
     "externalIpRatio": 0.1,
     "avgConnectionDuration": 0.223385,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC022",
@@ -513,7 +513,7 @@
     "trafficVolume": 364,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.153764",
+    "lastActivity": "2026-03-13T23:35:41.046363",
     "riskLevel": "Medium",
     "ifScore": 68.98,
     "xgbScore": 99.81,
@@ -525,7 +525,7 @@
     "failedConnectionRatio": 0.0,
     "externalIpRatio": 0.1,
     "avgConnectionDuration": 0.90977,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC023",
@@ -537,7 +537,7 @@
     "trafficVolume": 828,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.153890",
+    "lastActivity": "2026-03-13T23:35:41.046477",
     "riskLevel": "Medium",
     "ifScore": 66.32,
     "xgbScore": 99.8,
@@ -549,7 +549,7 @@
     "failedConnectionRatio": 0.0,
     "externalIpRatio": 0.1,
     "avgConnectionDuration": 1.608913,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC024",
@@ -561,7 +561,7 @@
     "trafficVolume": 306,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.154037",
+    "lastActivity": "2026-03-13T23:35:41.046583",
     "riskLevel": "Medium",
     "ifScore": 67.93,
     "xgbScore": 99.81,
@@ -573,7 +573,7 @@
     "failedConnectionRatio": 0.0,
     "externalIpRatio": 0.1,
     "avgConnectionDuration": 1.070805,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC025",
@@ -585,7 +585,7 @@
     "trafficVolume": 679,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.154163",
+    "lastActivity": "2026-03-13T23:35:41.046681",
     "riskLevel": "Medium",
     "ifScore": 66.93,
     "xgbScore": 99.8,
@@ -597,7 +597,7 @@
     "failedConnectionRatio": 0.0,
     "externalIpRatio": 0.1,
     "avgConnectionDuration": 1.089809,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC026",
@@ -609,7 +609,7 @@
     "trafficVolume": 511,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.154289",
+    "lastActivity": "2026-03-13T23:35:41.046782",
     "riskLevel": "Medium",
     "ifScore": 68.89,
     "xgbScore": 99.8,
@@ -621,7 +621,7 @@
     "failedConnectionRatio": 0.0,
     "externalIpRatio": 0.1,
     "avgConnectionDuration": 0.252743,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC027",
@@ -633,7 +633,7 @@
     "trafficVolume": 333,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.154415",
+    "lastActivity": "2026-03-13T23:35:41.046919",
     "riskLevel": "Medium",
     "ifScore": 69.76,
     "xgbScore": 99.81,
@@ -645,7 +645,7 @@
     "failedConnectionRatio": 0.0,
     "externalIpRatio": 0.1,
     "avgConnectionDuration": 0.282222,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC028",
@@ -657,7 +657,7 @@
     "trafficVolume": 363,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.154542",
+    "lastActivity": "2026-03-13T23:35:41.047029",
     "riskLevel": "Medium",
     "ifScore": 67.98,
     "xgbScore": 99.81,
@@ -669,7 +669,7 @@
     "failedConnectionRatio": 0.0,
     "externalIpRatio": 0.1,
     "avgConnectionDuration": 1.572252,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC029",
@@ -681,7 +681,7 @@
     "trafficVolume": 812,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.154666",
+    "lastActivity": "2026-03-13T23:35:41.047135",
     "riskLevel": "Medium",
     "ifScore": 66.19,
     "xgbScore": 99.8,
@@ -693,7 +693,7 @@
     "failedConnectionRatio": 0.0,
     "externalIpRatio": 0.1,
     "avgConnectionDuration": 1.804141,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC030",
@@ -705,7 +705,7 @@
     "trafficVolume": 405,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.154791",
+    "lastActivity": "2026-03-13T23:35:41.047232",
     "riskLevel": "Medium",
     "ifScore": 67.26,
     "xgbScore": 99.8,
@@ -717,7 +717,7 @@
     "failedConnectionRatio": 0.0,
     "externalIpRatio": 0.1,
     "avgConnectionDuration": 1.299132,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC031",
@@ -729,7 +729,7 @@
     "trafficVolume": 18676,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.154915",
+    "lastActivity": "2026-03-13T23:35:41.047338",
     "riskLevel": "Medium",
     "ifScore": 53.96,
     "xgbScore": 99.73,
@@ -741,7 +741,7 @@
     "failedConnectionRatio": 0.7,
     "externalIpRatio": 0.3,
     "avgConnectionDuration": 0.002975,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC032",
@@ -753,7 +753,7 @@
     "trafficVolume": 61567,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.155042",
+    "lastActivity": "2026-03-13T23:35:41.047434",
     "riskLevel": "Medium",
     "ifScore": 49.15,
     "xgbScore": 92.32,
@@ -765,7 +765,7 @@
     "failedConnectionRatio": 0.7,
     "externalIpRatio": 0.3,
     "avgConnectionDuration": 0.006619,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC033",
@@ -777,7 +777,7 @@
     "trafficVolume": 104399,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.155166",
+    "lastActivity": "2026-03-13T23:35:41.047530",
     "riskLevel": "Medium",
     "ifScore": 47.56,
     "xgbScore": 91.85,
@@ -789,7 +789,7 @@
     "failedConnectionRatio": 0.7,
     "externalIpRatio": 0.3,
     "avgConnectionDuration": 0.003714,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC034",
@@ -801,7 +801,7 @@
     "trafficVolume": 77908,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.155298",
+    "lastActivity": "2026-03-13T23:35:41.047625",
     "riskLevel": "Medium",
     "ifScore": 47.0,
     "xgbScore": 92.32,
@@ -813,7 +813,7 @@
     "failedConnectionRatio": 0.7,
     "externalIpRatio": 0.3,
     "avgConnectionDuration": 0.006174,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC035",
@@ -825,7 +825,7 @@
     "trafficVolume": 48992,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.155429",
+    "lastActivity": "2026-03-13T23:35:41.047720",
     "riskLevel": "Medium",
     "ifScore": 45.65,
     "xgbScore": 92.32,
@@ -837,7 +837,7 @@
     "failedConnectionRatio": 0.7,
     "externalIpRatio": 0.3,
     "avgConnectionDuration": 0.002715,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC036",
@@ -849,7 +849,7 @@
     "trafficVolume": 19915,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.155557",
+    "lastActivity": "2026-03-13T23:35:41.047814",
     "riskLevel": "Medium",
     "ifScore": 56.95,
     "xgbScore": 99.73,
@@ -861,7 +861,7 @@
     "failedConnectionRatio": 0.7,
     "externalIpRatio": 0.3,
     "avgConnectionDuration": 0.001224,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC037",
@@ -873,7 +873,7 @@
     "trafficVolume": 25557,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.155683",
+    "lastActivity": "2026-03-13T23:35:41.047947",
     "riskLevel": "Medium",
     "ifScore": 54.16,
     "xgbScore": 99.73,
@@ -885,7 +885,7 @@
     "failedConnectionRatio": 0.7,
     "externalIpRatio": 0.3,
     "avgConnectionDuration": 0.004824,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC038",
@@ -897,7 +897,7 @@
     "trafficVolume": 75058,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.155808",
+    "lastActivity": "2026-03-13T23:35:41.048047",
     "riskLevel": "Medium",
     "ifScore": 47.75,
     "xgbScore": 92.32,
@@ -909,7 +909,7 @@
     "failedConnectionRatio": 0.7,
     "externalIpRatio": 0.3,
     "avgConnectionDuration": 0.009167,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC039",
@@ -921,7 +921,7 @@
     "trafficVolume": 36492,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.155938",
+    "lastActivity": "2026-03-13T23:35:41.048141",
     "riskLevel": "Medium",
     "ifScore": 53.77,
     "xgbScore": 99.73,
@@ -933,7 +933,7 @@
     "failedConnectionRatio": 0.7,
     "externalIpRatio": 0.3,
     "avgConnectionDuration": 0.007613,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC040",
@@ -945,7 +945,7 @@
     "trafficVolume": 56395,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.156114",
+    "lastActivity": "2026-03-13T23:35:41.048236",
     "riskLevel": "Medium",
     "ifScore": 43.86,
     "xgbScore": 92.32,
@@ -957,7 +957,7 @@
     "failedConnectionRatio": 0.7,
     "externalIpRatio": 0.3,
     "avgConnectionDuration": 0.008558,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC041",
@@ -969,7 +969,7 @@
     "trafficVolume": 25653,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.156284",
+    "lastActivity": "2026-03-13T23:35:41.048413",
     "riskLevel": "Medium",
     "ifScore": 53.0,
     "xgbScore": 99.73,
@@ -981,7 +981,7 @@
     "failedConnectionRatio": 0.7,
     "externalIpRatio": 0.3,
     "avgConnectionDuration": 0.003145,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC042",
@@ -993,7 +993,7 @@
     "trafficVolume": 28713,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.156428",
+    "lastActivity": "2026-03-13T23:35:41.048594",
     "riskLevel": "Medium",
     "ifScore": 54.95,
     "xgbScore": 96.16,
@@ -1005,7 +1005,7 @@
     "failedConnectionRatio": 0.7,
     "externalIpRatio": 0.3,
     "avgConnectionDuration": 0.001403,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC043",
@@ -1017,7 +1017,7 @@
     "trafficVolume": 55073,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.156569",
+    "lastActivity": "2026-03-13T23:35:41.048758",
     "riskLevel": "Medium",
     "ifScore": 50.0,
     "xgbScore": 91.85,
@@ -1029,7 +1029,7 @@
     "failedConnectionRatio": 0.7,
     "externalIpRatio": 0.3,
     "avgConnectionDuration": 0.007025,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC044",
@@ -1041,7 +1041,7 @@
     "trafficVolume": 41936,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.156701",
+    "lastActivity": "2026-03-13T23:35:41.048872",
     "riskLevel": "Medium",
     "ifScore": 52.51,
     "xgbScore": 96.16,
@@ -1053,7 +1053,7 @@
     "failedConnectionRatio": 0.7,
     "externalIpRatio": 0.3,
     "avgConnectionDuration": 0.002414,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC045",
@@ -1065,7 +1065,7 @@
     "trafficVolume": 39713,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.156832",
+    "lastActivity": "2026-03-13T23:35:41.048974",
     "riskLevel": "Medium",
     "ifScore": 48.27,
     "xgbScore": 92.32,
@@ -1077,7 +1077,7 @@
     "failedConnectionRatio": 0.7,
     "externalIpRatio": 0.3,
     "avgConnectionDuration": 0.006393,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC046",
@@ -1089,7 +1089,7 @@
     "trafficVolume": 43353,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.156959",
+    "lastActivity": "2026-03-13T23:35:41.049071",
     "riskLevel": "Medium",
     "ifScore": 49.09,
     "xgbScore": 92.32,
@@ -1101,7 +1101,7 @@
     "failedConnectionRatio": 0.7,
     "externalIpRatio": 0.3,
     "avgConnectionDuration": 0.00189,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC047",
@@ -1113,7 +1113,7 @@
     "trafficVolume": 84301,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.157087",
+    "lastActivity": "2026-03-13T23:35:41.049170",
     "riskLevel": "Medium",
     "ifScore": 45.02,
     "xgbScore": 92.32,
@@ -1125,7 +1125,7 @@
     "failedConnectionRatio": 0.7,
     "externalIpRatio": 0.3,
     "avgConnectionDuration": 0.006055,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC048",
@@ -1137,7 +1137,7 @@
     "trafficVolume": 20600,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.157213",
+    "lastActivity": "2026-03-13T23:35:41.049267",
     "riskLevel": "Medium",
     "ifScore": 53.67,
     "xgbScore": 99.73,
@@ -1149,7 +1149,7 @@
     "failedConnectionRatio": 0.7,
     "externalIpRatio": 0.3,
     "avgConnectionDuration": 0.002028,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC049",
@@ -1161,7 +1161,7 @@
     "trafficVolume": 58114,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.157345",
+    "lastActivity": "2026-03-13T23:35:41.049363",
     "riskLevel": "Medium",
     "ifScore": 48.18,
     "xgbScore": 91.85,
@@ -1173,7 +1173,7 @@
     "failedConnectionRatio": 0.7,
     "externalIpRatio": 0.3,
     "avgConnectionDuration": 0.001712,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC050",
@@ -1185,7 +1185,7 @@
     "trafficVolume": 70140,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.157475",
+    "lastActivity": "2026-03-13T23:35:41.049459",
     "riskLevel": "Medium",
     "ifScore": 47.75,
     "xgbScore": 92.32,
@@ -1197,7 +1197,7 @@
     "failedConnectionRatio": 0.7,
     "externalIpRatio": 0.3,
     "avgConnectionDuration": 0.001784,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC051",
@@ -1209,7 +1209,7 @@
     "trafficVolume": 39168,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.157604",
+    "lastActivity": "2026-03-13T23:35:41.049552",
     "riskLevel": "Medium",
     "ifScore": 47.9,
     "xgbScore": 92.32,
@@ -1221,7 +1221,7 @@
     "failedConnectionRatio": 0.7,
     "externalIpRatio": 0.3,
     "avgConnectionDuration": 0.001829,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC052",
@@ -1233,7 +1233,7 @@
     "trafficVolume": 35281,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.157733",
+    "lastActivity": "2026-03-13T23:35:41.049647",
     "riskLevel": "Medium",
     "ifScore": 49.42,
     "xgbScore": 99.73,
@@ -1245,7 +1245,7 @@
     "failedConnectionRatio": 0.7,
     "externalIpRatio": 0.3,
     "avgConnectionDuration": 0.009031,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC053",
@@ -1257,7 +1257,7 @@
     "trafficVolume": 60096,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.157861",
+    "lastActivity": "2026-03-13T23:35:41.049782",
     "riskLevel": "Medium",
     "ifScore": 48.18,
     "xgbScore": 91.85,
@@ -1269,7 +1269,7 @@
     "failedConnectionRatio": 0.7,
     "externalIpRatio": 0.3,
     "avgConnectionDuration": 0.007072,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC054",
@@ -1281,7 +1281,7 @@
     "trafficVolume": 55471,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.158009",
+    "lastActivity": "2026-03-13T23:35:41.049880",
     "riskLevel": "Medium",
     "ifScore": 48.62,
     "xgbScore": 91.85,
@@ -1293,7 +1293,7 @@
     "failedConnectionRatio": 0.7,
     "externalIpRatio": 0.3,
     "avgConnectionDuration": 0.006104,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC055",
@@ -1305,7 +1305,7 @@
     "trafficVolume": 24698,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.158176",
+    "lastActivity": "2026-03-13T23:35:41.049976",
     "riskLevel": "Medium",
     "ifScore": 56.01,
     "xgbScore": 99.73,
@@ -1317,7 +1317,7 @@
     "failedConnectionRatio": 0.7,
     "externalIpRatio": 0.3,
     "avgConnectionDuration": 0.004599,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC056",
@@ -1329,7 +1329,7 @@
     "trafficVolume": 57998,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.158329",
+    "lastActivity": "2026-03-13T23:35:41.050069",
     "riskLevel": "Medium",
     "ifScore": 50.72,
     "xgbScore": 91.85,
@@ -1341,7 +1341,7 @@
     "failedConnectionRatio": 0.7,
     "externalIpRatio": 0.3,
     "avgConnectionDuration": 0.006853,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC057",
@@ -1353,7 +1353,7 @@
     "trafficVolume": 51950,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.158483",
+    "lastActivity": "2026-03-13T23:35:41.050329",
     "riskLevel": "Medium",
     "ifScore": 47.75,
     "xgbScore": 92.32,
@@ -1365,7 +1365,7 @@
     "failedConnectionRatio": 0.7,
     "externalIpRatio": 0.3,
     "avgConnectionDuration": 0.007958,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC058",
@@ -1377,7 +1377,7 @@
     "trafficVolume": 70977,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.158634",
+    "lastActivity": "2026-03-13T23:35:41.050455",
     "riskLevel": "Medium",
     "ifScore": 47.75,
     "xgbScore": 92.32,
@@ -1389,7 +1389,7 @@
     "failedConnectionRatio": 0.7,
     "externalIpRatio": 0.3,
     "avgConnectionDuration": 0.008538,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC059",
@@ -1401,7 +1401,7 @@
     "trafficVolume": 22747,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.158784",
+    "lastActivity": "2026-03-13T23:35:41.050565",
     "riskLevel": "Medium",
     "ifScore": 56.48,
     "xgbScore": 99.73,
@@ -1413,7 +1413,7 @@
     "failedConnectionRatio": 0.7,
     "externalIpRatio": 0.3,
     "avgConnectionDuration": 0.009495,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC060",
@@ -1425,7 +1425,7 @@
     "trafficVolume": 78038,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.159010",
+    "lastActivity": "2026-03-13T23:35:41.050666",
     "riskLevel": "Medium",
     "ifScore": 47.75,
     "xgbScore": 92.32,
@@ -1437,7 +1437,7 @@
     "failedConnectionRatio": 0.7,
     "externalIpRatio": 0.3,
     "avgConnectionDuration": 0.002464,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC061",
@@ -1449,7 +1449,7 @@
     "trafficVolume": 133130,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.159489",
+    "lastActivity": "2026-03-13T23:35:41.050767",
     "riskLevel": "Low",
     "ifScore": 76.77,
     "xgbScore": 99.84,
@@ -1461,7 +1461,7 @@
     "failedConnectionRatio": 0.0,
     "externalIpRatio": 0.95,
     "avgConnectionDuration": 5.919192,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC062",
@@ -1473,7 +1473,7 @@
     "trafficVolume": 268552,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.159765",
+    "lastActivity": "2026-03-13T23:35:41.050869",
     "riskLevel": "Medium",
     "ifScore": 70.73,
     "xgbScore": 99.84,
@@ -1485,7 +1485,7 @@
     "failedConnectionRatio": 0.0,
     "externalIpRatio": 0.95,
     "avgConnectionDuration": 9.594254,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC063",
@@ -1497,7 +1497,7 @@
     "trafficVolume": 224775,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.160053",
+    "lastActivity": "2026-03-13T23:35:41.050966",
     "riskLevel": "Medium",
     "ifScore": 74.81,
     "xgbScore": 99.84,
@@ -1509,7 +1509,7 @@
     "failedConnectionRatio": 0.0,
     "externalIpRatio": 0.95,
     "avgConnectionDuration": 5.56079,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC064",
@@ -1521,7 +1521,7 @@
     "trafficVolume": 427342,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.160281",
+    "lastActivity": "2026-03-13T23:35:41.051060",
     "riskLevel": "Medium",
     "ifScore": 70.4,
     "xgbScore": 99.84,
@@ -1533,7 +1533,7 @@
     "failedConnectionRatio": 0.0,
     "externalIpRatio": 0.95,
     "avgConnectionDuration": 9.90951,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC065",
@@ -1545,7 +1545,7 @@
     "trafficVolume": 697154,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.160447",
+    "lastActivity": "2026-03-13T23:35:41.051156",
     "riskLevel": "Medium",
     "ifScore": 68.95,
     "xgbScore": 99.84,
@@ -1557,7 +1557,7 @@
     "failedConnectionRatio": 0.0,
     "externalIpRatio": 0.95,
     "avgConnectionDuration": 9.64906,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC066",
@@ -1569,7 +1569,7 @@
     "trafficVolume": 343013,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.160599",
+    "lastActivity": "2026-03-13T23:35:41.051298",
     "riskLevel": "Medium",
     "ifScore": 67.23,
     "xgbScore": 99.84,
@@ -1581,7 +1581,7 @@
     "failedConnectionRatio": 0.0,
     "externalIpRatio": 0.95,
     "avgConnectionDuration": 5.388922,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC067",
@@ -1593,7 +1593,7 @@
     "trafficVolume": 1154705,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.160760",
+    "lastActivity": "2026-03-13T23:35:41.051400",
     "riskLevel": "Medium",
     "ifScore": 61.5,
     "xgbScore": 99.81,
@@ -1605,7 +1605,7 @@
     "failedConnectionRatio": 0.0,
     "externalIpRatio": 0.95,
     "avgConnectionDuration": 6.790384,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC068",
@@ -1617,7 +1617,7 @@
     "trafficVolume": 146577,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.160947",
+    "lastActivity": "2026-03-13T23:35:41.051502",
     "riskLevel": "Medium",
     "ifScore": 73.15,
     "xgbScore": 99.85,
@@ -1629,7 +1629,7 @@
     "failedConnectionRatio": 0.0,
     "externalIpRatio": 0.95,
     "avgConnectionDuration": 5.203272,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC069",
@@ -1641,7 +1641,7 @@
     "trafficVolume": 302103,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.161128",
+    "lastActivity": "2026-03-13T23:35:41.051619",
     "riskLevel": "Medium",
     "ifScore": 68.81,
     "xgbScore": 99.85,
@@ -1653,7 +1653,7 @@
     "failedConnectionRatio": 0.0,
     "externalIpRatio": 0.95,
     "avgConnectionDuration": 2.657746,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC070",
@@ -1665,7 +1665,7 @@
     "trafficVolume": 272326,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.161294",
+    "lastActivity": "2026-03-13T23:35:41.051716",
     "riskLevel": "Medium",
     "ifScore": 71.79,
     "xgbScore": 99.84,
@@ -1677,7 +1677,7 @@
     "failedConnectionRatio": 0.0,
     "externalIpRatio": 0.95,
     "avgConnectionDuration": 5.516067,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC071",
@@ -1689,7 +1689,7 @@
     "trafficVolume": 611134,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.161431",
+    "lastActivity": "2026-03-13T23:35:41.051811",
     "riskLevel": "Medium",
     "ifScore": 69.41,
     "xgbScore": 99.85,
@@ -1701,7 +1701,7 @@
     "failedConnectionRatio": 0.0,
     "externalIpRatio": 0.95,
     "avgConnectionDuration": 4.444236,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC072",
@@ -1713,7 +1713,7 @@
     "trafficVolume": 180043,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.161559",
+    "lastActivity": "2026-03-13T23:35:41.051926",
     "riskLevel": "Medium",
     "ifScore": 71.33,
     "xgbScore": 99.84,
@@ -1725,7 +1725,7 @@
     "failedConnectionRatio": 0.0,
     "externalIpRatio": 0.95,
     "avgConnectionDuration": 5.39498,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC073",
@@ -1737,7 +1737,7 @@
     "trafficVolume": 321035,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.161687",
+    "lastActivity": "2026-03-13T23:35:41.052029",
     "riskLevel": "Medium",
     "ifScore": 73.79,
     "xgbScore": 99.85,
@@ -1749,7 +1749,7 @@
     "failedConnectionRatio": 0.0,
     "externalIpRatio": 0.95,
     "avgConnectionDuration": 2.704755,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC074",
@@ -1761,7 +1761,7 @@
     "trafficVolume": 307130,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.161813",
+    "lastActivity": "2026-03-13T23:35:41.052125",
     "riskLevel": "Medium",
     "ifScore": 69.52,
     "xgbScore": 99.84,
@@ -1773,7 +1773,7 @@
     "failedConnectionRatio": 0.0,
     "externalIpRatio": 0.95,
     "avgConnectionDuration": 9.587067,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC075",
@@ -1785,7 +1785,7 @@
     "trafficVolume": 394350,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.161939",
+    "lastActivity": "2026-03-13T23:35:41.052262",
     "riskLevel": "Medium",
     "ifScore": 69.2,
     "xgbScore": 99.84,
@@ -1797,7 +1797,7 @@
     "failedConnectionRatio": 0.0,
     "externalIpRatio": 0.95,
     "avgConnectionDuration": 7.269261,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC076",
@@ -1809,7 +1809,7 @@
     "trafficVolume": 222995,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.162085",
+    "lastActivity": "2026-03-13T23:35:41.052364",
     "riskLevel": "Medium",
     "ifScore": 70.84,
     "xgbScore": 99.84,
@@ -1821,7 +1821,7 @@
     "failedConnectionRatio": 0.0,
     "externalIpRatio": 0.95,
     "avgConnectionDuration": 6.074571,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC077",
@@ -1833,7 +1833,7 @@
     "trafficVolume": 452835,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.162214",
+    "lastActivity": "2026-03-13T23:35:41.052459",
     "riskLevel": "Medium",
     "ifScore": 70.85,
     "xgbScore": 99.85,
@@ -1845,7 +1845,7 @@
     "failedConnectionRatio": 0.0,
     "externalIpRatio": 0.95,
     "avgConnectionDuration": 3.122366,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC078",
@@ -1857,7 +1857,7 @@
     "trafficVolume": 486758,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.162345",
+    "lastActivity": "2026-03-13T23:35:41.052557",
     "riskLevel": "Medium",
     "ifScore": 70.1,
     "xgbScore": 99.85,
@@ -1869,7 +1869,7 @@
     "failedConnectionRatio": 0.0,
     "externalIpRatio": 0.95,
     "avgConnectionDuration": 3.506639,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC079",
@@ -1881,7 +1881,7 @@
     "trafficVolume": 426744,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.162471",
+    "lastActivity": "2026-03-13T23:35:41.052652",
     "riskLevel": "Medium",
     "ifScore": 69.2,
     "xgbScore": 99.84,
@@ -1893,7 +1893,7 @@
     "failedConnectionRatio": 0.0,
     "externalIpRatio": 0.95,
     "avgConnectionDuration": 7.839605,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC080",
@@ -1905,7 +1905,7 @@
     "trafficVolume": 362987,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.162596",
+    "lastActivity": "2026-03-13T23:35:41.052758",
     "riskLevel": "Medium",
     "ifScore": 66.16,
     "xgbScore": 99.84,
@@ -1917,7 +1917,7 @@
     "failedConnectionRatio": 0.0,
     "externalIpRatio": 0.95,
     "avgConnectionDuration": 9.433161,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC081",
@@ -1929,7 +1929,7 @@
     "trafficVolume": 816876,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.162723",
+    "lastActivity": "2026-03-13T23:35:41.052852",
     "riskLevel": "Medium",
     "ifScore": 66.37,
     "xgbScore": 99.82,
@@ -1941,7 +1941,7 @@
     "failedConnectionRatio": 0.0,
     "externalIpRatio": 0.95,
     "avgConnectionDuration": 3.758393,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC082",
@@ -1953,7 +1953,7 @@
     "trafficVolume": 779955,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.162849",
+    "lastActivity": "2026-03-13T23:35:41.052947",
     "riskLevel": "Medium",
     "ifScore": 67.15,
     "xgbScore": 99.84,
@@ -1965,7 +1965,7 @@
     "failedConnectionRatio": 0.0,
     "externalIpRatio": 0.95,
     "avgConnectionDuration": 5.84823,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC083",
@@ -1977,7 +1977,7 @@
     "trafficVolume": 636437,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.162975",
+    "lastActivity": "2026-03-13T23:35:41.053041",
     "riskLevel": "Medium",
     "ifScore": 69.78,
     "xgbScore": 99.84,
@@ -1989,7 +1989,7 @@
     "failedConnectionRatio": 0.0,
     "externalIpRatio": 0.95,
     "avgConnectionDuration": 9.859659,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC084",
@@ -2001,7 +2001,7 @@
     "trafficVolume": 663233,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.163137",
+    "lastActivity": "2026-03-13T23:35:41.053147",
     "riskLevel": "Medium",
     "ifScore": 67.2,
     "xgbScore": 99.85,
@@ -2013,7 +2013,7 @@
     "failedConnectionRatio": 0.0,
     "externalIpRatio": 0.95,
     "avgConnectionDuration": 4.685291,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC085",
@@ -2025,7 +2025,7 @@
     "trafficVolume": 142186,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.163308",
+    "lastActivity": "2026-03-13T23:35:41.053278",
     "riskLevel": "Low",
     "ifScore": 77.28,
     "xgbScore": 99.85,
@@ -2037,7 +2037,7 @@
     "failedConnectionRatio": 0.0,
     "externalIpRatio": 0.95,
     "avgConnectionDuration": 4.717455,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC086",
@@ -2049,7 +2049,7 @@
     "trafficVolume": 1484,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.163477",
+    "lastActivity": "2026-03-13T23:35:41.053373",
     "riskLevel": "Low",
     "ifScore": 97.93,
     "xgbScore": 99.65,
@@ -2061,7 +2061,7 @@
     "failedConnectionRatio": 0.9,
     "externalIpRatio": 0.85,
     "avgConnectionDuration": 0.002054,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC087",
@@ -2073,7 +2073,7 @@
     "trafficVolume": 1705,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.163643",
+    "lastActivity": "2026-03-13T23:35:41.053467",
     "riskLevel": "Low",
     "ifScore": 97.56,
     "xgbScore": 99.67,
@@ -2085,7 +2085,7 @@
     "failedConnectionRatio": 0.9,
     "externalIpRatio": 0.85,
     "avgConnectionDuration": 0.004551,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC088",
@@ -2097,7 +2097,7 @@
     "trafficVolume": 1776,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.163804",
+    "lastActivity": "2026-03-13T23:35:41.053577",
     "riskLevel": "Low",
     "ifScore": 97.56,
     "xgbScore": 99.67,
@@ -2109,7 +2109,7 @@
     "failedConnectionRatio": 0.9,
     "externalIpRatio": 0.85,
     "avgConnectionDuration": 0.004622,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC089",
@@ -2121,7 +2121,7 @@
     "trafficVolume": 3796,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.163971",
+    "lastActivity": "2026-03-13T23:35:41.053672",
     "riskLevel": "Low",
     "ifScore": 94.43,
     "xgbScore": 99.68,
@@ -2133,7 +2133,7 @@
     "failedConnectionRatio": 0.9,
     "externalIpRatio": 0.85,
     "avgConnectionDuration": 0.003729,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC090",
@@ -2145,7 +2145,7 @@
     "trafficVolume": 2257,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.164157",
+    "lastActivity": "2026-03-13T23:35:41.053767",
     "riskLevel": "Low",
     "ifScore": 97.74,
     "xgbScore": 99.68,
@@ -2157,7 +2157,7 @@
     "failedConnectionRatio": 0.9,
     "externalIpRatio": 0.85,
     "avgConnectionDuration": 0.003357,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC091",
@@ -2169,7 +2169,7 @@
     "trafficVolume": 2562,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.164321",
+    "lastActivity": "2026-03-13T23:35:41.053876",
     "riskLevel": "Low",
     "ifScore": 97.27,
     "xgbScore": 99.68,
@@ -2181,7 +2181,7 @@
     "failedConnectionRatio": 0.9,
     "externalIpRatio": 0.85,
     "avgConnectionDuration": 0.004888,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC092",
@@ -2193,7 +2193,7 @@
     "trafficVolume": 4898,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.164524",
+    "lastActivity": "2026-03-13T23:35:41.053980",
     "riskLevel": "Low",
     "ifScore": 90.82,
     "xgbScore": 99.68,
@@ -2205,7 +2205,7 @@
     "failedConnectionRatio": 0.9,
     "externalIpRatio": 0.85,
     "avgConnectionDuration": 0.002772,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC093",
@@ -2217,7 +2217,7 @@
     "trafficVolume": 3087,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.164832",
+    "lastActivity": "2026-03-13T23:35:41.054074",
     "riskLevel": "Low",
     "ifScore": 96.78,
     "xgbScore": 99.68,
@@ -2229,7 +2229,7 @@
     "failedConnectionRatio": 0.9,
     "externalIpRatio": 0.85,
     "avgConnectionDuration": 0.002896,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC094",
@@ -2241,7 +2241,7 @@
     "trafficVolume": 1150,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.165125",
+    "lastActivity": "2026-03-13T23:35:41.054200",
     "riskLevel": "Low",
     "ifScore": 100.0,
     "xgbScore": 99.62,
@@ -2253,7 +2253,7 @@
     "failedConnectionRatio": 0.9,
     "externalIpRatio": 0.85,
     "avgConnectionDuration": 0.002685,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC095",
@@ -2265,7 +2265,7 @@
     "trafficVolume": 4015,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.165365",
+    "lastActivity": "2026-03-13T23:35:41.054307",
     "riskLevel": "Low",
     "ifScore": 93.09,
     "xgbScore": 99.68,
@@ -2277,7 +2277,7 @@
     "failedConnectionRatio": 0.9,
     "externalIpRatio": 0.85,
     "avgConnectionDuration": 0.001421,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC096",
@@ -2289,7 +2289,7 @@
     "trafficVolume": 2800,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.165572",
+    "lastActivity": "2026-03-13T23:35:41.054405",
     "riskLevel": "Low",
     "ifScore": 98.11,
     "xgbScore": 99.68,
@@ -2301,7 +2301,7 @@
     "failedConnectionRatio": 0.9,
     "externalIpRatio": 0.85,
     "avgConnectionDuration": 0.003036,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC097",
@@ -2313,7 +2313,7 @@
     "trafficVolume": 5390,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.165723",
+    "lastActivity": "2026-03-13T23:35:41.054503",
     "riskLevel": "Low",
     "ifScore": 89.33,
     "xgbScore": 99.68,
@@ -2325,7 +2325,7 @@
     "failedConnectionRatio": 0.9,
     "externalIpRatio": 0.85,
     "avgConnectionDuration": 0.004694,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC098",
@@ -2337,7 +2337,7 @@
     "trafficVolume": 1305,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.165861",
+    "lastActivity": "2026-03-13T23:35:41.054598",
     "riskLevel": "Low",
     "ifScore": 98.59,
     "xgbScore": 99.62,
@@ -2349,7 +2349,7 @@
     "failedConnectionRatio": 0.9,
     "externalIpRatio": 0.85,
     "avgConnectionDuration": 0.001254,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC099",
@@ -2361,7 +2361,7 @@
     "trafficVolume": 1430,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.165991",
+    "lastActivity": "2026-03-13T23:35:41.054692",
     "riskLevel": "Low",
     "ifScore": 98.59,
     "xgbScore": 99.65,
@@ -2373,7 +2373,7 @@
     "failedConnectionRatio": 0.9,
     "externalIpRatio": 0.85,
     "avgConnectionDuration": 0.001469,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC100",
@@ -2385,7 +2385,7 @@
     "trafficVolume": 4158,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.166140",
+    "lastActivity": "2026-03-13T23:35:41.054794",
     "riskLevel": "Low",
     "ifScore": 94.21,
     "xgbScore": 99.68,
@@ -2397,7 +2397,7 @@
     "failedConnectionRatio": 0.9,
     "externalIpRatio": 0.85,
     "avgConnectionDuration": 0.00469,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC101",
@@ -2409,7 +2409,7 @@
     "trafficVolume": 3990,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.166268",
+    "lastActivity": "2026-03-13T23:35:41.054890",
     "riskLevel": "Low",
     "ifScore": 93.59,
     "xgbScore": 99.68,
@@ -2421,7 +2421,7 @@
     "failedConnectionRatio": 0.9,
     "externalIpRatio": 0.85,
     "avgConnectionDuration": 0.002605,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC102",
@@ -2433,7 +2433,7 @@
     "trafficVolume": 1917,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.166394",
+    "lastActivity": "2026-03-13T23:35:41.054984",
     "riskLevel": "Low",
     "ifScore": 97.85,
     "xgbScore": 99.68,
@@ -2445,7 +2445,7 @@
     "failedConnectionRatio": 0.9,
     "externalIpRatio": 0.85,
     "avgConnectionDuration": 0.001688,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC103",
@@ -2457,7 +2457,7 @@
     "trafficVolume": 2280,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.166521",
+    "lastActivity": "2026-03-13T23:35:41.055077",
     "riskLevel": "Low",
     "ifScore": 97.27,
     "xgbScore": 99.68,
@@ -2469,7 +2469,7 @@
     "failedConnectionRatio": 0.9,
     "externalIpRatio": 0.85,
     "avgConnectionDuration": 0.003544,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC104",
@@ -2481,7 +2481,7 @@
     "trafficVolume": 2728,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.166647",
+    "lastActivity": "2026-03-13T23:35:41.055199",
     "riskLevel": "Low",
     "ifScore": 98.11,
     "xgbScore": 99.68,
@@ -2493,7 +2493,7 @@
     "failedConnectionRatio": 0.9,
     "externalIpRatio": 0.85,
     "avgConnectionDuration": 0.002976,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC105",
@@ -2505,7 +2505,7 @@
     "trafficVolume": 2760,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.166772",
+    "lastActivity": "2026-03-13T23:35:41.055302",
     "riskLevel": "Low",
     "ifScore": 98.11,
     "xgbScore": 99.68,
@@ -2517,7 +2517,7 @@
     "failedConnectionRatio": 0.9,
     "externalIpRatio": 0.85,
     "avgConnectionDuration": 0.001039,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC106",
@@ -2529,7 +2529,7 @@
     "trafficVolume": 1069,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.166896",
+    "lastActivity": "2026-03-13T23:35:41.055398",
     "riskLevel": "Medium",
     "ifScore": 70.34,
     "xgbScore": 99.81,
@@ -2541,7 +2541,7 @@
     "failedConnectionRatio": 0.0,
     "externalIpRatio": 0.3,
     "avgConnectionDuration": 0.318942,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC107",
@@ -2553,7 +2553,7 @@
     "trafficVolume": 1488,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.167021",
+    "lastActivity": "2026-03-13T23:35:41.055494",
     "riskLevel": "Medium",
     "ifScore": 65.74,
     "xgbScore": 99.81,
@@ -2565,7 +2565,7 @@
     "failedConnectionRatio": 0.0,
     "externalIpRatio": 0.3,
     "avgConnectionDuration": 0.105441,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC108",
@@ -2577,7 +2577,7 @@
     "trafficVolume": 1877,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.167147",
+    "lastActivity": "2026-03-13T23:35:41.055590",
     "riskLevel": "Medium",
     "ifScore": 65.13,
     "xgbScore": 99.83,
@@ -2589,7 +2589,7 @@
     "failedConnectionRatio": 0.0,
     "externalIpRatio": 0.3,
     "avgConnectionDuration": 0.49695,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC109",
@@ -2601,7 +2601,7 @@
     "trafficVolume": 3582,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.167271",
+    "lastActivity": "2026-03-13T23:35:41.055685",
     "riskLevel": "Medium",
     "ifScore": 62.74,
     "xgbScore": 99.84,
@@ -2613,7 +2613,7 @@
     "failedConnectionRatio": 0.0,
     "externalIpRatio": 0.3,
     "avgConnectionDuration": 0.340636,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC110",
@@ -2625,7 +2625,7 @@
     "trafficVolume": 3498,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.167417",
+    "lastActivity": "2026-03-13T23:35:41.055781",
     "riskLevel": "Medium",
     "ifScore": 64.55,
     "xgbScore": 99.84,
@@ -2637,7 +2637,7 @@
     "failedConnectionRatio": 0.0,
     "externalIpRatio": 0.3,
     "avgConnectionDuration": 0.147855,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC111",
@@ -2649,7 +2649,7 @@
     "trafficVolume": 1963,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.167543",
+    "lastActivity": "2026-03-13T23:35:41.055889",
     "riskLevel": "Medium",
     "ifScore": 66.06,
     "xgbScore": 99.84,
@@ -2661,7 +2661,7 @@
     "failedConnectionRatio": 0.0,
     "externalIpRatio": 0.3,
     "avgConnectionDuration": 0.622135,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC112",
@@ -2673,7 +2673,7 @@
     "trafficVolume": 3977,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.167668",
+    "lastActivity": "2026-03-13T23:35:41.055992",
     "riskLevel": "Medium",
     "ifScore": 61.0,
     "xgbScore": 99.83,
@@ -2685,7 +2685,7 @@
     "failedConnectionRatio": 0.0,
     "externalIpRatio": 0.3,
     "avgConnectionDuration": 0.233151,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC113",
@@ -2697,7 +2697,7 @@
     "trafficVolume": 4916,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.167793",
+    "lastActivity": "2026-03-13T23:35:41.056090",
     "riskLevel": "Medium",
     "ifScore": 63.4,
     "xgbScore": 99.84,
@@ -2709,7 +2709,7 @@
     "failedConnectionRatio": 0.0,
     "externalIpRatio": 0.3,
     "avgConnectionDuration": 0.360355,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC114",
@@ -2721,7 +2721,7 @@
     "trafficVolume": 2881,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.167919",
+    "lastActivity": "2026-03-13T23:35:41.056222",
     "riskLevel": "Medium",
     "ifScore": 66.92,
     "xgbScore": 99.84,
@@ -2733,7 +2733,7 @@
     "failedConnectionRatio": 0.0,
     "externalIpRatio": 0.3,
     "avgConnectionDuration": 0.943647,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC115",
@@ -2745,7 +2745,7 @@
     "trafficVolume": 2978,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.168049",
+    "lastActivity": "2026-03-13T23:35:41.056327",
     "riskLevel": "Medium",
     "ifScore": 67.01,
     "xgbScore": 99.84,
@@ -2757,7 +2757,7 @@
     "failedConnectionRatio": 0.0,
     "externalIpRatio": 0.3,
     "avgConnectionDuration": 0.234601,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC116",
@@ -2769,7 +2769,7 @@
     "trafficVolume": 5547,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.168186",
+    "lastActivity": "2026-03-13T23:35:41.056431",
     "riskLevel": "Medium",
     "ifScore": 59.78,
     "xgbScore": 99.84,
@@ -2781,7 +2781,7 @@
     "failedConnectionRatio": 0.0,
     "externalIpRatio": 0.3,
     "avgConnectionDuration": 0.161725,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC117",
@@ -2793,7 +2793,7 @@
     "trafficVolume": 6526,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.168312",
+    "lastActivity": "2026-03-13T23:35:41.056527",
     "riskLevel": "Medium",
     "ifScore": 53.11,
     "xgbScore": 99.84,
@@ -2805,7 +2805,7 @@
     "failedConnectionRatio": 0.0,
     "externalIpRatio": 0.3,
     "avgConnectionDuration": 0.814997,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC118",
@@ -2817,7 +2817,7 @@
     "trafficVolume": 4718,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.168436",
+    "lastActivity": "2026-03-13T23:35:41.056620",
     "riskLevel": "Medium",
     "ifScore": 59.43,
     "xgbScore": 99.84,
@@ -2829,7 +2829,7 @@
     "failedConnectionRatio": 0.0,
     "externalIpRatio": 0.3,
     "avgConnectionDuration": 0.359622,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC119",
@@ -2841,7 +2841,7 @@
     "trafficVolume": 7013,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.168562",
+    "lastActivity": "2026-03-13T23:35:41.056713",
     "riskLevel": "Medium",
     "ifScore": 54.97,
     "xgbScore": 99.85,
@@ -2853,7 +2853,7 @@
     "failedConnectionRatio": 0.0,
     "externalIpRatio": 0.3,
     "avgConnectionDuration": 0.314428,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC120",
@@ -2865,7 +2865,7 @@
     "trafficVolume": 4303,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.168687",
+    "lastActivity": "2026-03-13T23:35:41.056807",
     "riskLevel": "Medium",
     "ifScore": 64.53,
     "xgbScore": 99.84,
@@ -2877,7 +2877,7 @@
     "failedConnectionRatio": 0.0,
     "externalIpRatio": 0.3,
     "avgConnectionDuration": 0.284712,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC121",
@@ -2889,7 +2889,7 @@
     "trafficVolume": 5751,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.168813",
+    "lastActivity": "2026-03-13T23:35:41.056902",
     "riskLevel": "Medium",
     "ifScore": 54.42,
     "xgbScore": 99.85,
@@ -2901,7 +2901,7 @@
     "failedConnectionRatio": 0.0,
     "externalIpRatio": 0.3,
     "avgConnectionDuration": 0.887834,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC122",
@@ -2913,7 +2913,7 @@
     "trafficVolume": 11024,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.168938",
+    "lastActivity": "2026-03-13T23:35:41.057001",
     "riskLevel": "Medium",
     "ifScore": 49.52,
     "xgbScore": 99.84,
@@ -2925,7 +2925,7 @@
     "failedConnectionRatio": 0.0,
     "externalIpRatio": 0.3,
     "avgConnectionDuration": 0.815561,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC123",
@@ -2937,7 +2937,7 @@
     "trafficVolume": 7742,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.169063",
+    "lastActivity": "2026-03-13T23:35:41.057106",
     "riskLevel": "Medium",
     "ifScore": 58.53,
     "xgbScore": 99.85,
@@ -2949,7 +2949,7 @@
     "failedConnectionRatio": 0.0,
     "externalIpRatio": 0.3,
     "avgConnectionDuration": 0.45565,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC124",
@@ -2961,7 +2961,7 @@
     "trafficVolume": 9224,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.169187",
+    "lastActivity": "2026-03-13T23:35:41.057245",
     "riskLevel": "Medium",
     "ifScore": 51.76,
     "xgbScore": 99.84,
@@ -2973,7 +2973,7 @@
     "failedConnectionRatio": 0.0,
     "externalIpRatio": 0.3,
     "avgConnectionDuration": 0.555405,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC125",
@@ -2985,7 +2985,7 @@
     "trafficVolume": 11934,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.169324",
+    "lastActivity": "2026-03-13T23:35:41.057348",
     "riskLevel": "Medium",
     "ifScore": 51.3,
     "xgbScore": 99.85,
@@ -2997,7 +2997,7 @@
     "failedConnectionRatio": 0.0,
     "externalIpRatio": 0.3,
     "avgConnectionDuration": 0.212017,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC126",
@@ -3009,7 +3009,7 @@
     "trafficVolume": 0,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.169458",
+    "lastActivity": "2026-03-13T23:35:41.057450",
     "riskLevel": "Medium",
     "ifScore": 56.71,
     "xgbScore": 88.85,
@@ -3021,7 +3021,7 @@
     "failedConnectionRatio": 0.0,
     "externalIpRatio": 0.0,
     "avgConnectionDuration": 1000.0,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC127",
@@ -3033,7 +3033,7 @@
     "trafficVolume": 0,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.169585",
+    "lastActivity": "2026-03-13T23:35:41.057547",
     "riskLevel": "Medium",
     "ifScore": 56.71,
     "xgbScore": 88.85,
@@ -3045,7 +3045,7 @@
     "failedConnectionRatio": 0.0,
     "externalIpRatio": 0.0,
     "avgConnectionDuration": 1000.0,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC128",
@@ -3057,7 +3057,7 @@
     "trafficVolume": 1600000,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.169710",
+    "lastActivity": "2026-03-13T23:35:41.057643",
     "riskLevel": "Critical",
     "ifScore": 0.0,
     "xgbScore": 98.17,
@@ -3069,7 +3069,7 @@
     "failedConnectionRatio": 0.0,
     "externalIpRatio": 0.0,
     "avgConnectionDuration": 0.001,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC129",
@@ -3081,7 +3081,7 @@
     "trafficVolume": 800000,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.169837",
+    "lastActivity": "2026-03-13T23:35:41.057743",
     "riskLevel": "Medium",
     "ifScore": 33.09,
     "xgbScore": 98.72,
@@ -3093,7 +3093,7 @@
     "failedConnectionRatio": 0.0,
     "externalIpRatio": 0.0,
     "avgConnectionDuration": 0.001,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC130",
@@ -3105,7 +3105,7 @@
     "trafficVolume": 800000,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.169970",
+    "lastActivity": "2026-03-13T23:35:41.057842",
     "riskLevel": "Medium",
     "ifScore": 21.5,
     "xgbScore": 85.06,
@@ -3117,7 +3117,7 @@
     "failedConnectionRatio": 0.0,
     "externalIpRatio": 0.0,
     "avgConnectionDuration": 1000.0,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC131",
@@ -3129,7 +3129,7 @@
     "trafficVolume": 800000,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.170139",
+    "lastActivity": "2026-03-13T23:35:41.057968",
     "riskLevel": "Medium",
     "ifScore": 33.09,
     "xgbScore": 98.72,
@@ -3141,7 +3141,7 @@
     "failedConnectionRatio": 0.0,
     "externalIpRatio": 0.0,
     "avgConnectionDuration": 0.001,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC132",
@@ -3153,7 +3153,7 @@
     "trafficVolume": 0,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.170301",
+    "lastActivity": "2026-03-13T23:35:41.058068",
     "riskLevel": "Low",
     "ifScore": 76.84,
     "xgbScore": 99.09,
@@ -3165,7 +3165,7 @@
     "failedConnectionRatio": 0.0,
     "externalIpRatio": 0.0,
     "avgConnectionDuration": 0.001,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC133",
@@ -3177,7 +3177,7 @@
     "trafficVolume": 800000,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.170476",
+    "lastActivity": "2026-03-13T23:35:41.058163",
     "riskLevel": "Medium",
     "ifScore": 32.66,
     "xgbScore": 98.6,
@@ -3189,7 +3189,7 @@
     "failedConnectionRatio": 0.0,
     "externalIpRatio": 0.0,
     "avgConnectionDuration": 0.001,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC134",
@@ -3201,7 +3201,7 @@
     "trafficVolume": 1600000,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.170673",
+    "lastActivity": "2026-03-13T23:35:41.058297",
     "riskLevel": "Critical",
     "ifScore": 0.0,
     "xgbScore": 98.17,
@@ -3213,7 +3213,7 @@
     "failedConnectionRatio": 0.0,
     "externalIpRatio": 0.0,
     "avgConnectionDuration": 0.001,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC135",
@@ -3225,7 +3225,7 @@
     "trafficVolume": 800000,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.170832",
+    "lastActivity": "2026-03-13T23:35:41.058393",
     "riskLevel": "Medium",
     "ifScore": 33.09,
     "xgbScore": 98.72,
@@ -3237,7 +3237,7 @@
     "failedConnectionRatio": 0.0,
     "externalIpRatio": 0.0,
     "avgConnectionDuration": 0.001,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC136",
@@ -3249,7 +3249,7 @@
     "trafficVolume": 0,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.170986",
+    "lastActivity": "2026-03-13T23:35:41.058489",
     "riskLevel": "Medium",
     "ifScore": 56.71,
     "xgbScore": 88.85,
@@ -3261,7 +3261,7 @@
     "failedConnectionRatio": 0.0,
     "externalIpRatio": 0.0,
     "avgConnectionDuration": 1000.0,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC137",
@@ -3273,7 +3273,7 @@
     "trafficVolume": 800000,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.171146",
+    "lastActivity": "2026-03-13T23:35:41.058589",
     "riskLevel": "Medium",
     "ifScore": 32.66,
     "xgbScore": 98.6,
@@ -3285,7 +3285,7 @@
     "failedConnectionRatio": 0.0,
     "externalIpRatio": 0.0,
     "avgConnectionDuration": 0.001,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC138",
@@ -3297,7 +3297,7 @@
     "trafficVolume": 0,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.171356",
+    "lastActivity": "2026-03-13T23:35:41.058683",
     "riskLevel": "Low",
     "ifScore": 76.84,
     "xgbScore": 99.09,
@@ -3309,7 +3309,7 @@
     "failedConnectionRatio": 0.0,
     "externalIpRatio": 0.0,
     "avgConnectionDuration": 0.001,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC139",
@@ -3321,7 +3321,7 @@
     "trafficVolume": 0,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.171830",
+    "lastActivity": "2026-03-13T23:35:41.058775",
     "riskLevel": "Medium",
     "ifScore": 56.71,
     "xgbScore": 88.85,
@@ -3333,7 +3333,7 @@
     "failedConnectionRatio": 0.0,
     "externalIpRatio": 0.0,
     "avgConnectionDuration": 1000.0,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC140",
@@ -3345,7 +3345,7 @@
     "trafficVolume": 0,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.172128",
+    "lastActivity": "2026-03-13T23:35:41.058869",
     "riskLevel": "Low",
     "ifScore": 76.84,
     "xgbScore": 99.09,
@@ -3357,7 +3357,7 @@
     "failedConnectionRatio": 0.0,
     "externalIpRatio": 0.0,
     "avgConnectionDuration": 0.001,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC141",
@@ -3369,7 +3369,7 @@
     "trafficVolume": 4480,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.172312",
+    "lastActivity": "2026-03-13T23:35:41.058963",
     "riskLevel": "Medium",
     "ifScore": 53.11,
     "xgbScore": 99.82,
@@ -3381,7 +3381,7 @@
     "failedConnectionRatio": 0.0,
     "externalIpRatio": 0.3,
     "avgConnectionDuration": 0.821125,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC142",
@@ -3393,7 +3393,7 @@
     "trafficVolume": 3920,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.172461",
+    "lastActivity": "2026-03-13T23:35:41.059059",
     "riskLevel": "Medium",
     "ifScore": 60.78,
     "xgbScore": 99.83,
@@ -3405,7 +3405,7 @@
     "failedConnectionRatio": 0.0,
     "externalIpRatio": 0.3,
     "avgConnectionDuration": 0.300003,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC143",
@@ -3417,7 +3417,7 @@
     "trafficVolume": 3840,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.172600",
+    "lastActivity": "2026-03-13T23:35:41.059155",
     "riskLevel": "Medium",
     "ifScore": 57.72,
     "xgbScore": 99.83,
@@ -3429,7 +3429,7 @@
     "failedConnectionRatio": 0.0,
     "externalIpRatio": 0.3,
     "avgConnectionDuration": 0.163545,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC144",
@@ -3441,7 +3441,7 @@
     "trafficVolume": 6240,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.172748",
+    "lastActivity": "2026-03-13T23:35:41.059286",
     "riskLevel": "Medium",
     "ifScore": 52.85,
     "xgbScore": 99.82,
@@ -3453,7 +3453,7 @@
     "failedConnectionRatio": 0.0,
     "externalIpRatio": 0.3,
     "avgConnectionDuration": 0.414656,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC145",
@@ -3465,7 +3465,7 @@
     "trafficVolume": 3840,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.172878",
+    "lastActivity": "2026-03-13T23:35:41.059381",
     "riskLevel": "Medium",
     "ifScore": 60.67,
     "xgbScore": 99.83,
@@ -3477,7 +3477,7 @@
     "failedConnectionRatio": 0.0,
     "externalIpRatio": 0.3,
     "avgConnectionDuration": 0.398348,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC146",
@@ -3489,7 +3489,7 @@
     "trafficVolume": 4320,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.173009",
+    "lastActivity": "2026-03-13T23:35:41.059473",
     "riskLevel": "Medium",
     "ifScore": 59.18,
     "xgbScore": 99.83,
@@ -3501,7 +3501,7 @@
     "failedConnectionRatio": 0.0,
     "externalIpRatio": 0.3,
     "avgConnectionDuration": 0.485147,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC147",
@@ -3513,7 +3513,7 @@
     "trafficVolume": 3280,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.173137",
+    "lastActivity": "2026-03-13T23:35:41.059566",
     "riskLevel": "Medium",
     "ifScore": 60.63,
     "xgbScore": 99.82,
@@ -3525,7 +3525,7 @@
     "failedConnectionRatio": 0.0,
     "externalIpRatio": 0.3,
     "avgConnectionDuration": 0.961499,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC148",
@@ -3537,7 +3537,7 @@
     "trafficVolume": 3600,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.173263",
+    "lastActivity": "2026-03-13T23:35:41.059659",
     "riskLevel": "Medium",
     "ifScore": 57.25,
     "xgbScore": 99.82,
@@ -3549,7 +3549,7 @@
     "failedConnectionRatio": 0.0,
     "externalIpRatio": 0.3,
     "avgConnectionDuration": 0.625752,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC149",
@@ -3561,7 +3561,7 @@
     "trafficVolume": 5520,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.173396",
+    "lastActivity": "2026-03-13T23:35:41.059752",
     "riskLevel": "Medium",
     "ifScore": 53.65,
     "xgbScore": 99.83,
@@ -3573,7 +3573,7 @@
     "failedConnectionRatio": 0.0,
     "externalIpRatio": 0.3,
     "avgConnectionDuration": 0.495026,
-    "cusumShift": false
+    "cusumShift": null
   },
   {
     "deviceId": "TC150",
@@ -3585,7 +3585,7 @@
     "trafficVolume": 4240,
     "dnsQueries": 1,
     "uniqueIpConnections": 1,
-    "lastActivity": "2026-03-13T18:52:14.173529",
+    "lastActivity": "2026-03-13T23:35:41.059847",
     "riskLevel": "Medium",
     "ifScore": 61.39,
     "xgbScore": 99.83,
@@ -3597,6 +3597,6 @@
     "failedConnectionRatio": 0.0,
     "externalIpRatio": 0.3,
     "avgConnectionDuration": 0.435204,
-    "cusumShift": false
+    "cusumShift": null
   }
 ]
