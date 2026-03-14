@@ -17,7 +17,6 @@ export function Navigation() {
     { href: '/attack-overview', label: 'Attack Intel', icon: '🎯' },
     { href: '/devices', label: 'Devices', icon: '🖥️' },
     { href: '/alerts', label: 'Alerts', icon: '🚨' },
-    { href: '/analytics', label: 'Analytics', icon: '📈' },
     { href: '/architecture', label: 'Architecture', icon: '🏗️' },
   ];
 
