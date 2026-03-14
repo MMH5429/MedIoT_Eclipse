@@ -175,6 +175,7 @@ export function LiveDeviceMonitor() {
   const [history, setHistory] = useState<LiveDataPoint[]>([]);
   const [isRunning, setIsRunning] = useState(true);
   const [alertLog, setAlertLog] = useState<{ time: string; message: string; level: string }[]>([]);
+  const [countdown, setCountdown] = useState(INTERVAL_MS / 1000);
   const prevCusum = useRef(0);
 
   const tick = useCallback(() => {
@@ -195,6 +196,7 @@ export function LiveDeviceMonitor() {
         level: 'warning',
       }, ...prev].slice(0, 15));
     }
+    setCountdown(INTERVAL_MS / 1000);
   }, []);
 
   useEffect(() => {
@@ -204,6 +206,15 @@ export function LiveDeviceMonitor() {
     const interval = setInterval(tick, INTERVAL_MS);
     return () => clearInterval(interval);
   }, [isRunning, tick]);
+
+  // Countdown timer
+  useEffect(() => {
+    if (!isRunning) return;
+    const timer = setInterval(() => {
+      setCountdown((prev) => (prev <= 1 ? INTERVAL_MS / 1000 : prev - 1));
+    }, 1000);
+    return () => clearInterval(timer);
+  }, [isRunning]);
 
   const latest = history[history.length - 1];
   if (!latest) return null;
@@ -224,10 +235,16 @@ export function LiveDeviceMonitor() {
           <div className={`w-3 h-3 rounded-full ${isRunning ? 'bg-green-500 animate-pulse' : 'bg-slate-500'}`} />
           <div>
             <h3 className="text-lg font-bold text-slate-100">Live Device Monitor</h3>
-            <p className="text-xs text-slate-400">192.168.1.100 — Simulated IoT Device — Updates every 10s</p>
+            <p className="text-xs text-slate-400">192.168.1.100 — Simulated IoT Device — Updates every 45s</p>
           </div>
         </div>
         <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 rounded-lg border border-slate-600 bg-slate-800 px-3 py-1.5">
+            <span className="text-[10px] text-slate-400 uppercase">Next Update</span>
+            <span className={`text-sm font-mono font-bold ${countdown <= 5 ? 'text-red-400 animate-pulse' : countdown <= 15 ? 'text-yellow-400' : 'text-blue-400'}`}>
+              {countdown}s
+            </span>
+          </div>
           <span className={`inline-block rounded-full border px-3 py-1 text-sm font-bold ${statusBg}`}>
             {latest.status}
           </span>
