@@ -1,10 +1,11 @@
 'use client';
 
-import React, { useState, useEffect, useCallback, useRef } from 'react';
+import React, { useState, useEffect, useCallback, useRef, useMemo } from 'react';
 import {
   LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer,
   AreaChart, Area, ReferenceLine,
 } from 'recharts';
+import { useFilters, RawRow } from '@/contexts/filter-context';
 
 interface LiveDataPoint {
   time: string;
@@ -27,7 +28,7 @@ interface LiveDataPoint {
   connState: string;
 }
 
-// Weights based on real IoT-23 distribution: 28.3% benign, 48.6% DDoS, 22.7% C&C, 0.41% PortScan, 0.05% C&C-FileDownload, 0.01% FileDownload
+// ── Simulation constants ──────────────────────────────
 const ATTACK_SCENARIOS = [
   { type: 'Benign',             label: 'Benign'    as const, weight: 0.28 },
   { type: 'DDoS Attack',       label: 'Malicious' as const, weight: 0.35 },
@@ -37,19 +38,27 @@ const ATTACK_SCENARIOS = [
   { type: 'Malicious File Download', label: 'Malicious' as const, weight: 0.04 },
 ];
 
-// Real compromised source IPs from IoT-23
 const COMPROMISED_IPS = ['192.168.1.195', '192.168.1.197', '192.168.1.199'];
-// Real benign source IPs from IoT-23
 const BENIGN_IPS = [
   '192.168.1.132', '192.168.2.1', '192.168.2.3', '192.168.69.129',
   '192.168.69.136', '192.168.69.192', '192.168.69.73',
 ];
-// Real destination IPs from IoT-23
 const DEST_IPS = {
   ddos: ['123.59.209.185'],
   cc: ['185.244.25.235'],
   scan: ['66.67.61.168', '71.61.66.148'],
   download: ['46.101.251.172'],
+};
+
+const ATTACK_LABEL_MAP: Record<string, string> = {
+  DDoS: 'DDoS Attack',
+  'C&C': 'C&C Communication',
+  PartOfAHorizontalPortScan: 'Horizontal Port Scan',
+  'C&C-FileDownload': 'C&C File Download',
+  FileDownload: 'Malicious File Download',
+  Benign: 'Benign',
+  '-': 'Benign',
+  '': 'Benign',
 };
 
 function pickScenario() {
@@ -62,12 +71,11 @@ function pickScenario() {
   return ATTACK_SCENARIOS[0];
 }
 
-// Add small variance around a center value
 function vary(center: number, pct: number = 0.2): number {
   return center * (1 + (Math.random() - 0.5) * 2 * pct);
 }
 
-function generateDataPoint(prevCusum: number): LiveDataPoint {
+function generateSimulatedPoint(): LiveDataPoint {
   const scenario = pickScenario();
   const now = new Date();
   const time = now.toLocaleTimeString();
@@ -79,144 +87,131 @@ function generateDataPoint(prevCusum: number): LiveDataPoint {
 
   switch (scenario.type) {
     case 'DDoS Attack':
-      // Real IoT-23: avg 126,459 bytes sent, 0 received, 0.025s duration, port 80
-      // Source: 192.168.1.195 (trust 40.87, IF 75.63, XGB 41.23, failed 0.6048)
-      sourceIp = '192.168.1.195';
-      destIp = DEST_IPS.ddos[0];
-      destPort = 80;
+      sourceIp = '192.168.1.195'; destIp = DEST_IPS.ddos[0]; destPort = 80;
       connState = Math.random() > 0.01 ? 'OTH' : 'S0';
-      bytesSent = vary(126459, 0.3);
-      bytesReceived = Math.random() * 10;
-      connectionCount = Math.floor(vary(480, 0.4)); // ~14395 / 30 windows
-      failedRatio = vary(0.6048, 0.1);
-      externalRatio = vary(0.9877, 0.01);
+      bytesSent = vary(126459, 0.3); bytesReceived = Math.random() * 10;
+      connectionCount = Math.floor(vary(480, 0.4));
+      failedRatio = vary(0.6048, 0.1); externalRatio = vary(0.9877, 0.01);
       duration = vary(0.0253, 0.3);
-      ifScore = vary(75.63, 0.08);
-      xgbScore = vary(41.23, 0.15);
-      cusumShift = Math.random() > 0.3; // 70% chance — real device had CUSUM shift
-      break;
-
-    case 'C&C Communication':
-      // Real IoT-23: avg 20.6 bytes sent, 69.7 received, 18.77s duration, port 6667 (IRC)
-      // Source: 192.168.1.199 (trust 56.1, IF 65.19, XGB 80.05, failed 0.4713)
-      sourceIp = '192.168.1.199';
-      destIp = DEST_IPS.cc[0];
-      destPort = Math.random() > 0.002 ? 6667 : 80;
-      connState = Math.random() > 0.24 ? 'S0' : Math.random() > 0.03 ? 'S3' : 'RSTR';
-      bytesSent = vary(20.6, 0.4);
-      bytesReceived = vary(69.7, 0.4);
-      connectionCount = Math.floor(vary(224, 0.3)); // ~6720 / 30 windows
-      failedRatio = vary(0.4713, 0.15);
-      externalRatio = 1.0;
-      duration = vary(18.77, 0.3);
-      ifScore = vary(65.19, 0.1);
-      xgbScore = vary(80.05, 0.1);
+      ifScore = vary(75.63, 0.08); xgbScore = vary(41.23, 0.15);
       cusumShift = Math.random() > 0.3;
       break;
-
+    case 'C&C Communication':
+      sourceIp = '192.168.1.199'; destIp = DEST_IPS.cc[0];
+      destPort = Math.random() > 0.002 ? 6667 : 80;
+      connState = Math.random() > 0.24 ? 'S0' : Math.random() > 0.03 ? 'S3' : 'RSTR';
+      bytesSent = vary(20.6, 0.4); bytesReceived = vary(69.7, 0.4);
+      connectionCount = Math.floor(vary(224, 0.3));
+      failedRatio = vary(0.4713, 0.15); externalRatio = 1.0;
+      duration = vary(18.77, 0.3);
+      ifScore = vary(65.19, 0.1); xgbScore = vary(80.05, 0.1);
+      cusumShift = Math.random() > 0.3;
+      break;
     case 'Horizontal Port Scan':
-      // Real IoT-23: avg 24,139.5 bytes sent, 0 received, 0.30s duration, port 63798
-      // Source: 192.168.1.197 (trust 67.91, IF 78.88, XGB 92.71, failed 0.5178)
-      sourceIp = '192.168.1.197';
-      destIp = DEST_IPS.scan[Math.floor(Math.random() * 2)];
-      destPort = Math.random() > 0.008 ? 63798 : 256;
-      connState = 'S0'; // 100% S0 in real data
-      bytesSent = vary(24139.5, 0.3);
-      bytesReceived = 0;
+      sourceIp = '192.168.1.197'; destIp = DEST_IPS.scan[Math.floor(Math.random() * 2)];
+      destPort = Math.random() > 0.008 ? 63798 : 256; connState = 'S0';
+      bytesSent = vary(24139.5, 0.3); bytesReceived = 0;
       connectionCount = Math.floor(vary(122, 0.3));
-      failedRatio = 1.0; // 100% failure rate in real data
-      externalRatio = vary(0.936, 0.05);
+      failedRatio = 1.0; externalRatio = vary(0.936, 0.05);
       duration = vary(0.3035, 0.3);
-      ifScore = vary(78.88, 0.08);
-      xgbScore = vary(92.71, 0.05);
+      ifScore = vary(78.88, 0.08); xgbScore = vary(92.71, 0.05);
       cusumShift = Math.random() > 0.4;
       break;
-
     case 'C&C File Download':
-      // Real IoT-23: avg 149.4 bytes sent, 128,613.2 received, 1.93s duration, port 80
-      sourceIp = '192.168.1.195';
-      destIp = DEST_IPS.download[0];
-      destPort = 80;
-      connState = 'SF'; // 100% SF in real data
-      bytesSent = vary(149.4, 0.3);
-      bytesReceived = vary(128613.2, 0.2);
+      sourceIp = '192.168.1.195'; destIp = DEST_IPS.download[0];
+      destPort = 80; connState = 'SF';
+      bytesSent = vary(149.4, 0.3); bytesReceived = vary(128613.2, 0.2);
       connectionCount = 1 + Math.floor(Math.random() * 3);
-      failedRatio = 0.0; // SF = successful
-      externalRatio = 1.0;
+      failedRatio = 0.0; externalRatio = 1.0;
       duration = vary(1.9336, 0.3);
-      ifScore = vary(75.63, 0.1);
-      xgbScore = vary(41.23, 0.2);
+      ifScore = vary(75.63, 0.1); xgbScore = vary(41.23, 0.2);
       cusumShift = Math.random() > 0.4;
       break;
-
     case 'Malicious File Download':
-      // Real IoT-23: avg 83.3 bytes sent, 64,982 received, 1.9s duration, port 80
       sourceIp = COMPROMISED_IPS[Math.floor(Math.random() * 3)];
-      destIp = DEST_IPS.download[0];
-      destPort = 80;
-      connState = 'SF';
-      bytesSent = vary(83.3, 0.3);
-      bytesReceived = vary(64982, 0.2);
+      destIp = DEST_IPS.download[0]; destPort = 80; connState = 'SF';
+      bytesSent = vary(83.3, 0.3); bytesReceived = vary(64982, 0.2);
       connectionCount = 1 + Math.floor(Math.random() * 2);
-      failedRatio = 0.0;
-      externalRatio = 1.0;
+      failedRatio = 0.0; externalRatio = 1.0;
       duration = vary(1.8953, 0.3);
-      ifScore = vary(70, 0.15);
-      xgbScore = vary(50, 0.2);
+      ifScore = vary(70, 0.15); xgbScore = vary(50, 0.2);
       cusumShift = Math.random() > 0.5;
       break;
-
-    default: // Benign
-      // Real IoT-23 benign devices: trust 79-87, IF 73-93, XGB 97-99
+    default:
       sourceIp = BENIGN_IPS[Math.floor(Math.random() * BENIGN_IPS.length)];
       destIp = `${Math.floor(Math.random() * 200) + 10}.${Math.floor(Math.random() * 255)}.${Math.floor(Math.random() * 255)}.${Math.floor(Math.random() * 255)}`;
       destPort = [80, 443, 53, 8080][Math.floor(Math.random() * 4)];
       connState = ['SF', 'S0', 'S1'][Math.floor(Math.random() * 3)];
-      bytesSent = vary(5000, 0.8);
-      bytesReceived = vary(3000, 0.8);
+      bytesSent = vary(5000, 0.8); bytesReceived = vary(3000, 0.8);
       connectionCount = 3 + Math.floor(Math.random() * 12);
-      failedRatio = vary(0.7, 0.3); // benign devices had high failed ratios too (0.53-1.0)
-      externalRatio = vary(0.8, 0.2);
+      failedRatio = vary(0.7, 0.3); externalRatio = vary(0.8, 0.2);
       duration = vary(15, 0.8);
-      ifScore = 73 + Math.random() * 20; // real range: 73-93
-      xgbScore = 97 + Math.random() * 3;  // real range: 97-99.8
+      ifScore = 73 + Math.random() * 20; xgbScore = 97 + Math.random() * 3;
       cusumShift = false;
       break;
   }
 
-  // Trust Score: 0.4*IF + 0.5*XGB - CUSUM_penalty
   const cusumPenalty = cusumShift ? 10 : 0;
   const trustScore = Math.max(0, Math.min(100, 0.4 * ifScore + 0.5 * xgbScore - cusumPenalty));
-
-  // Status
   let status: 'Healthy' | 'Suspicious' | 'Critical';
   if (trustScore > 80) status = 'Healthy';
   else if (trustScore >= 50) status = 'Suspicious';
   else status = 'Critical';
 
   return {
-    time,
-    trustScore: Math.round(trustScore * 10) / 10,
-    ifScore: Math.round(ifScore * 10) / 10,
-    xgbScore: Math.round(xgbScore * 10) / 10,
-    bytesSent: Math.round(bytesSent),
-    bytesReceived: Math.round(bytesReceived),
+    time, trustScore: Math.round(trustScore * 10) / 10,
+    ifScore: Math.round(ifScore * 10) / 10, xgbScore: Math.round(xgbScore * 10) / 10,
+    bytesSent: Math.round(bytesSent), bytesReceived: Math.round(bytesReceived),
     connectionCount,
     failedRatio: Math.round(Math.min(1, Math.max(0, failedRatio)) * 1000) / 1000,
     externalRatio: Math.round(Math.min(1, Math.max(0, externalRatio)) * 1000) / 1000,
     duration: Math.round(Math.max(0, duration) * 1000) / 1000,
-    status,
-    label: scenario.label,
-    attackType: scenario.type,
-    cusumShift,
-    sourceIp,
-    destIp,
-    destPort,
-    connState,
+    status, label: scenario.label, attackType: scenario.type, cusumShift,
+    sourceIp, destIp, destPort, connState,
   };
 }
 
-const INTERVAL_MS = 45000; // 45 seconds
+// ── Convert real raw row to LiveDataPoint ─────────────
+function rawRowToDataPoint(row: RawRow, device: { ifScore?: number; xgbScore?: number; cusumShift?: boolean; failedConnectionRatio?: number; externalIpRatio?: number }, idx: number): LiveDataPoint {
+  const attackType = ATTACK_LABEL_MAP[row.attack_type] || ATTACK_LABEL_MAP[row.attack_label] || row.attack_type || 'Benign';
+  const isMalicious = row.label === 'Malicious';
+
+  const ifScore = device.ifScore ?? (isMalicious ? 65 + Math.random() * 15 : 80 + Math.random() * 15);
+  const xgbScore = device.xgbScore ?? (isMalicious ? 40 + Math.random() * 20 : 95 + Math.random() * 5);
+  const cusumShift = device.cusumShift ?? false;
+
+  const cusumPenalty = cusumShift ? 10 : 0;
+  const trustScore = Math.max(0, Math.min(100, 0.4 * ifScore + 0.5 * xgbScore - cusumPenalty));
+  let status: 'Healthy' | 'Suspicious' | 'Critical';
+  if (trustScore > 80) status = 'Healthy';
+  else if (trustScore >= 50) status = 'Suspicious';
+  else status = 'Critical';
+
+  const dt = new Date(row.ts * 1000);
+
+  return {
+    time: dt.toLocaleTimeString(),
+    trustScore: Math.round(trustScore * 10) / 10,
+    ifScore: Math.round(ifScore * 10) / 10,
+    xgbScore: Math.round(xgbScore * 10) / 10,
+    bytesSent: row.orig_bytes || 0,
+    bytesReceived: row.resp_bytes || 0,
+    connectionCount: 1,
+    failedRatio: device.failedConnectionRatio ?? (row.conn_state === 'S0' || row.conn_state === 'REJ' ? 1 : 0),
+    externalRatio: device.externalIpRatio ?? 1,
+    duration: row.duration || 0,
+    status,
+    label: isMalicious ? 'Malicious' : 'Benign',
+    attackType,
+    cusumShift,
+    sourceIp: row.device_id,
+    destIp: row['id.resp_h'] || 'unknown',
+    destPort: row['id.resp_p'] || 0,
+    connState: row.conn_state || 'OTH',
+  };
+}
+
+const INTERVAL_MS = 45000;
 const MAX_POINTS = 30;
 
 const tooltipStyle = {
@@ -227,17 +222,47 @@ const tooltipStyle = {
 };
 
 export function LiveDeviceMonitor() {
+  const { selectedIps, filteredDevices, filteredRows, devices, allIps } = useFilters();
   const [history, setHistory] = useState<LiveDataPoint[]>([]);
   const [isRunning, setIsRunning] = useState(true);
   const [alertLog, setAlertLog] = useState<{ time: string; message: string; level: string }[]>([]);
   const [countdown, setCountdown] = useState(INTERVAL_MS / 1000);
-  const prevCusum = useRef(0);
+  const telemetryIdx = useRef(0);
+
+  // Determine mode: telemetry (single IP selected) vs simulation
+  const isTelemetry = selectedIps.length === 1;
+  const selectedDevice = isTelemetry ? filteredDevices[0] : null;
+
+  // Get raw rows for the selected IP, sorted by timestamp
+  const deviceRows = useMemo(() => {
+    if (!isTelemetry) return [];
+    return [...filteredRows].sort((a, b) => a.ts - b.ts);
+  }, [isTelemetry, filteredRows]);
+
+  // Reset history and telemetry index when mode or IP changes
+  useEffect(() => {
+    setHistory([]);
+    setAlertLog([]);
+    telemetryIdx.current = 0;
+    setCountdown(INTERVAL_MS / 1000);
+  }, [selectedIps.join(',')]);
 
   const tick = useCallback(() => {
-    const point = generateDataPoint(prevCusum.current);
+    let point: LiveDataPoint;
+
+    if (isTelemetry && deviceRows.length > 0 && selectedDevice) {
+      // Telemetry mode: replay real connections one by one
+      const idx = telemetryIdx.current % deviceRows.length;
+      const row = deviceRows[idx];
+      point = rawRowToDataPoint(row, selectedDevice, idx);
+      telemetryIdx.current = idx + 1;
+    } else {
+      // Simulation mode
+      point = generateSimulatedPoint();
+    }
+
     setHistory((prev) => [...prev.slice(-(MAX_POINTS - 1)), point]);
 
-    // Generate alert if status changed
     if (point.status === 'Critical') {
       setAlertLog((prev) => [{
         time: point.time,
@@ -252,10 +277,9 @@ export function LiveDeviceMonitor() {
       }, ...prev].slice(0, 15));
     }
     setCountdown(INTERVAL_MS / 1000);
-  }, []);
+  }, [isTelemetry, deviceRows, selectedDevice]);
 
   useEffect(() => {
-    // Initial data
     tick();
     if (!isRunning) return;
     const interval = setInterval(tick, INTERVAL_MS);
@@ -290,12 +314,26 @@ export function LiveDeviceMonitor() {
           <div className={`w-3 h-3 rounded-full ${isRunning ? 'bg-green-500 animate-pulse' : 'bg-slate-500'}`} />
           <div>
             <h3 className="text-lg font-bold text-slate-100">Live Device Monitor</h3>
-            <p className="text-xs text-slate-400">IoT-23 Network Simulation — Real attack patterns from dataset — Updates every 45s</p>
+            {isTelemetry ? (
+              <p className="text-xs text-cyan-400">
+                TELEMETRY — {selectedIps[0]} — Replaying {deviceRows.length.toLocaleString()} real connections — {telemetryIdx.current}/{deviceRows.length}
+              </p>
+            ) : (
+              <p className="text-xs text-slate-400">
+                SIMULATION — IoT-23 attack patterns — Select a single IP in the filter for real telemetry
+              </p>
+            )}
           </div>
         </div>
         <div className="flex items-center gap-3">
+          {/* Mode badge */}
+          <span className={`rounded-full px-3 py-1 text-[10px] font-bold uppercase ${
+            isTelemetry ? 'bg-cyan-500/20 border border-cyan-500/40 text-cyan-400' : 'bg-purple-500/20 border border-purple-500/40 text-purple-400'
+          }`}>
+            {isTelemetry ? 'Telemetry' : 'Simulation'}
+          </span>
           <div className="flex items-center gap-2 rounded-lg border border-slate-600 bg-slate-800 px-3 py-1.5">
-            <span className="text-[10px] text-slate-400 uppercase">Next Update</span>
+            <span className="text-[10px] text-slate-400 uppercase">Next</span>
             <span className={`text-sm font-mono font-bold ${countdown <= 5 ? 'text-red-400 animate-pulse' : countdown <= 15 ? 'text-yellow-400' : 'text-blue-400'}`}>
               {countdown}s
             </span>
@@ -407,7 +445,6 @@ export function LiveDeviceMonitor() {
 
         {/* Charts */}
         <div className="grid md:grid-cols-2 gap-6">
-          {/* Trust Score Over Time */}
           <div className="rounded-lg border border-slate-800 bg-slate-900/60 p-4">
             <h4 className="text-xs font-semibold text-slate-300 uppercase mb-3">Trust Score Timeline</h4>
             <ResponsiveContainer width="100%" height={200}>
@@ -429,7 +466,6 @@ export function LiveDeviceMonitor() {
             </ResponsiveContainer>
           </div>
 
-          {/* Algorithm Scores Over Time */}
           <div className="rounded-lg border border-slate-800 bg-slate-900/60 p-4">
             <h4 className="text-xs font-semibold text-slate-300 uppercase mb-3">Algorithm Scores</h4>
             <ResponsiveContainer width="100%" height={200}>
@@ -451,7 +487,6 @@ export function LiveDeviceMonitor() {
 
         {/* Bottom Row: Traffic + Alert Log */}
         <div className="grid md:grid-cols-2 gap-6">
-          {/* Traffic Stats */}
           <div className="rounded-lg border border-slate-800 bg-slate-900/60 p-4">
             <h4 className="text-xs font-semibold text-slate-300 uppercase mb-3">Traffic Metrics</h4>
             <div className="grid grid-cols-2 gap-3">
@@ -480,7 +515,6 @@ export function LiveDeviceMonitor() {
             </div>
           </div>
 
-          {/* Alert Log */}
           <div className="rounded-lg border border-slate-800 bg-slate-900/60 p-4">
             <h4 className="text-xs font-semibold text-slate-300 uppercase mb-3">Alert Log</h4>
             <div className="space-y-1.5 max-h-[180px] overflow-y-auto">
