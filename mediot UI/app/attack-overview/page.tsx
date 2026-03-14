@@ -52,7 +52,7 @@ export default function AttackOverviewPage() {
 
   // Alerts tab state
   const [expandedAlertId, setExpandedAlertId] = useState<string | null>(null);
-  const [compareAlertId, setCompareAlertId] = useState<string | null>(null);
+
 
   // Feature explorer
   const [xAxis, setXAxis] = useState('bytesSent');
@@ -837,123 +837,118 @@ export default function AttackOverviewPage() {
               </Card>
             )}
 
-            {/* Alert Table with Expandable Reasons */}
+            {/* Alert Table — Grouped by IP */}
             <SectionHeader title="Alert Details" />
             <Card>
               <div className="space-y-2">
-                {/* Compare mode */}
-                {compareAlertId && (() => {
-                  const a = filteredAlerts.find((al) => al.id === compareAlertId);
-                  const b = filteredAlerts.find((al) => al.id === expandedAlertId);
-                  if (!a || !b) return null;
-                  return (
-                    <div className="mb-4 rounded-lg border border-blue-500/30 bg-blue-500/5 p-4">
-                      <div className="flex justify-between items-center mb-3">
-                        <h4 className="text-sm font-semibold text-blue-400">Comparing Alerts</h4>
-                        <button onClick={() => setCompareAlertId(null)}
-                          className="text-xs text-slate-400 hover:text-white">Close comparison</button>
-                      </div>
-                      <div className="grid grid-cols-2 gap-4">
-                        <AlertDetailCard alert={a} label="Alert A" />
-                        <AlertDetailCard alert={b} label="Alert B" />
-                      </div>
-                    </div>
-                  );
-                })()}
+                {(() => {
+                  // Group alerts by deviceId
+                  const grouped: Record<string, typeof filteredAlerts> = {};
+                  filteredAlerts.forEach((a) => {
+                    if (!grouped[a.deviceId]) grouped[a.deviceId] = [];
+                    grouped[a.deviceId].push(a);
+                  });
+                  // Sort groups: most alerts first
+                  const groups = Object.entries(grouped).sort((a, b) => b[1].length - a[1].length);
 
-                <div className="overflow-x-auto">
-                  <table className="w-full text-sm">
-                    <thead>
-                      <tr className="border-b border-slate-700 text-left text-xs uppercase tracking-wider text-slate-400">
-                        <th className="pb-3 pr-3 w-8"></th>
-                        <th className="pb-3 pr-3">Device</th>
-                        <th className="pb-3 pr-3">Trust</th>
-                        <th className="pb-3 pr-3">Severity</th>
-                        <th className="pb-3 pr-3">IF</th>
-                        <th className="pb-3 pr-3">XGB</th>
-                        <th className="pb-3 pr-3">CUSUM</th>
-                        <th className="pb-3 pr-3">Flagged By</th>
-                        <th className="pb-3">Reasons</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {filteredAlerts.map((a) => {
-                        const isExpanded = expandedAlertId === a.id;
-                        return (
-                          <React.Fragment key={a.id}>
-                            <tr className={`border-b border-slate-800/50 hover:bg-slate-800/30 cursor-pointer transition-colors ${isExpanded ? 'bg-slate-800/20' : ''}`}
-                              onClick={() => setExpandedAlertId(isExpanded ? null : a.id)}>
-                              <td className="py-2 pr-3 text-slate-500">{isExpanded ? '▼' : '▶'}</td>
-                              <td className="py-2 pr-3 font-mono text-slate-300 text-xs">{a.deviceId}</td>
-                              <td className="py-2 pr-3">
-                                <span className={`font-bold ${a.trustScore < 25 ? 'text-red-400' : a.trustScore < 50 ? 'text-yellow-400' : 'text-green-400'}`}>
-                                  {a.trustScore.toFixed(1)}
-                                </span>
-                              </td>
-                              <td className="py-2 pr-3">
-                                <span className={`inline-block rounded-full px-2 py-0.5 text-xs font-semibold ${
-                                  a.severity === 'Critical' ? 'bg-red-500/20 text-red-400' : 'bg-yellow-500/20 text-yellow-400'
-                                }`}>{a.severity}</span>
-                              </td>
-                              <td className="py-2 pr-3 text-slate-400 text-xs">{a.metrics?.if_score.toFixed(1) ?? '-'}</td>
-                              <td className="py-2 pr-3 text-slate-400 text-xs">{a.metrics?.xgb_score.toFixed(1) ?? '-'}</td>
-                              <td className="py-2 pr-3 text-xs">{a.metrics?.cusum_shift ? <span className="text-red-400">Yes</span> : <span className="text-slate-500">No</span>}</td>
-                              <td className="py-2 pr-3 text-slate-400 text-xs">{a.flaggedBy?.join(', ') || '-'}</td>
-                              <td className="py-2 text-slate-400 text-xs max-w-[200px] truncate">{a.alertReason.split(';')[0]}...</td>
-                            </tr>
-                            {/* Expanded row: full reasons dropdown */}
-                            {isExpanded && (
-                              <tr>
-                                <td colSpan={9} className="py-0">
-                                  <div className="border-l-2 border-blue-500 ml-4 pl-4 py-3 bg-slate-800/30 mb-1">
-                                    <h4 className="text-xs font-semibold text-blue-400 uppercase tracking-wider mb-2">Full Reasons</h4>
-                                    <div className="space-y-1">
-                                      {a.alertReason.split(';').map((reason, i) => (
-                                        <p key={i} className="text-sm text-slate-300">
-                                          <span className="text-slate-500 mr-2">{i + 1}.</span>
-                                          {reason.trim()}
-                                        </p>
-                                      ))}
-                                    </div>
-                                    <div className="mt-3 flex gap-4 text-xs">
-                                      <span className="text-slate-400">
-                                        <strong className="text-slate-300">Recommended:</strong> {a.recommendedAction}
-                                      </span>
-                                    </div>
-                                    {a.deviatingFeatures && a.deviatingFeatures.length > 0 && (
-                                      <div className="mt-2">
-                                        <span className="text-xs text-slate-400">Deviating features: </span>
-                                        {a.deviatingFeatures.map((f) => (
-                                          <span key={f} className="inline-block rounded bg-slate-700 px-1.5 py-0.5 text-[10px] text-slate-300 mr-1">{f}</span>
-                                        ))}
-                                      </div>
-                                    )}
-                                    {/* Compare button */}
-                                    <div className="mt-3 pt-2 border-t border-slate-700">
-                                      <label className="text-xs text-slate-400 font-medium">Compare with another alert:</label>
-                                      <select
-                                        value={compareAlertId || ''}
-                                        onChange={(e) => setCompareAlertId(e.target.value || null)}
-                                        className="ml-2 rounded-md border border-slate-700 bg-slate-800 px-2 py-1 text-xs text-slate-200"
-                                      >
-                                        <option value="">Select alert to compare...</option>
-                                        {filteredAlerts.filter((al) => al.id !== a.id).map((al) => (
-                                          <option key={al.id} value={al.id}>
-                                            {al.deviceId} — Trust: {al.trustScore.toFixed(1)} ({al.severity})
-                                          </option>
-                                        ))}
-                                      </select>
-                                    </div>
-                                  </div>
-                                </td>
-                              </tr>
-                            )}
-                          </React.Fragment>
-                        );
-                      })}
-                    </tbody>
-                  </table>
-                </div>
+                  return groups.map(([ip, ipAlerts]) => {
+                    const isIpExpanded = expandedAlertId === ip;
+                    const worstSeverity = ipAlerts.some((a) => a.severity === 'Critical') ? 'Critical' : 'Warning';
+                    const lowestTrust = Math.min(...ipAlerts.map((a) => a.trustScore));
+                    const flaggedByAll = [...new Set(ipAlerts.flatMap((a) => a.flaggedBy || []))];
+
+                    return (
+                      <div key={ip} className="rounded-lg border border-slate-800 overflow-hidden">
+                        {/* IP Header Row — always visible */}
+                        <div
+                          className={`flex items-center gap-3 px-4 py-3 cursor-pointer transition-colors hover:bg-slate-800/50 ${
+                            isIpExpanded ? 'bg-slate-800/40' : ''
+                          }`}
+                          onClick={() => setExpandedAlertId(isIpExpanded ? null : ip)}
+                        >
+                          <span className="text-slate-500 text-sm w-5">{isIpExpanded ? '▼' : '▶'}</span>
+                          <span className="font-mono text-sm text-slate-200 font-semibold">{ip}</span>
+                          <span className={`inline-block rounded-full px-2 py-0.5 text-xs font-semibold ${
+                            worstSeverity === 'Critical' ? 'bg-red-500/20 text-red-400' : 'bg-yellow-500/20 text-yellow-400'
+                          }`}>{worstSeverity}</span>
+                          <span className="rounded-full bg-slate-700 px-2 py-0.5 text-xs text-slate-300">
+                            {ipAlerts.length} alert{ipAlerts.length > 1 ? 's' : ''}
+                          </span>
+                          <span className={`ml-auto text-sm font-bold ${
+                            lowestTrust < 25 ? 'text-red-400' : lowestTrust < 50 ? 'text-yellow-400' : 'text-green-400'
+                          }`}>
+                            Trust: {lowestTrust.toFixed(1)}
+                          </span>
+                          <span className="text-xs text-slate-500">{flaggedByAll.join(', ')}</span>
+                        </div>
+
+                        {/* Expanded: individual alerts for this IP */}
+                        {isIpExpanded && (
+                          <div className="border-t border-slate-800">
+                            <table className="w-full text-sm">
+                              <thead>
+                                <tr className="border-b border-slate-800 text-left text-[10px] uppercase tracking-wider text-slate-500 bg-slate-900/50">
+                                  <th className="px-4 py-2">Window</th>
+                                  <th className="px-2 py-2">Trust</th>
+                                  <th className="px-2 py-2">Severity</th>
+                                  <th className="px-2 py-2">IF</th>
+                                  <th className="px-2 py-2">XGB</th>
+                                  <th className="px-2 py-2">CUSUM</th>
+                                  <th className="px-2 py-2">Flagged By</th>
+                                  <th className="px-2 py-2">Reason</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                {ipAlerts.map((a, i) => {
+                                  const windowId = a.id.includes('_w') ? a.id.split('_w').pop() : String(i + 1);
+                                  return (
+                                    <tr key={a.id} className="border-b border-slate-800/30 hover:bg-slate-800/20">
+                                      <td className="px-4 py-2 font-mono text-xs text-slate-400">w{windowId}</td>
+                                      <td className="px-2 py-2">
+                                        <span className={`text-xs font-bold ${
+                                          a.trustScore < 25 ? 'text-red-400' : a.trustScore < 50 ? 'text-yellow-400' : 'text-green-400'
+                                        }`}>{a.trustScore.toFixed(1)}</span>
+                                      </td>
+                                      <td className="px-2 py-2">
+                                        <span className={`inline-block rounded-full px-2 py-0.5 text-[10px] font-semibold ${
+                                          a.severity === 'Critical' ? 'bg-red-500/20 text-red-400' : 'bg-yellow-500/20 text-yellow-400'
+                                        }`}>{a.severity}</span>
+                                      </td>
+                                      <td className="px-2 py-2 text-xs text-slate-400">{a.metrics?.if_score.toFixed(1) ?? '-'}</td>
+                                      <td className="px-2 py-2 text-xs text-slate-400">{a.metrics?.xgb_score.toFixed(1) ?? '-'}</td>
+                                      <td className="px-2 py-2 text-xs">{a.metrics?.cusum_shift ? <span className="text-red-400">Shift</span> : <span className="text-slate-500">No</span>}</td>
+                                      <td className="px-2 py-2 text-xs text-slate-400">{a.flaggedBy?.join(', ') || '-'}</td>
+                                      <td className="px-2 py-2 text-xs text-slate-400 max-w-[300px]">
+                                        <div className="space-y-0.5">
+                                          {a.alertReason.split(';').slice(0, 2).map((r, ri) => (
+                                            <p key={ri} className="truncate">{r.trim()}</p>
+                                          ))}
+                                        </div>
+                                      </td>
+                                    </tr>
+                                  );
+                                })}
+                              </tbody>
+                            </table>
+                            {/* Deviating features summary */}
+                            {(() => {
+                              const allFeatures = [...new Set(ipAlerts.flatMap((a) => a.deviatingFeatures || []))];
+                              if (allFeatures.length === 0) return null;
+                              return (
+                                <div className="px-4 py-3 bg-slate-900/30 border-t border-slate-800">
+                                  <span className="text-xs text-slate-400">Deviating features across all windows: </span>
+                                  {allFeatures.map((f) => (
+                                    <span key={f} className="inline-block rounded bg-slate-700 px-1.5 py-0.5 text-[10px] text-slate-300 mr-1 mb-1">{f}</span>
+                                  ))}
+                                </div>
+                              );
+                            })()}
+                          </div>
+                        )}
+                      </div>
+                    );
+                  });
+                })()}
               </div>
             </Card>
           </div>
@@ -1154,27 +1149,6 @@ function MiniMetric({ label, value }: { label: string; value: string }) {
     <div className="rounded-md border border-slate-700 bg-slate-800/50 p-3">
       <p className="text-xs text-slate-400">{label}</p>
       <p className="text-lg font-bold text-slate-100 mt-1">{value}</p>
-    </div>
-  );
-}
-
-function AlertDetailCard({ alert, label }: { alert: Alert; label: string }) {
-  return (
-    <div className="rounded-lg border border-slate-700 bg-slate-800/50 p-3 space-y-2">
-      <h5 className="text-xs font-semibold text-blue-400">{label}: {alert.deviceId}</h5>
-      <div className="grid grid-cols-2 gap-2 text-xs">
-        <div><span className="text-slate-400">Trust: </span><span className="text-slate-200 font-bold">{alert.trustScore.toFixed(1)}</span></div>
-        <div><span className="text-slate-400">Severity: </span><span className={alert.severity === 'Critical' ? 'text-red-400' : 'text-yellow-400'}>{alert.severity}</span></div>
-        <div><span className="text-slate-400">IF: </span><span className="text-slate-200">{alert.metrics?.if_score.toFixed(1)}</span></div>
-        <div><span className="text-slate-400">XGB: </span><span className="text-slate-200">{alert.metrics?.xgb_score.toFixed(1)}</span></div>
-      </div>
-      <div>
-        <p className="text-[10px] text-slate-400 uppercase font-semibold mb-1">Reasons:</p>
-        {alert.alertReason.split(';').map((r, i) => (
-          <p key={i} className="text-xs text-slate-300 pl-2 border-l border-slate-600 mb-1">{r.trim()}</p>
-        ))}
-      </div>
-      <div><span className="text-[10px] text-slate-400">Flagged by: </span><span className="text-xs text-slate-300">{alert.flaggedBy?.join(', ')}</span></div>
     </div>
   );
 }
