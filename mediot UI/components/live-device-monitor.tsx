@@ -331,7 +331,7 @@ export function LiveDeviceMonitor() {
       }, ...prev].slice(0, 15));
     }
     setCountdown(INTERVAL_MS / 1000);
-  }, [isTelemetry, deviceRows, selectedDevice]);
+  }, [isTelemetry, deviceWindows, selectedDevice]);
 
   useEffect(() => {
     tick();
