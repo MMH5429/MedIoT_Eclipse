@@ -235,7 +235,7 @@ export function GlobalThreatMap() {
 
         {/* Map */}
         <MapProvider>
-          <ComposableMap projection="geoMercator">
+          <ComposableMap projection="geoMercator" projectionConfig={{ center: [0, 20], scale: 120 }}>
           <Geographies geography={geoUrl}>
             {({ geographies }) =>
               geographies.map((geo) => (
