@@ -1,18 +1,14 @@
 'use client';
 
 import React, { useEffect, useState, useMemo, useCallback } from 'react';
-import { ComposableMap, Geographies, Geography, Marker, MapProvider } from 'react-simple-maps';
 import { AlertCircle, Play, Pause } from 'lucide-react';
-
-const geoUrl = 'https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json';
 
 interface AttackOrigin {
   id: string;
   name: string;
-  lat: number;
-  lng: number;
+  x: number; // SVG x coordinate on world map
+  y: number; // SVG y coordinate on world map
   color: string;
-  isInteractive: boolean;
 }
 
 interface Attack {
@@ -26,73 +22,40 @@ interface Attack {
 }
 
 const ATTACK_ORIGINS: AttackOrigin[] = [
-  {
-    id: 'russia',
-    name: 'Russia',
-    lat: 55.75,
-    lng: 37.62,
-    color: '#ef4444',
-    isInteractive: true,
-  },
-  {
-    id: 'china',
-    name: 'China',
-    lat: 39.9,
-    lng: 116.4,
-    color: '#f59e0b',
-    isInteractive: true,
-  },
-  {
-    id: 'unknown',
-    name: 'Unknown',
-    lat: 0,
-    lng: 0,
-    color: '#eab308',
-    isInteractive: false,
-  },
+  { id: 'russia', name: 'Russia', x: 680, y: 120, color: '#ef4444' },
+  { id: 'china', name: 'China', x: 750, y: 200, color: '#f59e0b' },
+  { id: 'brazil', name: 'Brazil', x: 310, y: 340, color: '#a855f7' },
+  { id: 'iran', name: 'Iran', x: 620, y: 210, color: '#ec4899' },
+  { id: 'nkorea', name: 'N. Korea', x: 790, y: 185, color: '#f97316' },
 ];
 
-const HOSPITAL_LOCATION = { lat: 40.7128, lng: -74.006 }; // New York area
+const HOSPITAL = { x: 220, y: 175, name: 'Hospital Network' };
 
 export function GlobalThreatMap() {
   const [attacks, setAttacks] = useState<Attack[]>([]);
   const [isPlaying, setIsPlaying] = useState(true);
   const [attackHistory, setAttackHistory] = useState<Attack[]>([]);
 
-  // Generate random attack from Unknown origin
   const generateRandomAttack = useCallback(() => {
+    const origins = ['russia', 'china', 'brazil', 'iran', 'nkorea'];
+    const originId = origins[Math.floor(Math.random() * origins.length)];
+    const origin = ATTACK_ORIGINS.find((o) => o.id === originId)!;
+
     const rand = Math.random();
-    let severity: 'critical' | 'alert' | 'warning' = 'critical';
-    if (rand < 0.6) severity = 'critical';
-    else if (rand < 0.9) severity = 'alert';
-    else severity = 'warning';
+    const severity: 'critical' | 'alert' | 'warning' =
+      rand < 0.5 ? 'critical' : rand < 0.8 ? 'alert' : 'warning';
 
-    const randomLat = (Math.random() - 0.5) * 180;
-    const randomLng = (Math.random() - 0.5) * 360;
-
-    const originId = ['russia', 'china', 'unknown'][Math.floor(Math.random() * 3)];
-    const origin = ATTACK_ORIGINS.find((o) => o.id === originId) || ATTACK_ORIGINS[2];
-
-    let finalName = origin.name;
-
-    if (originId === 'unknown') {
-      finalName = `Unknown (${randomLat > 0 ? 'N' : 'S'}, ${randomLng > 0 ? 'E' : 'W'})`;
-    }
-
-    const attack: Attack = {
+    return {
       id: `attack-${Date.now()}-${Math.random()}`,
       originId,
-      originName: finalName,
+      originName: origin.name,
       severity,
-      status: 'active',
+      status: 'active' as const,
       startTime: new Date(),
-      duration: 5000, // 5 seconds
+      duration: 5000,
     };
-
-    return attack;
   }, []);
 
-  // Auto-generate attacks when playing
   useEffect(() => {
     if (!isPlaying) return;
 
@@ -101,66 +64,30 @@ export function GlobalThreatMap() {
       setAttacks((prev) => [...prev, newAttack]);
       setAttackHistory((prev) => [newAttack, ...prev].slice(0, 20));
 
-      // Remove completed attacks after duration
       setTimeout(() => {
-        setAttacks((prev) =>
-          prev.filter((a) => a.id !== newAttack.id)
-        );
+        setAttacks((prev) => prev.filter((a) => a.id !== newAttack.id));
       }, newAttack.duration);
-    }, 4000 + Math.random() * 2000); // 4-6 seconds
+    }, 3000 + Math.random() * 2000);
 
     return () => clearInterval(interval);
   }, [isPlaying, generateRandomAttack]);
 
-  // Handle country click to create attack
-  const handleGeographyClick = (geo: { properties?: Record<string, unknown> }) => {
-    const properties = geo.properties;
-    if (!properties) return;
+  const stats = useMemo(() => ({
+    activeFlows: attacks.length,
+    totalAttacked: new Set(attackHistory.map((a) => a.originId)).size,
+    historyCount: attackHistory.length,
+    criticalCount: attackHistory.filter((a) => a.severity === 'critical').length,
+    alertCount: attackHistory.filter((a) => a.severity === 'alert').length,
+    warningCount: attackHistory.filter((a) => a.severity === 'warning').length,
+  }), [attacks, attackHistory]);
 
-    // Find closest attack origin or use random
-    const newAttack = generateRandomAttack();
-    setAttacks((prev) => [...prev, newAttack]);
-    setAttackHistory((prev) => [newAttack, ...prev].slice(0, 20));
-
-    setTimeout(() => {
-      setAttacks((prev) =>
-        prev.filter((a) => a.id !== newAttack.id)
-      );
-    }, newAttack.duration);
+  const getSeverityColor = (severity: string) => {
+    if (severity === 'critical') return '#ef4444';
+    if (severity === 'alert') return '#f59e0b';
+    return '#eab308';
   };
 
-  const stats = useMemo(() => {
-    return {
-      totalAttacked: new Set(attackHistory.map((a) => a.originId)).size,
-      activeFlows: attacks.length,
-      historyCount: attackHistory.length,
-      criticalCount: attackHistory.filter((a) => a.severity === 'critical').length,
-      alertCount: attackHistory.filter((a) => a.severity === 'alert').length,
-      warningCount: attackHistory.filter((a) => a.severity === 'warning').length,
-    };
-  }, [attacks, attackHistory]);
-
-  const getSeverityColor = (severity: 'critical' | 'alert' | 'warning') => {
-    switch (severity) {
-      case 'critical':
-        return '#ef4444';
-      case 'alert':
-        return '#f59e0b';
-      case 'warning':
-        return '#eab308';
-    }
-  };
-
-  const getSeverityLabel = (severity: 'critical' | 'alert' | 'warning') => {
-    switch (severity) {
-      case 'critical':
-        return 'CRITICAL';
-      case 'alert':
-        return 'ALERT';
-      case 'warning':
-        return 'WARNING';
-    }
-  };
+  const getSeverityLabel = (severity: string) => severity.toUpperCase();
 
   return (
     <div className="w-full space-y-4">
@@ -169,8 +96,15 @@ export function GlobalThreatMap() {
         <div className="flex items-center justify-between mb-4">
           <div>
             <h3 className="text-sm font-semibold text-slate-100">Global Threat Origins</h3>
-            <p className="text-xs text-slate-400 mt-1">Attack flows to hospital network (click countries to simulate)</p>
+            <p className="text-xs text-slate-400 mt-1">Live attack flows to hospital network</p>
           </div>
+          <button
+            onClick={() => setIsPlaying(!isPlaying)}
+            className="p-2 rounded-lg bg-slate-800 border border-slate-600 hover:bg-slate-700 transition text-slate-100"
+            title={isPlaying ? 'Pause' : 'Resume'}
+          >
+            {isPlaying ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4" />}
+          </button>
         </div>
 
         {/* Stats Grid */}
@@ -180,7 +114,7 @@ export function GlobalThreatMap() {
             <p className="text-2xl font-bold text-blue-400 mt-1">{stats.activeFlows}</p>
           </div>
           <div className="bg-slate-800 rounded p-3">
-            <p className="text-xs text-slate-400">Total Attacked</p>
+            <p className="text-xs text-slate-400">Origins</p>
             <p className="text-2xl font-bold text-slate-100 mt-1">{stats.totalAttacked}</p>
           </div>
           <div className="bg-slate-800 rounded p-3">
@@ -203,152 +137,107 @@ export function GlobalThreatMap() {
 
         {/* Legend */}
         <div className="flex flex-wrap gap-4 text-xs">
+          {ATTACK_ORIGINS.map((o) => (
+            <div key={o.id} className="flex items-center gap-2">
+              <div className="w-3 h-3 rounded-full" style={{ backgroundColor: o.color }} />
+              <span className="text-slate-300">{o.name}</span>
+            </div>
+          ))}
           <div className="flex items-center gap-2">
-            <div className="w-3 h-3 rounded-full bg-red-500"></div>
-            <span className="text-slate-300">Russia (Critical)</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <div className="w-3 h-3 rounded-full bg-orange-500"></div>
-            <span className="text-slate-300">China (Alert)</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-            <span className="text-slate-300">Unknown (Warning)</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <div className="w-3 h-3 rounded-full bg-blue-500"></div>
+            <div className="w-3 h-3 rounded-full bg-blue-500" />
             <span className="text-slate-300">Hospital Network</span>
           </div>
         </div>
       </div>
 
-      {/* Map Container */}
-      <div className="relative rounded-lg border border-slate-700 bg-slate-900 overflow-hidden" style={{ minHeight: '500px' }}>
-        {/* Pause/Play Button */}
-        <button
-          onClick={() => setIsPlaying(!isPlaying)}
-          className="absolute top-4 left-4 z-10 p-2 rounded-lg bg-slate-800 border border-slate-600 hover:bg-slate-700 transition text-slate-100"
-          title={isPlaying ? 'Pause animations' : 'Resume animations'}
-        >
-          {isPlaying ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4" />}
-        </button>
+      {/* SVG Map */}
+      <div className="relative rounded-lg border border-slate-700 bg-slate-900 overflow-hidden">
+        <svg viewBox="0 0 960 500" className="w-full" style={{ minHeight: '400px' }}>
+          {/* Background */}
+          <rect width="960" height="500" fill="#0f172a" />
 
-        {/* Map */}
-        <MapProvider>
-          <ComposableMap projection="geoMercator" projectionConfig={{ center: [0, 20], scale: 120 }}>
-          <Geographies geography={geoUrl}>
-            {({ geographies }) =>
-              geographies.map((geo) => (
-                <Geography
-                  key={geo.rsmKey}
-                  geography={geo}
-                  onClick={() => handleGeographyClick(geo)}
-                  className="cursor-pointer"
-                  style={{
-                    default: {
-                      fill: 'rgb(15, 23, 42)',
-                      stroke: 'rgb(51, 65, 85)',
-                      strokeWidth: 0.75,
-                      outline: 'none',
-                      transition: 'all 250ms',
-                    },
-                    hover: {
-                      fill: 'rgb(30, 41, 59)',
-                      stroke: 'rgb(71, 85, 105)',
-                      strokeWidth: 0.75,
-                      outline: 'none',
-                      cursor: 'pointer',
-                      transition: 'all 250ms',
-                    },
-                    pressed: {
-                      fill: 'rgb(51, 65, 85)',
-                      stroke: 'rgb(100, 116, 139)',
-                      strokeWidth: 0.75,
-                      outline: 'none',
-                    },
-                  }}
-                />
-              ))
-            }
-          </Geographies>
+          {/* Simplified world map continents */}
+          {/* North America */}
+          <path d="M120,80 L280,80 L300,120 L280,160 L300,200 L260,240 L220,220 L180,240 L140,200 L100,180 L80,120 Z"
+            fill="#1e293b" stroke="#334155" strokeWidth="1" />
+          {/* South America */}
+          <path d="M240,260 L300,260 L330,300 L340,360 L320,420 L280,440 L250,400 L230,340 L220,300 Z"
+            fill="#1e293b" stroke="#334155" strokeWidth="1" />
+          {/* Europe */}
+          <path d="M440,80 L520,70 L560,90 L540,130 L560,150 L520,160 L480,140 L440,150 L430,120 Z"
+            fill="#1e293b" stroke="#334155" strokeWidth="1" />
+          {/* Africa */}
+          <path d="M460,180 L540,180 L560,220 L570,300 L540,380 L500,400 L460,370 L440,300 L430,240 L440,200 Z"
+            fill="#1e293b" stroke="#334155" strokeWidth="1" />
+          {/* Asia */}
+          <path d="M560,60 L750,50 L820,80 L850,120 L830,180 L800,200 L750,220 L700,230 L650,220 L600,200 L570,170 L560,130 Z"
+            fill="#1e293b" stroke="#334155" strokeWidth="1" />
+          {/* Australia */}
+          <path d="M780,320 L860,310 L880,340 L870,380 L840,390 L800,380 L780,350 Z"
+            fill="#1e293b" stroke="#334155" strokeWidth="1" />
 
-          {/* Hospital Marker */}
-          <Marker coordinates={[HOSPITAL_LOCATION.lng, HOSPITAL_LOCATION.lat]}>
-            <circle r={8} fill="rgb(59, 130, 246)" stroke="rgb(30, 144, 255)" strokeWidth={2} filter="url(#glow)" />
-            <text y={20} textAnchor="middle" style={{ fontSize: '10px', fill: 'rgb(59, 130, 246)', fontWeight: 'bold' }}>
-              Hospital
-            </text>
-          </Marker>
-
-          {/* Attack Origins */}
-          {ATTACK_ORIGINS.map((origin) => (
-            <Marker key={origin.id} coordinates={[origin.lng, origin.lat]}>
-              <circle r={6} fill={origin.color} opacity={0.8} stroke="rgb(248, 248, 248)" strokeWidth={1.5} />
-              <text
-                y={16}
-                textAnchor="middle"
-                style={{
-                  fontSize: '10px',
-                  fill: origin.color,
-                  fontWeight: 'bold',
-                }}
-              >
-                {origin.name}
-              </text>
-            </Marker>
+          {/* Grid lines */}
+          {[100, 200, 300, 400].map((y) => (
+            <line key={`h${y}`} x1="0" y1={y} x2="960" y2={y} stroke="#1e293b" strokeWidth="0.5" strokeDasharray="4 4" />
+          ))}
+          {[200, 400, 600, 800].map((x) => (
+            <line key={`v${x}`} x1={x} y1="0" x2={x} y2="500" stroke="#1e293b" strokeWidth="0.5" strokeDasharray="4 4" />
           ))}
 
-          {/* Attack Lines */}
+          {/* Attack lines (animated) */}
           {attacks.map((attack) => {
             const origin = ATTACK_ORIGINS.find((o) => o.id === attack.originId);
             if (!origin) return null;
-
+            const color = getSeverityColor(attack.severity);
             return (
-              <line
-                key={attack.id}
-                x1={origin.lng}
-                y1={origin.lat}
-                x2={HOSPITAL_LOCATION.lng}
-                y2={HOSPITAL_LOCATION.lat}
-                stroke={getSeverityColor(attack.severity)}
-                strokeWidth={2}
-                opacity={0.7}
-                className="attack-line"
-                style={{
-                  strokeDasharray: '5, 5',
-                  animation: isPlaying ? 'animateDash 1s linear infinite' : 'none',
-                  filter: `drop-shadow(0 0 4px ${getSeverityColor(attack.severity)})`,
-                }}
-              />
+              <g key={attack.id}>
+                <line
+                  x1={origin.x} y1={origin.y}
+                  x2={HOSPITAL.x} y2={HOSPITAL.y}
+                  stroke={color} strokeWidth="2" opacity="0.6"
+                  strokeDasharray="8 4"
+                >
+                  <animate attributeName="stroke-dashoffset" from="0" to="-24" dur="0.8s" repeatCount="indefinite" />
+                </line>
+                {/* Glow effect */}
+                <line
+                  x1={origin.x} y1={origin.y}
+                  x2={HOSPITAL.x} y2={HOSPITAL.y}
+                  stroke={color} strokeWidth="4" opacity="0.15"
+                />
+              </g>
             );
           })}
 
-          {/* SVG Filter for Glow Effect */}
-          <defs>
-            <filter id="glow">
-              <feGaussianBlur stdDeviation="3" result="coloredBlur" />
-              <feMerge>
-                <feMergeNode in="coloredBlur" />
-                <feMergeNode in="SourceGraphic" />
-              </feMerge>
-            </filter>
-          </defs>
-          </ComposableMap>
-        </MapProvider>
+          {/* Hospital marker */}
+          <circle cx={HOSPITAL.x} cy={HOSPITAL.y} r="12" fill="#3b82f6" opacity="0.3">
+            <animate attributeName="r" values="12;18;12" dur="2s" repeatCount="indefinite" />
+            <animate attributeName="opacity" values="0.3;0.1;0.3" dur="2s" repeatCount="indefinite" />
+          </circle>
+          <circle cx={HOSPITAL.x} cy={HOSPITAL.y} r="8" fill="#3b82f6" stroke="#60a5fa" strokeWidth="2" />
+          <text x={HOSPITAL.x} y={HOSPITAL.y + 22} textAnchor="middle" fontSize="10" fill="#60a5fa" fontWeight="bold">
+            Hospital
+          </text>
 
-        {/* Glow CSS Animation */}
-        <style>{`
-          @keyframes animateDash {
-            to {
-              stroke-dashoffset: -100;
-            }
-          }
-
-          .attack-line {
-            stroke-dasharray: 5, 5;
-            stroke-dashoffset: 0;
-          }
-        `}</style>
+          {/* Attack origin markers */}
+          {ATTACK_ORIGINS.map((origin) => {
+            const hasActiveAttack = attacks.some((a) => a.originId === origin.id);
+            return (
+              <g key={origin.id}>
+                {hasActiveAttack && (
+                  <circle cx={origin.x} cy={origin.y} r="14" fill={origin.color} opacity="0.2">
+                    <animate attributeName="r" values="14;22;14" dur="1.5s" repeatCount="indefinite" />
+                    <animate attributeName="opacity" values="0.2;0.05;0.2" dur="1.5s" repeatCount="indefinite" />
+                  </circle>
+                )}
+                <circle cx={origin.x} cy={origin.y} r="6" fill={origin.color} stroke="#f8f8f8" strokeWidth="1.5" opacity="0.9" />
+                <text x={origin.x} y={origin.y - 12} textAnchor="middle" fontSize="10" fill={origin.color} fontWeight="bold">
+                  {origin.name}
+                </text>
+              </g>
+            );
+          })}
+        </svg>
       </div>
 
       {/* Attack History */}
@@ -356,7 +245,7 @@ export function GlobalThreatMap() {
         <h3 className="text-sm font-semibold text-slate-100 mb-4">Attack History</h3>
         <div className="space-y-2 max-h-48 overflow-y-auto">
           {attackHistory.length === 0 ? (
-            <p className="text-xs text-slate-500">No attacks recorded yet. Click countries or wait for auto-generation.</p>
+            <p className="text-xs text-slate-500">No attacks recorded yet. Wait for auto-generation.</p>
           ) : (
             attackHistory.map((attack) => (
               <div
