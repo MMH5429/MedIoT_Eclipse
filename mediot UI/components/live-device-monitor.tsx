@@ -161,7 +161,7 @@ function generateDataPoint(prevCusum: number): LiveDataPoint {
   };
 }
 
-const INTERVAL_MS = 10000; // 10 seconds for demo (change to 300000 for 5 min)
+const INTERVAL_MS = 45000; // 45 seconds
 const MAX_POINTS = 30;
 
 const tooltipStyle = {
