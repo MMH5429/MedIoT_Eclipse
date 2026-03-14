@@ -1,8 +1,8 @@
 {
   "totalDevices": 19,
-  "healthyDevices": 8,
-  "suspiciousDevices": 11,
-  "criticalAlerts": 30,
+  "healthyDevices": 4,
+  "suspiciousDevices": 15,
+  "criticalAlerts": 26,
   "networkTraffic": 2179260472,
   "totalConnections": 29634,
   "maliciousConnections": 21254,

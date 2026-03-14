@@ -146,7 +146,7 @@ function generateSimulatedPoint(): LiveDataPoint {
       connectionCount = 3 + Math.floor(Math.random() * 12);
       failedRatio = vary(0.7, 0.3); externalRatio = vary(0.8, 0.2);
       duration = vary(15, 0.8);
-      ifScore = 73 + Math.random() * 20; xgbScore = 97 + Math.random() * 3;
+      ifScore = 73 + Math.random() * 20; xgbScore = 82 + Math.random() * 12;
       cusumShift = false;
       break;
   }
@@ -171,43 +171,87 @@ function generateSimulatedPoint(): LiveDataPoint {
   };
 }
 
-// ── Convert real raw row to LiveDataPoint ─────────────
-function rawRowToDataPoint(row: RawRow, device: { ifScore?: number; xgbScore?: number; cusumShift?: boolean; failedConnectionRatio?: number; externalIpRatio?: number }, idx: number): LiveDataPoint {
-  const attackType = ATTACK_LABEL_MAP[row.attack_type] || ATTACK_LABEL_MAP[row.attack_label] || row.attack_type || 'Benign';
-  const isMalicious = row.label === 'Malicious';
+// ── Aggregate a batch of raw rows into a single LiveDataPoint ──
+function aggregateWindow(
+  rows: RawRow[],
+  device: { ifScore?: number; xgbScore?: number; cusumShift?: boolean; failedConnectionRatio?: number; externalIpRatio?: number },
+  windowLabel: string,
+): LiveDataPoint {
+  const n = rows.length;
+  const malCount = rows.filter(r => r.label === 'Malicious').length;
+  const malRatio = n > 0 ? malCount / n : 0;
 
-  const ifScore = device.ifScore ?? (isMalicious ? 65 + Math.random() * 15 : 80 + Math.random() * 15);
-  const xgbScore = device.xgbScore ?? (isMalicious ? 40 + Math.random() * 20 : 95 + Math.random() * 5);
-  const cusumShift = device.cusumShift ?? false;
+  // Aggregate traffic stats from the window
+  const totalBytesSent = rows.reduce((s, r) => s + (r.orig_bytes || 0), 0);
+  const totalBytesRecv = rows.reduce((s, r) => s + (r.resp_bytes || 0), 0);
+  const avgDuration = n > 0 ? rows.reduce((s, r) => s + (r.duration || 0), 0) / n : 0;
 
+  const failedStates = ['S0', 'REJ', 'RSTO', 'RSTR'];
+  const failedCount = rows.filter(r => failedStates.includes(r.conn_state)).length;
+  const failedRatio = n > 0 ? failedCount / n : 0;
+
+  // Unique destinations
+  const dstIps = new Set(rows.map(r => r['id.resp_h']).filter(Boolean));
+  const dstPorts = new Set(rows.map(r => r['id.resp_p']).filter(Boolean));
+
+  // Compute IF & XGB scores for this window based on device baseline + malicious ratio shift
+  const baseIf = device.ifScore ?? 80;
+  const baseXgb = device.xgbScore ?? 95;
+  // Shift scores based on how malicious this specific window is
+  const ifScore = Math.max(0, Math.min(100, baseIf - malRatio * vary(25, 0.3) + (Math.random() - 0.5) * 8));
+  const xgbScore = Math.max(0, Math.min(100, baseXgb - malRatio * vary(40, 0.3) + (Math.random() - 0.5) * 6));
+
+  const cusumShift = (device.cusumShift ?? false) && malRatio > 0.3;
   const cusumPenalty = cusumShift ? 10 : 0;
   const trustScore = Math.max(0, Math.min(100, 0.4 * ifScore + 0.5 * xgbScore - cusumPenalty));
+
   let status: 'Healthy' | 'Suspicious' | 'Critical';
   if (trustScore > 80) status = 'Healthy';
   else if (trustScore >= 50) status = 'Suspicious';
   else status = 'Critical';
 
-  const dt = new Date(row.ts * 1000);
+  // Dominant attack type in this window
+  const attackCounts: Record<string, number> = {};
+  rows.forEach(r => {
+    const at = ATTACK_LABEL_MAP[r.attack_type] || ATTACK_LABEL_MAP[r.attack_label] || r.attack_type || 'Benign';
+    attackCounts[at] = (attackCounts[at] || 0) + 1;
+  });
+  const dominantAttack = Object.entries(attackCounts).sort((a, b) => b[1] - a[1])[0]?.[0] || 'Benign';
+
+  // Most common dest IP and port
+  const destIpCounts: Record<string, number> = {};
+  const destPortCounts: Record<number, number> = {};
+  rows.forEach(r => {
+    if (r['id.resp_h']) destIpCounts[r['id.resp_h']] = (destIpCounts[r['id.resp_h']] || 0) + 1;
+    if (r['id.resp_p']) destPortCounts[r['id.resp_p']] = (destPortCounts[r['id.resp_p']] || 0) + 1;
+  });
+  const topDestIp = Object.entries(destIpCounts).sort((a, b) => b[1] - a[1])[0]?.[0] || 'unknown';
+  const topDestPort = Number(Object.entries(destPortCounts).sort((a, b) => b[1] - a[1])[0]?.[0] || 0);
+
+  // Most common conn state
+  const stateCounts: Record<string, number> = {};
+  rows.forEach(r => { if (r.conn_state) stateCounts[r.conn_state] = (stateCounts[r.conn_state] || 0) + 1; });
+  const topConnState = Object.entries(stateCounts).sort((a, b) => b[1] - a[1])[0]?.[0] || 'OTH';
 
   return {
-    time: dt.toLocaleTimeString(),
+    time: windowLabel,
     trustScore: Math.round(trustScore * 10) / 10,
     ifScore: Math.round(ifScore * 10) / 10,
     xgbScore: Math.round(xgbScore * 10) / 10,
-    bytesSent: row.orig_bytes || 0,
-    bytesReceived: row.resp_bytes || 0,
-    connectionCount: 1,
-    failedRatio: device.failedConnectionRatio ?? (row.conn_state === 'S0' || row.conn_state === 'REJ' ? 1 : 0),
+    bytesSent: totalBytesSent,
+    bytesReceived: totalBytesRecv,
+    connectionCount: n,
+    failedRatio: Math.round(failedRatio * 1000) / 1000,
     externalRatio: device.externalIpRatio ?? 1,
-    duration: row.duration || 0,
+    duration: Math.round(avgDuration * 1000) / 1000,
     status,
-    label: isMalicious ? 'Malicious' : 'Benign',
-    attackType,
+    label: malCount > n / 2 ? 'Malicious' : 'Benign',
+    attackType: dominantAttack,
     cusumShift,
-    sourceIp: row.device_id,
-    destIp: row['id.resp_h'] || 'unknown',
-    destPort: row['id.resp_p'] || 0,
-    connState: row.conn_state || 'OTH',
+    sourceIp: rows[0]?.device_id || 'unknown',
+    destIp: topDestIp,
+    destPort: topDestPort,
+    connState: topConnState,
   };
 }
 
@@ -233,11 +277,20 @@ export function LiveDeviceMonitor() {
   const isTelemetry = selectedIps.length === 1;
   const selectedDevice = isTelemetry ? filteredDevices[0] : null;
 
-  // Get raw rows for the selected IP, sorted by timestamp
-  const deviceRows = useMemo(() => {
-    if (!isTelemetry) return [];
-    return [...filteredRows].sort((a, b) => a.ts - b.ts);
+  // Split device's connections into time windows for telemetry replay
+  const deviceWindows = useMemo(() => {
+    if (!isTelemetry || filteredRows.length === 0) return [];
+    const sorted = [...filteredRows].sort((a, b) => a.ts - b.ts);
+    // Split into windows of ~WINDOW_SIZE connections each
+    const WINDOW_SIZE = Math.max(5, Math.ceil(sorted.length / 30)); // ~30 windows max
+    const windows: RawRow[][] = [];
+    for (let i = 0; i < sorted.length; i += WINDOW_SIZE) {
+      windows.push(sorted.slice(i, i + WINDOW_SIZE));
+    }
+    return windows;
   }, [isTelemetry, filteredRows]);
+
+  const totalConns = filteredRows.length;
 
   // Reset history and telemetry index when mode or IP changes
   useEffect(() => {
@@ -250,11 +303,12 @@ export function LiveDeviceMonitor() {
   const tick = useCallback(() => {
     let point: LiveDataPoint;
 
-    if (isTelemetry && deviceRows.length > 0 && selectedDevice) {
-      // Telemetry mode: replay real connections one by one
-      const idx = telemetryIdx.current % deviceRows.length;
-      const row = deviceRows[idx];
-      point = rawRowToDataPoint(row, selectedDevice, idx);
+    if (isTelemetry && deviceWindows.length > 0 && selectedDevice) {
+      // Telemetry mode: aggregate a window of connections
+      const idx = telemetryIdx.current % deviceWindows.length;
+      const windowRows = deviceWindows[idx];
+      const windowNum = idx + 1;
+      point = aggregateWindow(windowRows, selectedDevice, `W${windowNum}`);
       telemetryIdx.current = idx + 1;
     } else {
       // Simulation mode
@@ -266,13 +320,13 @@ export function LiveDeviceMonitor() {
     if (point.status === 'Critical') {
       setAlertLog((prev) => [{
         time: point.time,
-        message: `${point.sourceIp} → ${point.destIp}:${point.destPort} — ${point.attackType} — Trust: ${point.trustScore}, ${point.connectionCount} conns, state: ${point.connState}${point.cusumShift ? ', CUSUM SHIFT' : ''}`,
+        message: `${point.sourceIp} → ${point.destIp}:${point.destPort} — ${point.attackType} — Trust: ${point.trustScore}, IF: ${point.ifScore}, XGB: ${point.xgbScore}, ${point.connectionCount} conns${point.cusumShift ? ', CUSUM SHIFT' : ''}`,
         level: 'critical',
       }, ...prev].slice(0, 15));
     } else if (point.status === 'Suspicious') {
       setAlertLog((prev) => [{
         time: point.time,
-        message: `${point.sourceIp} → ${point.destIp}:${point.destPort} — ${point.attackType} — Trust: ${point.trustScore}, failed: ${(point.failedRatio * 100).toFixed(1)}%`,
+        message: `${point.sourceIp} — ${point.attackType} — Trust: ${point.trustScore}, IF: ${point.ifScore}, XGB: ${point.xgbScore}, ${point.connectionCount} conns, failed: ${(point.failedRatio * 100).toFixed(1)}%`,
         level: 'warning',
       }, ...prev].slice(0, 15));
     }
@@ -316,7 +370,7 @@ export function LiveDeviceMonitor() {
             <h3 className="text-lg font-bold text-slate-100">Live Device Monitor</h3>
             {isTelemetry ? (
               <p className="text-xs text-cyan-400">
-                TELEMETRY — {selectedIps[0]} — Replaying {deviceRows.length.toLocaleString()} real connections — {telemetryIdx.current}/{deviceRows.length}
+                TELEMETRY — {selectedIps[0]} — {totalConns.toLocaleString()} connections in {deviceWindows.length} windows — Window {Math.min(telemetryIdx.current, deviceWindows.length)}/{deviceWindows.length}
               </p>
             ) : (
               <p className="text-xs text-slate-400">

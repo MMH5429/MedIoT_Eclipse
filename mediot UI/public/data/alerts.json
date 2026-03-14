@@ -1,31 +1,11 @@
 [
   {
-    "id": "192.168.1.195_w4378",
-    "timestamp": "2026-03-14T00:40:16.799233",
-    "deviceId": "192.168.1.195",
-    "deviceName": "IoT Device (192.168.1.195)",
-    "severity": "Critical",
-    "trustScore": 5.8,
-    "alertReason": "Multiple algorithm consensus indicates anomalous behavior",
-    "recommendedAction": "Flagged by: Isolation Forest, XGBoost. Investigate immediately.",
-    "flaggedBy": [
-      "Isolation Forest",
-      "XGBoost"
-    ],
-    "metrics": {
-      "if_score": 33.6,
-      "xgb_score": 4.71,
-      "cusum_shift": true
-    },
-    "deviatingFeatures": []
-  },
-  {
     "id": "192.168.1.195_w4382",
-    "timestamp": "2026-03-14T00:40:16.799255",
+    "timestamp": "2026-03-14T06:13:02.087094",
     "deviceId": "192.168.1.195",
     "deviceName": "IoT Device (192.168.1.195)",
     "severity": "Critical",
-    "trustScore": 9.87,
+    "trustScore": 13.53,
     "alertReason": "Contacted unusual number of external servers (33.0 vs baseline 6.2, +431%); Excessive number of connections (623.0 vs baseline 48.9, +1173%)",
     "recommendedAction": "Flagged by: Isolation Forest, XGBoost. Investigate immediately.",
     "flaggedBy": [
@@ -34,7 +14,7 @@
     ],
     "metrics": {
       "if_score": 47.17,
-      "xgb_score": 2.01,
+      "xgb_score": 9.33,
       "cusum_shift": true
     },
     "deviatingFeatures": [
@@ -44,11 +24,11 @@
   },
   {
     "id": "192.168.1.195_w4419",
-    "timestamp": "2026-03-14T00:40:16.799266",
+    "timestamp": "2026-03-14T06:13:02.087118",
     "deviceId": "192.168.1.195",
     "deviceName": "IoT Device (192.168.1.195)",
     "severity": "Critical",
-    "trustScore": 11.1,
+    "trustScore": 14.82,
     "alertReason": "Multiple algorithm consensus indicates anomalous behavior",
     "recommendedAction": "Flagged by: Isolation Forest, XGBoost. Investigate immediately.",
     "flaggedBy": [
@@ -57,18 +37,38 @@
     ],
     "metrics": {
       "if_score": 51.68,
-      "xgb_score": 0.86,
+      "xgb_score": 8.29,
+      "cusum_shift": true
+    },
+    "deviatingFeatures": []
+  },
+  {
+    "id": "192.168.1.195_w4378",
+    "timestamp": "2026-03-14T06:13:02.087130",
+    "deviceId": "192.168.1.195",
+    "deviceName": "IoT Device (192.168.1.195)",
+    "severity": "Critical",
+    "trustScore": 15.42,
+    "alertReason": "Multiple algorithm consensus indicates anomalous behavior",
+    "recommendedAction": "Flagged by: Isolation Forest, XGBoost. Investigate immediately.",
+    "flaggedBy": [
+      "Isolation Forest",
+      "XGBoost"
+    ],
+    "metrics": {
+      "if_score": 33.6,
+      "xgb_score": 23.96,
       "cusum_shift": true
     },
     "deviatingFeatures": []
   },
   {
     "id": "192.168.1.195_w4412",
-    "timestamp": "2026-03-14T00:40:16.799273",
+    "timestamp": "2026-03-14T06:13:02.087137",
     "deviceId": "192.168.1.195",
     "deviceName": "IoT Device (192.168.1.195)",
     "severity": "Critical",
-    "trustScore": 12.39,
+    "trustScore": 16.43,
     "alertReason": "Multiple algorithm consensus indicates anomalous behavior",
     "recommendedAction": "Flagged by: Isolation Forest, XGBoost. Investigate immediately.",
     "flaggedBy": [
@@ -77,18 +77,18 @@
     ],
     "metrics": {
       "if_score": 54.76,
-      "xgb_score": 0.96,
+      "xgb_score": 9.05,
       "cusum_shift": true
     },
     "deviatingFeatures": []
   },
   {
     "id": "192.168.1.195_w4418",
-    "timestamp": "2026-03-14T00:40:16.799280",
+    "timestamp": "2026-03-14T06:13:02.087144",
     "deviceId": "192.168.1.195",
     "deviceName": "IoT Device (192.168.1.195)",
     "severity": "Critical",
-    "trustScore": 14.22,
+    "trustScore": 17.93,
     "alertReason": "Multiple algorithm consensus indicates anomalous behavior",
     "recommendedAction": "Flagged by: Isolation Forest, XGBoost. Investigate immediately.",
     "flaggedBy": [
@@ -97,18 +97,18 @@
     ],
     "metrics": {
       "if_score": 59.47,
-      "xgb_score": 0.86,
+      "xgb_score": 8.29,
       "cusum_shift": true
     },
     "deviatingFeatures": []
   },
   {
     "id": "192.168.1.195_w4410",
-    "timestamp": "2026-03-14T00:40:16.799285",
+    "timestamp": "2026-03-14T06:13:02.087151",
     "deviceId": "192.168.1.195",
     "deviceName": "IoT Device (192.168.1.195)",
     "severity": "Critical",
-    "trustScore": 14.23,
+    "trustScore": 18.24,
     "alertReason": "Multiple algorithm consensus indicates anomalous behavior",
     "recommendedAction": "Flagged by: Isolation Forest, XGBoost. Investigate immediately.",
     "flaggedBy": [
@@ -117,38 +117,18 @@
     ],
     "metrics": {
       "if_score": 58.44,
-      "xgb_score": 1.71,
-      "cusum_shift": true
-    },
-    "deviatingFeatures": []
-  },
-  {
-    "id": "192.168.1.195_w4417",
-    "timestamp": "2026-03-14T00:40:16.799291",
-    "deviceId": "192.168.1.195",
-    "deviceName": "IoT Device (192.168.1.195)",
-    "severity": "Critical",
-    "trustScore": 14.53,
-    "alertReason": "Multiple algorithm consensus indicates anomalous behavior",
-    "recommendedAction": "Flagged by: Isolation Forest, XGBoost. Investigate immediately.",
-    "flaggedBy": [
-      "Isolation Forest",
-      "XGBoost"
-    ],
-    "metrics": {
-      "if_score": 45.55,
-      "xgb_score": 12.62,
+      "xgb_score": 9.73,
       "cusum_shift": true
     },
     "deviatingFeatures": []
   },
   {
     "id": "192.168.1.195_w4408",
-    "timestamp": "2026-03-14T00:40:16.799297",
+    "timestamp": "2026-03-14T06:13:02.087157",
     "deviceId": "192.168.1.195",
     "deviceName": "IoT Device (192.168.1.195)",
     "severity": "Critical",
-    "trustScore": 14.87,
+    "trustScore": 18.59,
     "alertReason": "Multiple algorithm consensus indicates anomalous behavior",
     "recommendedAction": "Flagged by: Isolation Forest, XGBoost. Investigate immediately.",
     "flaggedBy": [
@@ -157,41 +137,18 @@
     ],
     "metrics": {
       "if_score": 61.11,
-      "xgb_score": 0.85,
+      "xgb_score": 8.29,
       "cusum_shift": true
     },
     "deviatingFeatures": []
   },
   {
-    "id": "192.168.1.195_w4385",
-    "timestamp": "2026-03-14T00:40:16.799303",
-    "deviceId": "192.168.1.195",
-    "deviceName": "IoT Device (192.168.1.195)",
-    "severity": "Critical",
-    "trustScore": 15.17,
-    "alertReason": "Contacted unusual number of external servers (25.0 vs baseline 6.2, +302%); Excessive number of connections (544.0 vs baseline 48.9, +1012%)",
-    "recommendedAction": "Flagged by: Isolation Forest, XGBoost. Investigate immediately.",
-    "flaggedBy": [
-      "Isolation Forest",
-      "XGBoost"
-    ],
-    "metrics": {
-      "if_score": 59.14,
-      "xgb_score": 3.02,
-      "cusum_shift": true
-    },
-    "deviatingFeatures": [
-      "unique_dst_ips",
-      "connection_count"
-    ]
-  },
-  {
     "id": "192.168.1.195_w4381",
-    "timestamp": "2026-03-14T00:40:16.799314",
+    "timestamp": "2026-03-14T06:13:02.087162",
     "deviceId": "192.168.1.195",
     "deviceName": "IoT Device (192.168.1.195)",
     "severity": "Critical",
-    "trustScore": 15.38,
+    "trustScore": 19.02,
     "alertReason": "Excessive number of connections (436.0 vs baseline 48.9, +791%)",
     "recommendedAction": "Flagged by: Isolation Forest, XGBoost. Investigate immediately.",
     "flaggedBy": [
@@ -200,7 +157,7 @@
     ],
     "metrics": {
       "if_score": 62.19,
-      "xgb_score": 1.01,
+      "xgb_score": 8.29,
       "cusum_shift": true
     },
     "deviatingFeatures": [
@@ -209,11 +166,11 @@
   },
   {
     "id": "192.168.1.195_w4379",
-    "timestamp": "2026-03-14T00:40:16.799319",
+    "timestamp": "2026-03-14T06:13:02.087169",
     "deviceId": "192.168.1.195",
     "deviceName": "IoT Device (192.168.1.195)",
     "severity": "Critical",
-    "trustScore": 15.39,
+    "trustScore": 19.1,
     "alertReason": "Excessive number of connections (480.0 vs baseline 48.9, +881%)",
     "recommendedAction": "Flagged by: Isolation Forest, XGBoost. Investigate immediately.",
     "flaggedBy": [
@@ -222,7 +179,7 @@
     ],
     "metrics": {
       "if_score": 59.71,
-      "xgb_score": 3.01,
+      "xgb_score": 10.44,
       "cusum_shift": true
     },
     "deviatingFeatures": [
@@ -230,32 +187,35 @@
     ]
   },
   {
-    "id": "192.168.1.195_w4409",
-    "timestamp": "2026-03-14T00:40:16.799325",
+    "id": "192.168.1.195_w4385",
+    "timestamp": "2026-03-14T06:13:02.087203",
     "deviceId": "192.168.1.195",
     "deviceName": "IoT Device (192.168.1.195)",
     "severity": "Critical",
-    "trustScore": 16.32,
-    "alertReason": "Multiple algorithm consensus indicates anomalous behavior",
+    "trustScore": 19.77,
+    "alertReason": "Contacted unusual number of external servers (25.0 vs baseline 6.2, +302%); Excessive number of connections (544.0 vs baseline 48.9, +1012%)",
     "recommendedAction": "Flagged by: Isolation Forest, XGBoost. Investigate immediately.",
     "flaggedBy": [
       "Isolation Forest",
       "XGBoost"
     ],
     "metrics": {
-      "if_score": 63.67,
-      "xgb_score": 1.71,
+      "if_score": 59.14,
+      "xgb_score": 12.23,
       "cusum_shift": true
     },
-    "deviatingFeatures": []
+    "deviatingFeatures": [
+      "unique_dst_ips",
+      "connection_count"
+    ]
   },
   {
     "id": "192.168.1.195_w4383",
-    "timestamp": "2026-03-14T00:40:16.799330",
+    "timestamp": "2026-03-14T06:13:02.087221",
     "deviceId": "192.168.1.195",
     "deviceName": "IoT Device (192.168.1.195)",
     "severity": "Critical",
-    "trustScore": 16.47,
+    "trustScore": 20.07,
     "alertReason": "Excessive number of connections (461.0 vs baseline 48.9, +842%)",
     "recommendedAction": "Flagged by: Isolation Forest, XGBoost. Investigate immediately.",
     "flaggedBy": [
@@ -264,274 +224,20 @@
     ],
     "metrics": {
       "if_score": 64.81,
-      "xgb_score": 1.08,
+      "xgb_score": 8.29,
       "cusum_shift": true
     },
     "deviatingFeatures": [
       "connection_count"
     ]
-  },
-  {
-    "id": "192.168.1.195_w4407",
-    "timestamp": "2026-03-14T00:40:16.799336",
-    "deviceId": "192.168.1.195",
-    "deviceName": "IoT Device (192.168.1.195)",
-    "severity": "Critical",
-    "trustScore": 16.98,
-    "alertReason": "Multiple algorithm consensus indicates anomalous behavior",
-    "recommendedAction": "Flagged by: Isolation Forest, XGBoost. Investigate immediately.",
-    "flaggedBy": [
-      "Isolation Forest",
-      "XGBoost"
-    ],
-    "metrics": {
-      "if_score": 49.75,
-      "xgb_score": 14.16,
-      "cusum_shift": true
-    },
-    "deviatingFeatures": []
-  },
-  {
-    "id": "192.168.1.195_w4423",
-    "timestamp": "2026-03-14T00:40:16.799341",
-    "deviceId": "192.168.1.195",
-    "deviceName": "IoT Device (192.168.1.195)",
-    "severity": "Critical",
-    "trustScore": 17.2,
-    "alertReason": "Multiple algorithm consensus indicates anomalous behavior",
-    "recommendedAction": "Flagged by: XGBoost. Investigate immediately.",
-    "flaggedBy": [
-      "XGBoost"
-    ],
-    "metrics": {
-      "if_score": 66.98,
-      "xgb_score": 0.82,
-      "cusum_shift": true
-    },
-    "deviatingFeatures": []
-  },
-  {
-    "id": "192.168.1.195_w4422",
-    "timestamp": "2026-03-14T00:40:16.799346",
-    "deviceId": "192.168.1.195",
-    "deviceName": "IoT Device (192.168.1.195)",
-    "severity": "Critical",
-    "trustScore": 17.21,
-    "alertReason": "Multiple algorithm consensus indicates anomalous behavior",
-    "recommendedAction": "Flagged by: XGBoost. Investigate immediately.",
-    "flaggedBy": [
-      "XGBoost"
-    ],
-    "metrics": {
-      "if_score": 66.99,
-      "xgb_score": 0.82,
-      "cusum_shift": true
-    },
-    "deviatingFeatures": []
-  },
-  {
-    "id": "192.168.1.195_w4380",
-    "timestamp": "2026-03-14T00:40:16.799351",
-    "deviceId": "192.168.1.195",
-    "deviceName": "IoT Device (192.168.1.195)",
-    "severity": "Critical",
-    "trustScore": 17.33,
-    "alertReason": "Excessive number of connections (485.0 vs baseline 48.9, +891%)",
-    "recommendedAction": "Flagged by: Isolation Forest, XGBoost. Investigate immediately.",
-    "flaggedBy": [
-      "Isolation Forest",
-      "XGBoost"
-    ],
-    "metrics": {
-      "if_score": 66.28,
-      "xgb_score": 1.63,
-      "cusum_shift": true
-    },
-    "deviatingFeatures": [
-      "connection_count"
-    ]
-  },
-  {
-    "id": "192.168.1.195_w4424",
-    "timestamp": "2026-03-14T00:40:16.799357",
-    "deviceId": "192.168.1.195",
-    "deviceName": "IoT Device (192.168.1.195)",
-    "severity": "Critical",
-    "trustScore": 17.72,
-    "alertReason": "Multiple algorithm consensus indicates anomalous behavior",
-    "recommendedAction": "Flagged by: XGBoost. Investigate immediately.",
-    "flaggedBy": [
-      "XGBoost"
-    ],
-    "metrics": {
-      "if_score": 68.33,
-      "xgb_score": 0.76,
-      "cusum_shift": true
-    },
-    "deviatingFeatures": []
-  },
-  {
-    "id": "192.168.1.195_w4425",
-    "timestamp": "2026-03-14T00:40:16.799362",
-    "deviceId": "192.168.1.195",
-    "deviceName": "IoT Device (192.168.1.195)",
-    "severity": "Critical",
-    "trustScore": 17.84,
-    "alertReason": "Multiple algorithm consensus indicates anomalous behavior",
-    "recommendedAction": "Flagged by: XGBoost. Investigate immediately.",
-    "flaggedBy": [
-      "XGBoost"
-    ],
-    "metrics": {
-      "if_score": 68.48,
-      "xgb_score": 0.9,
-      "cusum_shift": true
-    },
-    "deviatingFeatures": []
-  },
-  {
-    "id": "192.168.1.195_w4411",
-    "timestamp": "2026-03-14T00:40:16.799368",
-    "deviceId": "192.168.1.195",
-    "deviceName": "IoT Device (192.168.1.195)",
-    "severity": "Critical",
-    "trustScore": 18.28,
-    "alertReason": "Multiple algorithm consensus indicates anomalous behavior",
-    "recommendedAction": "Flagged by: XGBoost. Investigate immediately.",
-    "flaggedBy": [
-      "XGBoost"
-    ],
-    "metrics": {
-      "if_score": 68.53,
-      "xgb_score": 1.74,
-      "cusum_shift": true
-    },
-    "deviatingFeatures": []
-  },
-  {
-    "id": "192.168.1.199_w5348",
-    "timestamp": "2026-03-14T00:40:16.799373",
-    "deviceId": "192.168.1.199",
-    "deviceName": "IoT Device (192.168.1.199)",
-    "severity": "Critical",
-    "trustScore": 18.34,
-    "alertReason": "Multiple algorithm consensus indicates anomalous behavior",
-    "recommendedAction": "Flagged by: Isolation Forest, XGBoost. Investigate immediately.",
-    "flaggedBy": [
-      "Isolation Forest",
-      "XGBoost"
-    ],
-    "metrics": {
-      "if_score": 47.86,
-      "xgb_score": 18.39,
-      "cusum_shift": true
-    },
-    "deviatingFeatures": []
-  },
-  {
-    "id": "192.168.1.195_w4421",
-    "timestamp": "2026-03-14T00:40:16.799379",
-    "deviceId": "192.168.1.195",
-    "deviceName": "IoT Device (192.168.1.195)",
-    "severity": "Critical",
-    "trustScore": 18.37,
-    "alertReason": "Multiple algorithm consensus indicates anomalous behavior",
-    "recommendedAction": "Flagged by: XGBoost. Investigate immediately.",
-    "flaggedBy": [
-      "XGBoost"
-    ],
-    "metrics": {
-      "if_score": 69.91,
-      "xgb_score": 0.8,
-      "cusum_shift": true
-    },
-    "deviatingFeatures": []
-  },
-  {
-    "id": "192.168.1.195_w4384",
-    "timestamp": "2026-03-14T00:40:16.799385",
-    "deviceId": "192.168.1.195",
-    "deviceName": "IoT Device (192.168.1.195)",
-    "severity": "Critical",
-    "trustScore": 19.84,
-    "alertReason": "Excessive number of connections (515.0 vs baseline 48.9, +953%)",
-    "recommendedAction": "Flagged by: XGBoost. Investigate immediately.",
-    "flaggedBy": [
-      "XGBoost"
-    ],
-    "metrics": {
-      "if_score": 67.31,
-      "xgb_score": 5.83,
-      "cusum_shift": true
-    },
-    "deviatingFeatures": [
-      "connection_count"
-    ]
-  },
-  {
-    "id": "192.168.1.195_w4414",
-    "timestamp": "2026-03-14T00:40:16.799390",
-    "deviceId": "192.168.1.195",
-    "deviceName": "IoT Device (192.168.1.195)",
-    "severity": "Critical",
-    "trustScore": 20.19,
-    "alertReason": "Multiple algorithm consensus indicates anomalous behavior",
-    "recommendedAction": "Flagged by: XGBoost. Investigate immediately.",
-    "flaggedBy": [
-      "XGBoost"
-    ],
-    "metrics": {
-      "if_score": 74.46,
-      "xgb_score": 0.8,
-      "cusum_shift": true
-    },
-    "deviatingFeatures": []
-  },
-  {
-    "id": "192.168.1.195_w4420",
-    "timestamp": "2026-03-14T00:40:16.799395",
-    "deviceId": "192.168.1.195",
-    "deviceName": "IoT Device (192.168.1.195)",
-    "severity": "Critical",
-    "trustScore": 20.63,
-    "alertReason": "Multiple algorithm consensus indicates anomalous behavior",
-    "recommendedAction": "Flagged by: XGBoost. Investigate immediately.",
-    "flaggedBy": [
-      "XGBoost"
-    ],
-    "metrics": {
-      "if_score": 75.12,
-      "xgb_score": 1.15,
-      "cusum_shift": true
-    },
-    "deviatingFeatures": []
-  },
-  {
-    "id": "192.168.1.195_w4415",
-    "timestamp": "2026-03-14T00:40:16.799400",
-    "deviceId": "192.168.1.195",
-    "deviceName": "IoT Device (192.168.1.195)",
-    "severity": "Critical",
-    "trustScore": 20.72,
-    "alertReason": "Multiple algorithm consensus indicates anomalous behavior",
-    "recommendedAction": "Flagged by: XGBoost. Investigate immediately.",
-    "flaggedBy": [
-      "XGBoost"
-    ],
-    "metrics": {
-      "if_score": 75.36,
-      "xgb_score": 1.15,
-      "cusum_shift": true
-    },
-    "deviatingFeatures": []
   },
   {
     "id": "192.168.1.195_w4413",
-    "timestamp": "2026-03-14T00:40:16.799408",
+    "timestamp": "2026-03-14T06:13:02.087232",
     "deviceId": "192.168.1.195",
     "deviceName": "IoT Device (192.168.1.195)",
     "severity": "Critical",
-    "trustScore": 20.85,
+    "trustScore": 20.55,
     "alertReason": "Excessive number of connections (14483.0 vs baseline 48.9, +29503%)",
     "recommendedAction": "Flagged by: Isolation Forest, XGBoost. Investigate immediately.",
     "flaggedBy": [
@@ -540,7 +246,7 @@
     ],
     "metrics": {
       "if_score": 56.63,
-      "xgb_score": 16.41,
+      "xgb_score": 15.79,
       "cusum_shift": true
     },
     "deviatingFeatures": [
@@ -548,61 +254,60 @@
     ]
   },
   {
-    "id": "192.168.1.195_w4386",
-    "timestamp": "2026-03-14T00:40:16.799413",
+    "id": "192.168.1.195_w4409",
+    "timestamp": "2026-03-14T06:13:02.087239",
     "deviceId": "192.168.1.195",
     "deviceName": "IoT Device (192.168.1.195)",
     "severity": "Critical",
-    "trustScore": 21.7,
-    "alertReason": "Excessive number of connections (395.0 vs baseline 48.9, +707%)",
-    "recommendedAction": "Flagged by: XGBoost. Investigate immediately.",
-    "flaggedBy": [
-      "XGBoost"
-    ],
-    "metrics": {
-      "if_score": 72.39,
-      "xgb_score": 5.49,
-      "cusum_shift": true
-    },
-    "deviatingFeatures": [
-      "connection_count"
-    ]
-  },
-  {
-    "id": "192.168.1.195_w4416",
-    "timestamp": "2026-03-14T00:40:16.799418",
-    "deviceId": "192.168.1.195",
-    "deviceName": "IoT Device (192.168.1.195)",
-    "severity": "Critical",
-    "trustScore": 21.7,
+    "trustScore": 20.63,
     "alertReason": "Multiple algorithm consensus indicates anomalous behavior",
-    "recommendedAction": "Flagged by: XGBoost. Investigate immediately.",
-    "flaggedBy": [
-      "XGBoost"
-    ],
-    "metrics": {
-      "if_score": 77.8,
-      "xgb_score": 1.15,
-      "cusum_shift": true
-    },
-    "deviatingFeatures": []
-  },
-  {
-    "id": "192.168.1.197_w5338",
-    "timestamp": "2026-03-14T00:40:16.799423",
-    "deviceId": "192.168.1.197",
-    "deviceName": "IoT Device (192.168.1.197)",
-    "severity": "Critical",
-    "trustScore": 24.19,
-    "alertReason": "Excessive number of connections (941.0 vs baseline 48.9, +1823%)",
     "recommendedAction": "Flagged by: Isolation Forest, XGBoost. Investigate immediately.",
     "flaggedBy": [
       "Isolation Forest",
       "XGBoost"
     ],
     "metrics": {
-      "if_score": 56.88,
-      "xgb_score": 22.87,
+      "if_score": 63.67,
+      "xgb_score": 10.33,
+      "cusum_shift": true
+    },
+    "deviatingFeatures": []
+  },
+  {
+    "id": "192.168.1.195_w4422",
+    "timestamp": "2026-03-14T06:13:02.087244",
+    "deviceId": "192.168.1.195",
+    "deviceName": "IoT Device (192.168.1.195)",
+    "severity": "Critical",
+    "trustScore": 20.94,
+    "alertReason": "Multiple algorithm consensus indicates anomalous behavior",
+    "recommendedAction": "Flagged by: XGBoost. Investigate immediately.",
+    "flaggedBy": [
+      "XGBoost"
+    ],
+    "metrics": {
+      "if_score": 66.99,
+      "xgb_score": 8.29,
+      "cusum_shift": true
+    },
+    "deviatingFeatures": []
+  },
+  {
+    "id": "192.168.1.195_w4380",
+    "timestamp": "2026-03-14T06:13:02.087251",
+    "deviceId": "192.168.1.195",
+    "deviceName": "IoT Device (192.168.1.195)",
+    "severity": "Critical",
+    "trustScore": 21.04,
+    "alertReason": "Excessive number of connections (485.0 vs baseline 48.9, +891%)",
+    "recommendedAction": "Flagged by: Isolation Forest, XGBoost. Investigate immediately.",
+    "flaggedBy": [
+      "Isolation Forest",
+      "XGBoost"
+    ],
+    "metrics": {
+      "if_score": 66.28,
+      "xgb_score": 9.06,
       "cusum_shift": true
     },
     "deviatingFeatures": [
@@ -610,31 +315,108 @@
     ]
   },
   {
-    "id": "192.168.1.195_w4390",
-    "timestamp": "2026-03-14T00:40:16.799429",
+    "id": "192.168.1.195_w4424",
+    "timestamp": "2026-03-14T06:13:02.087256",
     "deviceId": "192.168.1.195",
     "deviceName": "IoT Device (192.168.1.195)",
-    "severity": "Warning",
-    "trustScore": 25.59,
+    "severity": "Critical",
+    "trustScore": 21.48,
     "alertReason": "Multiple algorithm consensus indicates anomalous behavior",
     "recommendedAction": "Flagged by: XGBoost. Investigate immediately.",
     "flaggedBy": [
       "XGBoost"
     ],
     "metrics": {
-      "if_score": 69.7,
-      "xgb_score": 15.43,
+      "if_score": 68.33,
+      "xgb_score": 8.29,
+      "cusum_shift": true
+    },
+    "deviatingFeatures": []
+  },
+  {
+    "id": "192.168.1.195_w4423",
+    "timestamp": "2026-03-14T06:13:02.087262",
+    "deviceId": "192.168.1.195",
+    "deviceName": "IoT Device (192.168.1.195)",
+    "severity": "Critical",
+    "trustScore": 21.64,
+    "alertReason": "Multiple algorithm consensus indicates anomalous behavior",
+    "recommendedAction": "Flagged by: XGBoost. Investigate immediately.",
+    "flaggedBy": [
+      "XGBoost"
+    ],
+    "metrics": {
+      "if_score": 66.98,
+      "xgb_score": 9.7,
+      "cusum_shift": true
+    },
+    "deviatingFeatures": []
+  },
+  {
+    "id": "192.168.1.195_w4421",
+    "timestamp": "2026-03-14T06:13:02.087268",
+    "deviceId": "192.168.1.195",
+    "deviceName": "IoT Device (192.168.1.195)",
+    "severity": "Critical",
+    "trustScore": 22.11,
+    "alertReason": "Multiple algorithm consensus indicates anomalous behavior",
+    "recommendedAction": "Flagged by: XGBoost. Investigate immediately.",
+    "flaggedBy": [
+      "XGBoost"
+    ],
+    "metrics": {
+      "if_score": 69.91,
+      "xgb_score": 8.29,
+      "cusum_shift": true
+    },
+    "deviatingFeatures": []
+  },
+  {
+    "id": "192.168.1.195_w4425",
+    "timestamp": "2026-03-14T06:13:02.087274",
+    "deviceId": "192.168.1.195",
+    "deviceName": "IoT Device (192.168.1.195)",
+    "severity": "Critical",
+    "trustScore": 22.12,
+    "alertReason": "Multiple algorithm consensus indicates anomalous behavior",
+    "recommendedAction": "Flagged by: XGBoost. Investigate immediately.",
+    "flaggedBy": [
+      "XGBoost"
+    ],
+    "metrics": {
+      "if_score": 68.48,
+      "xgb_score": 9.46,
+      "cusum_shift": true
+    },
+    "deviatingFeatures": []
+  },
+  {
+    "id": "192.168.1.195_w4407",
+    "timestamp": "2026-03-14T06:13:02.087280",
+    "deviceId": "192.168.1.195",
+    "deviceName": "IoT Device (192.168.1.195)",
+    "severity": "Critical",
+    "trustScore": 22.8,
+    "alertReason": "Multiple algorithm consensus indicates anomalous behavior",
+    "recommendedAction": "Flagged by: Isolation Forest, XGBoost. Investigate immediately.",
+    "flaggedBy": [
+      "Isolation Forest",
+      "XGBoost"
+    ],
+    "metrics": {
+      "if_score": 49.75,
+      "xgb_score": 25.8,
       "cusum_shift": true
     },
     "deviatingFeatures": []
   },
   {
     "id": "192.168.1.199_w5352",
-    "timestamp": "2026-03-14T00:40:16.799434",
+    "timestamp": "2026-03-14T06:13:02.087286",
     "deviceId": "192.168.1.199",
     "deviceName": "IoT Device (192.168.1.199)",
-    "severity": "Warning",
-    "trustScore": 33.54,
+    "severity": "Critical",
+    "trustScore": 23.18,
     "alertReason": "Abnormal outbound data volume (possible data exfiltration) (1744830554.0 vs baseline 12005081.5, +14434%); High average bytes per connection sent (102637091.4 vs baseline 705869.3, +14441%)",
     "recommendedAction": "Flagged by: Isolation Forest. Investigate immediately.",
     "flaggedBy": [
@@ -642,7 +424,7 @@
     ],
     "metrics": {
       "if_score": 2.63,
-      "xgb_score": 84.98,
+      "xgb_score": 64.25,
       "cusum_shift": true
     },
     "deviatingFeatures": [
@@ -652,52 +434,108 @@
     ]
   },
   {
-    "id": "192.168.1.195_w4426",
-    "timestamp": "2026-03-14T00:40:16.799440",
+    "id": "192.168.1.195_w4417",
+    "timestamp": "2026-03-14T06:13:02.087292",
     "deviceId": "192.168.1.195",
     "deviceName": "IoT Device (192.168.1.195)",
-    "severity": "Warning",
-    "trustScore": 35.94,
+    "severity": "Critical",
+    "trustScore": 23.19,
+    "alertReason": "Multiple algorithm consensus indicates anomalous behavior",
+    "recommendedAction": "Flagged by: Isolation Forest, XGBoost. Investigate immediately.",
+    "flaggedBy": [
+      "Isolation Forest",
+      "XGBoost"
+    ],
+    "metrics": {
+      "if_score": 45.55,
+      "xgb_score": 29.95,
+      "cusum_shift": true
+    },
+    "deviatingFeatures": []
+  },
+  {
+    "id": "192.168.1.195_w4414",
+    "timestamp": "2026-03-14T06:13:02.087297",
+    "deviceId": "192.168.1.195",
+    "deviceName": "IoT Device (192.168.1.195)",
+    "severity": "Critical",
+    "trustScore": 24.05,
     "alertReason": "Multiple algorithm consensus indicates anomalous behavior",
     "recommendedAction": "Flagged by: XGBoost. Investigate immediately.",
     "flaggedBy": [
       "XGBoost"
     ],
     "metrics": {
-      "if_score": 80.11,
-      "xgb_score": 27.78,
+      "if_score": 74.46,
+      "xgb_score": 8.53,
       "cusum_shift": true
     },
     "deviatingFeatures": []
   },
   {
-    "id": "192.168.1.132_w1636",
-    "timestamp": "2026-03-14T00:40:16.799445",
-    "deviceId": "192.168.1.132",
-    "deviceName": "IoT Device (192.168.1.132)",
-    "severity": "Warning",
-    "trustScore": 44.71,
-    "alertReason": "Unusual connection duration patterns (15877.1 vs baseline 203.9, +7688%)",
-    "recommendedAction": "Flagged by: Isolation Forest. Investigate immediately.",
+    "id": "192.168.1.195_w4420",
+    "timestamp": "2026-03-14T06:13:02.087303",
+    "deviceId": "192.168.1.195",
+    "deviceName": "IoT Device (192.168.1.195)",
+    "severity": "Critical",
+    "trustScore": 24.31,
+    "alertReason": "Multiple algorithm consensus indicates anomalous behavior",
+    "recommendedAction": "Flagged by: XGBoost. Investigate immediately.",
     "flaggedBy": [
-      "Isolation Forest"
+      "XGBoost"
     ],
     "metrics": {
-      "if_score": 19.81,
-      "xgb_score": 73.57,
-      "cusum_shift": false
+      "if_score": 75.12,
+      "xgb_score": 8.53,
+      "cusum_shift": true
     },
-    "deviatingFeatures": [
-      "avg_connection_duration"
-    ]
+    "deviatingFeatures": []
+  },
+  {
+    "id": "192.168.1.195_w4415",
+    "timestamp": "2026-03-14T06:13:02.087308",
+    "deviceId": "192.168.1.195",
+    "deviceName": "IoT Device (192.168.1.195)",
+    "severity": "Critical",
+    "trustScore": 24.41,
+    "alertReason": "Multiple algorithm consensus indicates anomalous behavior",
+    "recommendedAction": "Flagged by: XGBoost. Investigate immediately.",
+    "flaggedBy": [
+      "XGBoost"
+    ],
+    "metrics": {
+      "if_score": 75.36,
+      "xgb_score": 8.53,
+      "cusum_shift": true
+    },
+    "deviatingFeatures": []
+  },
+  {
+    "id": "192.168.1.195_w4390",
+    "timestamp": "2026-03-14T06:13:02.087314",
+    "deviceId": "192.168.1.195",
+    "deviceName": "IoT Device (192.168.1.195)",
+    "severity": "Critical",
+    "trustScore": 24.71,
+    "alertReason": "Multiple algorithm consensus indicates anomalous behavior",
+    "recommendedAction": "Flagged by: XGBoost. Investigate immediately.",
+    "flaggedBy": [
+      "XGBoost"
+    ],
+    "metrics": {
+      "if_score": 69.7,
+      "xgb_score": 13.65,
+      "cusum_shift": true
+    },
+    "deviatingFeatures": []
   },
   {
     "id": "192.168.2.3_w0",
-    "timestamp": "2026-03-14T00:40:16.799450",
+    "timestamp": "2026-03-14T06:13:02.087324",
     "deviceId": "192.168.2.3",
     "deviceName": "IoT Device (192.168.2.3)",
     "severity": "Warning",
-    "trustScore": 47.42,
+    "trustScore": 25.1,
     "alertReason": "Contacted unusual number of external servers (31.0 vs baseline 6.2, +398%); Connected to unusually many distinct ports (possible scanning) (7.0 vs baseline 2.4, +191%)",
     "recommendedAction": "Flagged by: Isolation Forest. Investigate immediately.",
     "flaggedBy": [
@@ -705,7 +543,7 @@
     ],
     "metrics": {
       "if_score": 0.0,
-      "xgb_score": 94.84,
+      "xgb_score": 50.19,
       "cusum_shift": false
     },
     "deviatingFeatures": [
@@ -713,5 +551,380 @@
       "unique_dst_ports",
       "bytes_received"
     ]
+  },
+  {
+    "id": "192.168.1.195_w4416",
+    "timestamp": "2026-03-14T06:13:02.087331",
+    "deviceId": "192.168.1.195",
+    "deviceName": "IoT Device (192.168.1.195)",
+    "severity": "Warning",
+    "trustScore": 25.39,
+    "alertReason": "Multiple algorithm consensus indicates anomalous behavior",
+    "recommendedAction": "Flagged by: XGBoost. Investigate immediately.",
+    "flaggedBy": [
+      "XGBoost"
+    ],
+    "metrics": {
+      "if_score": 77.8,
+      "xgb_score": 8.53,
+      "cusum_shift": true
+    },
+    "deviatingFeatures": []
+  },
+  {
+    "id": "192.168.1.195_w4411",
+    "timestamp": "2026-03-14T06:13:02.087337",
+    "deviceId": "192.168.1.195",
+    "deviceName": "IoT Device (192.168.1.195)",
+    "severity": "Warning",
+    "trustScore": 25.63,
+    "alertReason": "Multiple algorithm consensus indicates anomalous behavior",
+    "recommendedAction": "Flagged by: XGBoost. Investigate immediately.",
+    "flaggedBy": [
+      "XGBoost"
+    ],
+    "metrics": {
+      "if_score": 68.53,
+      "xgb_score": 16.43,
+      "cusum_shift": true
+    },
+    "deviatingFeatures": []
+  },
+  {
+    "id": "192.168.1.195_w4384",
+    "timestamp": "2026-03-14T06:13:02.087342",
+    "deviceId": "192.168.1.195",
+    "deviceName": "IoT Device (192.168.1.195)",
+    "severity": "Warning",
+    "trustScore": 26.3,
+    "alertReason": "Excessive number of connections (515.0 vs baseline 48.9, +953%)",
+    "recommendedAction": "Flagged by: XGBoost. Investigate immediately.",
+    "flaggedBy": [
+      "XGBoost"
+    ],
+    "metrics": {
+      "if_score": 67.31,
+      "xgb_score": 18.75,
+      "cusum_shift": true
+    },
+    "deviatingFeatures": [
+      "connection_count"
+    ]
+  },
+  {
+    "id": "192.168.1.195_w4386",
+    "timestamp": "2026-03-14T06:13:02.087347",
+    "deviceId": "192.168.1.195",
+    "deviceName": "IoT Device (192.168.1.195)",
+    "severity": "Warning",
+    "trustScore": 29.39,
+    "alertReason": "Excessive number of connections (395.0 vs baseline 48.9, +707%)",
+    "recommendedAction": "Flagged by: XGBoost. Investigate immediately.",
+    "flaggedBy": [
+      "XGBoost"
+    ],
+    "metrics": {
+      "if_score": 72.39,
+      "xgb_score": 20.87,
+      "cusum_shift": true
+    },
+    "deviatingFeatures": [
+      "connection_count"
+    ]
+  },
+  {
+    "id": "192.168.1.199_w5348",
+    "timestamp": "2026-03-14T06:13:02.087352",
+    "deviceId": "192.168.1.199",
+    "deviceName": "IoT Device (192.168.1.199)",
+    "severity": "Warning",
+    "trustScore": 29.59,
+    "alertReason": "Multiple algorithm consensus indicates anomalous behavior",
+    "recommendedAction": "Flagged by: Isolation Forest, XGBoost. Investigate immediately.",
+    "flaggedBy": [
+      "Isolation Forest",
+      "XGBoost"
+    ],
+    "metrics": {
+      "if_score": 47.86,
+      "xgb_score": 40.9,
+      "cusum_shift": true
+    },
+    "deviatingFeatures": []
+  },
+  {
+    "id": "192.168.1.197_w5338",
+    "timestamp": "2026-03-14T06:13:02.087357",
+    "deviceId": "192.168.1.197",
+    "deviceName": "IoT Device (192.168.1.197)",
+    "severity": "Warning",
+    "trustScore": 32.42,
+    "alertReason": "Excessive number of connections (941.0 vs baseline 48.9, +1823%)",
+    "recommendedAction": "Flagged by: Isolation Forest, XGBoost. Investigate immediately.",
+    "flaggedBy": [
+      "Isolation Forest",
+      "XGBoost"
+    ],
+    "metrics": {
+      "if_score": 56.88,
+      "xgb_score": 39.33,
+      "cusum_shift": true
+    },
+    "deviatingFeatures": [
+      "connection_count"
+    ]
+  },
+  {
+    "id": "192.168.1.197_w5337",
+    "timestamp": "2026-03-14T06:13:02.087363",
+    "deviceId": "192.168.1.197",
+    "deviceName": "IoT Device (192.168.1.197)",
+    "severity": "Warning",
+    "trustScore": 33.03,
+    "alertReason": "Excessive number of connections (1010.0 vs baseline 48.9, +1964%)",
+    "recommendedAction": "Flagged by: Isolation Forest, XGBoost. Investigate immediately.",
+    "flaggedBy": [
+      "Isolation Forest",
+      "XGBoost"
+    ],
+    "metrics": {
+      "if_score": 52.45,
+      "xgb_score": 44.1,
+      "cusum_shift": true
+    },
+    "deviatingFeatures": [
+      "connection_count"
+    ]
+  },
+  {
+    "id": "192.168.2.3_w3",
+    "timestamp": "2026-03-14T06:13:02.087368",
+    "deviceId": "192.168.2.3",
+    "deviceName": "IoT Device (192.168.2.3)",
+    "severity": "Warning",
+    "trustScore": 33.09,
+    "alertReason": "Contacted unusual number of external servers (33.0 vs baseline 6.2, +431%); Connected to unusually many distinct ports (possible scanning) (7.0 vs baseline 2.4, +191%)",
+    "recommendedAction": "Flagged by: Isolation Forest, XGBoost. Investigate immediately.",
+    "flaggedBy": [
+      "Isolation Forest",
+      "XGBoost"
+    ],
+    "metrics": {
+      "if_score": 27.72,
+      "xgb_score": 44.01,
+      "cusum_shift": false
+    },
+    "deviatingFeatures": [
+      "unique_dst_ips",
+      "unique_dst_ports"
+    ]
+  },
+  {
+    "id": "192.168.1.197_w5335",
+    "timestamp": "2026-03-14T06:13:02.087375",
+    "deviceId": "192.168.1.197",
+    "deviceName": "IoT Device (192.168.1.197)",
+    "severity": "Warning",
+    "trustScore": 34.08,
+    "alertReason": "Multiple algorithm consensus indicates anomalous behavior",
+    "recommendedAction": "Flagged by: Isolation Forest, XGBoost. Investigate immediately.",
+    "flaggedBy": [
+      "Isolation Forest",
+      "XGBoost"
+    ],
+    "metrics": {
+      "if_score": 59.87,
+      "xgb_score": 40.26,
+      "cusum_shift": true
+    },
+    "deviatingFeatures": []
+  },
+  {
+    "id": "192.168.1.197_w5336",
+    "timestamp": "2026-03-14T06:13:02.087380",
+    "deviceId": "192.168.1.197",
+    "deviceName": "IoT Device (192.168.1.197)",
+    "severity": "Warning",
+    "trustScore": 34.86,
+    "alertReason": "Excessive number of connections (1002.0 vs baseline 48.9, +1948%)",
+    "recommendedAction": "Flagged by: Isolation Forest, XGBoost. Investigate immediately.",
+    "flaggedBy": [
+      "Isolation Forest",
+      "XGBoost"
+    ],
+    "metrics": {
+      "if_score": 57.02,
+      "xgb_score": 44.1,
+      "cusum_shift": true
+    },
+    "deviatingFeatures": [
+      "connection_count"
+    ]
+  },
+  {
+    "id": "192.168.1.197_w5347",
+    "timestamp": "2026-03-14T06:13:02.087385",
+    "deviceId": "192.168.1.197",
+    "deviceName": "IoT Device (192.168.1.197)",
+    "severity": "Warning",
+    "trustScore": 38.12,
+    "alertReason": "Contacted unusual number of external servers (32.0 vs baseline 6.2, +415%)",
+    "recommendedAction": "Flagged by: Isolation Forest. Investigate immediately.",
+    "flaggedBy": [
+      "Isolation Forest"
+    ],
+    "metrics": {
+      "if_score": 53.38,
+      "xgb_score": 53.54,
+      "cusum_shift": true
+    },
+    "deviatingFeatures": [
+      "unique_dst_ips"
+    ]
+  },
+  {
+    "id": "192.168.1.197_w5348",
+    "timestamp": "2026-03-14T06:13:02.087390",
+    "deviceId": "192.168.1.197",
+    "deviceName": "IoT Device (192.168.1.197)",
+    "severity": "Warning",
+    "trustScore": 38.73,
+    "alertReason": "Contacted unusual number of external servers (32.0 vs baseline 6.2, +415%)",
+    "recommendedAction": "Flagged by: Isolation Forest. Investigate immediately.",
+    "flaggedBy": [
+      "Isolation Forest"
+    ],
+    "metrics": {
+      "if_score": 56.79,
+      "xgb_score": 52.02,
+      "cusum_shift": true
+    },
+    "deviatingFeatures": [
+      "unique_dst_ips"
+    ]
+  },
+  {
+    "id": "192.168.1.132_w1636",
+    "timestamp": "2026-03-14T06:13:02.087396",
+    "deviceId": "192.168.1.132",
+    "deviceName": "IoT Device (192.168.1.132)",
+    "severity": "Warning",
+    "trustScore": 40.3,
+    "alertReason": "Unusual connection duration patterns (15877.1 vs baseline 203.9, +7688%)",
+    "recommendedAction": "Flagged by: Isolation Forest. Investigate immediately.",
+    "flaggedBy": [
+      "Isolation Forest"
+    ],
+    "metrics": {
+      "if_score": 19.81,
+      "xgb_score": 64.75,
+      "cusum_shift": false
+    },
+    "deviatingFeatures": [
+      "avg_connection_duration"
+    ]
+  },
+  {
+    "id": "192.168.1.132_w1641",
+    "timestamp": "2026-03-14T06:13:02.087401",
+    "deviceId": "192.168.1.132",
+    "deviceName": "IoT Device (192.168.1.132)",
+    "severity": "Warning",
+    "trustScore": 41.65,
+    "alertReason": "Unusual connection duration patterns (7827.2 vs baseline 203.9, +3739%)",
+    "recommendedAction": "Flagged by: Isolation Forest. Investigate immediately.",
+    "flaggedBy": [
+      "Isolation Forest"
+    ],
+    "metrics": {
+      "if_score": 17.77,
+      "xgb_score": 69.08,
+      "cusum_shift": false
+    },
+    "deviatingFeatures": [
+      "avg_connection_duration"
+    ]
+  },
+  {
+    "id": "192.168.1.197_w5339",
+    "timestamp": "2026-03-14T06:13:02.087406",
+    "deviceId": "192.168.1.197",
+    "deviceName": "IoT Device (192.168.1.197)",
+    "severity": "Warning",
+    "trustScore": 42.35,
+    "alertReason": "Excessive number of connections (432.0 vs baseline 48.9, +783%)",
+    "recommendedAction": "Flagged by: XGBoost. Investigate immediately.",
+    "flaggedBy": [
+      "XGBoost"
+    ],
+    "metrics": {
+      "if_score": 74.37,
+      "xgb_score": 45.19,
+      "cusum_shift": true
+    },
+    "deviatingFeatures": [
+      "connection_count"
+    ]
+  },
+  {
+    "id": "192.168.2.3_w2",
+    "timestamp": "2026-03-14T06:13:02.087411",
+    "deviceId": "192.168.2.3",
+    "deviceName": "IoT Device (192.168.2.3)",
+    "severity": "Warning",
+    "trustScore": 42.65,
+    "alertReason": "Contacted unusual number of external servers (23.0 vs baseline 6.2, +270%)",
+    "recommendedAction": "Flagged by: Isolation Forest. Investigate immediately.",
+    "flaggedBy": [
+      "Isolation Forest"
+    ],
+    "metrics": {
+      "if_score": 43.88,
+      "xgb_score": 50.19,
+      "cusum_shift": false
+    },
+    "deviatingFeatures": [
+      "unique_dst_ips"
+    ]
+  },
+  {
+    "id": "192.168.2.1_w0",
+    "timestamp": "2026-03-14T06:13:02.087416",
+    "deviceId": "192.168.2.1",
+    "deviceName": "IoT Device (192.168.2.1)",
+    "severity": "Warning",
+    "trustScore": 42.84,
+    "alertReason": "Unusual connection duration patterns (3918.1 vs baseline 203.9, +1822%)",
+    "recommendedAction": "Flagged by: Isolation Forest. Investigate immediately.",
+    "flaggedBy": [
+      "Isolation Forest"
+    ],
+    "metrics": {
+      "if_score": 30.04,
+      "xgb_score": 61.65,
+      "cusum_shift": false
+    },
+    "deviatingFeatures": [
+      "avg_connection_duration"
+    ]
+  },
+  {
+    "id": "192.168.1.195_w4426",
+    "timestamp": "2026-03-14T06:13:02.087421",
+    "deviceId": "192.168.1.195",
+    "deviceName": "IoT Device (192.168.1.195)",
+    "severity": "Warning",
+    "trustScore": 45.23,
+    "alertReason": "Multiple algorithm consensus indicates anomalous behavior",
+    "recommendedAction": "Flagged by: XGBoost. Investigate immediately.",
+    "flaggedBy": [
+      "XGBoost"
+    ],
+    "metrics": {
+      "if_score": 80.11,
+      "xgb_score": 46.36,
+      "cusum_shift": true
+    },
+    "deviatingFeatures": []
   }
 ]

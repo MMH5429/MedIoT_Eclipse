@@ -57,11 +57,11 @@ const stages: StageInfo[] = [
   {
     title: 'XGBoost Classifier',
     icon: '🎯',
-    description: 'Supervised binary classifier with 97.2% accuracy',
+    description: 'Supervised binary classifier with 85.2% accuracy',
     details: [
-      'n_estimators=100, max_depth=6',
-      '80/20 stratified train-test split',
-      '97.2% test accuracy on IoT-23 data',
+      'n_estimators=50, max_depth=3, heavy regularization',
+      'Temporal holdout split (50/50 per device)',
+      '85.2% test accuracy on IoT-23 data',
       'Outputs malicious probability per sample',
       'Weight: 50% of trust score formula',
     ],
@@ -162,7 +162,7 @@ export default function ArchitecturePage() {
               XGBoost Accuracy
             </p>
             <p className="mt-2 text-3xl font-bold text-green-600 dark:text-green-400">
-              97.2%
+              85.2%
             </p>
             <p className="mt-2 text-xs text-slate-500 dark:text-slate-400">
               On 80/20 stratified test split
@@ -383,7 +383,7 @@ export default function ArchitecturePage() {
               </h3>
               <ul className="space-y-2 text-sm text-slate-700 dark:text-slate-300">
                 <li>• scikit-learn — Isolation Forest (unsupervised anomaly detection)</li>
-                <li>• XGBoost — Gradient boosted classifier (97.2% accuracy)</li>
+                <li>• XGBoost — Gradient boosted classifier (85.2% accuracy)</li>
                 <li>• Custom CUSUM — Change-point detection on time-series</li>
                 <li>• Pandas / NumPy — Data processing and feature engineering</li>
                 <li>• joblib — Model serialization (PKL files)</li>
@@ -633,7 +633,7 @@ export default function ArchitecturePage() {
                 </h3>
                 <p className="mt-1 text-slate-700 dark:text-slate-300">
                   Supervised binary classifier trained on labeled data with 80/20 stratified split.
-                  Achieves 97.2% accuracy. Outputs malicious probability for each sample.
+                  Achieves 85.2% accuracy. Outputs malicious probability for each sample.
                 </p>
               </div>
             </div>

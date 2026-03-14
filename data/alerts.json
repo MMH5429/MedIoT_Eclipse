@@ -1,26 +1,7 @@
 [
   {
-    "device_id": "192.168.1.195_w4378",
-    "trust_score": 5.8,
-    "severity": "CRITICAL",
-    "status": "ALERT",
-    "flagged_by": [
-      "Isolation Forest",
-      "XGBoost"
-    ],
-    "reasons": [
-      "Multiple algorithm consensus indicates anomalous behavior"
-    ],
-    "deviating_features": [],
-    "metrics": {
-      "if_score": 33.6,
-      "xgb_score": 4.71,
-      "cusum_shift": true
-    }
-  },
-  {
     "device_id": "192.168.1.195_w4382",
-    "trust_score": 9.87,
+    "trust_score": 13.53,
     "severity": "CRITICAL",
     "status": "ALERT",
     "flagged_by": [
@@ -37,13 +18,13 @@
     ],
     "metrics": {
       "if_score": 47.17,
-      "xgb_score": 2.01,
+      "xgb_score": 9.33,
       "cusum_shift": true
     }
   },
   {
     "device_id": "192.168.1.195_w4419",
-    "trust_score": 11.1,
+    "trust_score": 14.82,
     "severity": "CRITICAL",
     "status": "ALERT",
     "flagged_by": [
@@ -56,13 +37,32 @@
     "deviating_features": [],
     "metrics": {
       "if_score": 51.68,
-      "xgb_score": 0.86,
+      "xgb_score": 8.29,
+      "cusum_shift": true
+    }
+  },
+  {
+    "device_id": "192.168.1.195_w4378",
+    "trust_score": 15.42,
+    "severity": "CRITICAL",
+    "status": "ALERT",
+    "flagged_by": [
+      "Isolation Forest",
+      "XGBoost"
+    ],
+    "reasons": [
+      "Multiple algorithm consensus indicates anomalous behavior"
+    ],
+    "deviating_features": [],
+    "metrics": {
+      "if_score": 33.6,
+      "xgb_score": 23.96,
       "cusum_shift": true
     }
   },
   {
     "device_id": "192.168.1.195_w4412",
-    "trust_score": 12.39,
+    "trust_score": 16.43,
     "severity": "CRITICAL",
     "status": "ALERT",
     "flagged_by": [
@@ -75,13 +75,13 @@
     "deviating_features": [],
     "metrics": {
       "if_score": 54.76,
-      "xgb_score": 0.96,
+      "xgb_score": 9.05,
       "cusum_shift": true
     }
   },
   {
     "device_id": "192.168.1.195_w4418",
-    "trust_score": 14.22,
+    "trust_score": 17.93,
     "severity": "CRITICAL",
     "status": "ALERT",
     "flagged_by": [
@@ -94,13 +94,13 @@
     "deviating_features": [],
     "metrics": {
       "if_score": 59.47,
-      "xgb_score": 0.86,
+      "xgb_score": 8.29,
       "cusum_shift": true
     }
   },
   {
     "device_id": "192.168.1.195_w4410",
-    "trust_score": 14.23,
+    "trust_score": 18.24,
     "severity": "CRITICAL",
     "status": "ALERT",
     "flagged_by": [
@@ -113,32 +113,13 @@
     "deviating_features": [],
     "metrics": {
       "if_score": 58.44,
-      "xgb_score": 1.71,
-      "cusum_shift": true
-    }
-  },
-  {
-    "device_id": "192.168.1.195_w4417",
-    "trust_score": 14.53,
-    "severity": "CRITICAL",
-    "status": "ALERT",
-    "flagged_by": [
-      "Isolation Forest",
-      "XGBoost"
-    ],
-    "reasons": [
-      "Multiple algorithm consensus indicates anomalous behavior"
-    ],
-    "deviating_features": [],
-    "metrics": {
-      "if_score": 45.55,
-      "xgb_score": 12.62,
+      "xgb_score": 9.73,
       "cusum_shift": true
     }
   },
   {
     "device_id": "192.168.1.195_w4408",
-    "trust_score": 14.87,
+    "trust_score": 18.59,
     "severity": "CRITICAL",
     "status": "ALERT",
     "flagged_by": [
@@ -151,13 +132,55 @@
     "deviating_features": [],
     "metrics": {
       "if_score": 61.11,
-      "xgb_score": 0.85,
+      "xgb_score": 8.29,
+      "cusum_shift": true
+    }
+  },
+  {
+    "device_id": "192.168.1.195_w4381",
+    "trust_score": 19.02,
+    "severity": "CRITICAL",
+    "status": "ALERT",
+    "flagged_by": [
+      "Isolation Forest",
+      "XGBoost"
+    ],
+    "reasons": [
+      "Excessive number of connections (436.0 vs baseline 48.9, +791%)"
+    ],
+    "deviating_features": [
+      "connection_count"
+    ],
+    "metrics": {
+      "if_score": 62.19,
+      "xgb_score": 8.29,
+      "cusum_shift": true
+    }
+  },
+  {
+    "device_id": "192.168.1.195_w4379",
+    "trust_score": 19.1,
+    "severity": "CRITICAL",
+    "status": "ALERT",
+    "flagged_by": [
+      "Isolation Forest",
+      "XGBoost"
+    ],
+    "reasons": [
+      "Excessive number of connections (480.0 vs baseline 48.9, +881%)"
+    ],
+    "deviating_features": [
+      "connection_count"
+    ],
+    "metrics": {
+      "if_score": 59.71,
+      "xgb_score": 10.44,
       "cusum_shift": true
     }
   },
   {
     "device_id": "192.168.1.195_w4385",
-    "trust_score": 15.17,
+    "trust_score": 19.77,
     "severity": "CRITICAL",
     "status": "ALERT",
     "flagged_by": [
@@ -174,74 +197,13 @@
     ],
     "metrics": {
       "if_score": 59.14,
-      "xgb_score": 3.02,
-      "cusum_shift": true
-    }
-  },
-  {
-    "device_id": "192.168.1.195_w4381",
-    "trust_score": 15.38,
-    "severity": "CRITICAL",
-    "status": "ALERT",
-    "flagged_by": [
-      "Isolation Forest",
-      "XGBoost"
-    ],
-    "reasons": [
-      "Excessive number of connections (436.0 vs baseline 48.9, +791%)"
-    ],
-    "deviating_features": [
-      "connection_count"
-    ],
-    "metrics": {
-      "if_score": 62.19,
-      "xgb_score": 1.01,
-      "cusum_shift": true
-    }
-  },
-  {
-    "device_id": "192.168.1.195_w4379",
-    "trust_score": 15.39,
-    "severity": "CRITICAL",
-    "status": "ALERT",
-    "flagged_by": [
-      "Isolation Forest",
-      "XGBoost"
-    ],
-    "reasons": [
-      "Excessive number of connections (480.0 vs baseline 48.9, +881%)"
-    ],
-    "deviating_features": [
-      "connection_count"
-    ],
-    "metrics": {
-      "if_score": 59.71,
-      "xgb_score": 3.01,
-      "cusum_shift": true
-    }
-  },
-  {
-    "device_id": "192.168.1.195_w4409",
-    "trust_score": 16.32,
-    "severity": "CRITICAL",
-    "status": "ALERT",
-    "flagged_by": [
-      "Isolation Forest",
-      "XGBoost"
-    ],
-    "reasons": [
-      "Multiple algorithm consensus indicates anomalous behavior"
-    ],
-    "deviating_features": [],
-    "metrics": {
-      "if_score": 63.67,
-      "xgb_score": 1.71,
+      "xgb_score": 12.23,
       "cusum_shift": true
     }
   },
   {
     "device_id": "192.168.1.195_w4383",
-    "trust_score": 16.47,
+    "trust_score": 20.07,
     "severity": "CRITICAL",
     "status": "ALERT",
     "flagged_by": [
@@ -256,254 +218,13 @@
     ],
     "metrics": {
       "if_score": 64.81,
-      "xgb_score": 1.08,
-      "cusum_shift": true
-    }
-  },
-  {
-    "device_id": "192.168.1.195_w4407",
-    "trust_score": 16.98,
-    "severity": "CRITICAL",
-    "status": "ALERT",
-    "flagged_by": [
-      "Isolation Forest",
-      "XGBoost"
-    ],
-    "reasons": [
-      "Multiple algorithm consensus indicates anomalous behavior"
-    ],
-    "deviating_features": [],
-    "metrics": {
-      "if_score": 49.75,
-      "xgb_score": 14.16,
-      "cusum_shift": true
-    }
-  },
-  {
-    "device_id": "192.168.1.195_w4423",
-    "trust_score": 17.2,
-    "severity": "CRITICAL",
-    "status": "ALERT",
-    "flagged_by": [
-      "XGBoost"
-    ],
-    "reasons": [
-      "Multiple algorithm consensus indicates anomalous behavior"
-    ],
-    "deviating_features": [],
-    "metrics": {
-      "if_score": 66.98,
-      "xgb_score": 0.82,
-      "cusum_shift": true
-    }
-  },
-  {
-    "device_id": "192.168.1.195_w4422",
-    "trust_score": 17.21,
-    "severity": "CRITICAL",
-    "status": "ALERT",
-    "flagged_by": [
-      "XGBoost"
-    ],
-    "reasons": [
-      "Multiple algorithm consensus indicates anomalous behavior"
-    ],
-    "deviating_features": [],
-    "metrics": {
-      "if_score": 66.99,
-      "xgb_score": 0.82,
-      "cusum_shift": true
-    }
-  },
-  {
-    "device_id": "192.168.1.195_w4380",
-    "trust_score": 17.33,
-    "severity": "CRITICAL",
-    "status": "ALERT",
-    "flagged_by": [
-      "Isolation Forest",
-      "XGBoost"
-    ],
-    "reasons": [
-      "Excessive number of connections (485.0 vs baseline 48.9, +891%)"
-    ],
-    "deviating_features": [
-      "connection_count"
-    ],
-    "metrics": {
-      "if_score": 66.28,
-      "xgb_score": 1.63,
-      "cusum_shift": true
-    }
-  },
-  {
-    "device_id": "192.168.1.195_w4424",
-    "trust_score": 17.72,
-    "severity": "CRITICAL",
-    "status": "ALERT",
-    "flagged_by": [
-      "XGBoost"
-    ],
-    "reasons": [
-      "Multiple algorithm consensus indicates anomalous behavior"
-    ],
-    "deviating_features": [],
-    "metrics": {
-      "if_score": 68.33,
-      "xgb_score": 0.76,
-      "cusum_shift": true
-    }
-  },
-  {
-    "device_id": "192.168.1.195_w4425",
-    "trust_score": 17.84,
-    "severity": "CRITICAL",
-    "status": "ALERT",
-    "flagged_by": [
-      "XGBoost"
-    ],
-    "reasons": [
-      "Multiple algorithm consensus indicates anomalous behavior"
-    ],
-    "deviating_features": [],
-    "metrics": {
-      "if_score": 68.48,
-      "xgb_score": 0.9,
-      "cusum_shift": true
-    }
-  },
-  {
-    "device_id": "192.168.1.195_w4411",
-    "trust_score": 18.28,
-    "severity": "CRITICAL",
-    "status": "ALERT",
-    "flagged_by": [
-      "XGBoost"
-    ],
-    "reasons": [
-      "Multiple algorithm consensus indicates anomalous behavior"
-    ],
-    "deviating_features": [],
-    "metrics": {
-      "if_score": 68.53,
-      "xgb_score": 1.74,
-      "cusum_shift": true
-    }
-  },
-  {
-    "device_id": "192.168.1.199_w5348",
-    "trust_score": 18.34,
-    "severity": "CRITICAL",
-    "status": "ALERT",
-    "flagged_by": [
-      "Isolation Forest",
-      "XGBoost"
-    ],
-    "reasons": [
-      "Multiple algorithm consensus indicates anomalous behavior"
-    ],
-    "deviating_features": [],
-    "metrics": {
-      "if_score": 47.86,
-      "xgb_score": 18.39,
-      "cusum_shift": true
-    }
-  },
-  {
-    "device_id": "192.168.1.195_w4421",
-    "trust_score": 18.37,
-    "severity": "CRITICAL",
-    "status": "ALERT",
-    "flagged_by": [
-      "XGBoost"
-    ],
-    "reasons": [
-      "Multiple algorithm consensus indicates anomalous behavior"
-    ],
-    "deviating_features": [],
-    "metrics": {
-      "if_score": 69.91,
-      "xgb_score": 0.8,
-      "cusum_shift": true
-    }
-  },
-  {
-    "device_id": "192.168.1.195_w4384",
-    "trust_score": 19.84,
-    "severity": "CRITICAL",
-    "status": "ALERT",
-    "flagged_by": [
-      "XGBoost"
-    ],
-    "reasons": [
-      "Excessive number of connections (515.0 vs baseline 48.9, +953%)"
-    ],
-    "deviating_features": [
-      "connection_count"
-    ],
-    "metrics": {
-      "if_score": 67.31,
-      "xgb_score": 5.83,
-      "cusum_shift": true
-    }
-  },
-  {
-    "device_id": "192.168.1.195_w4414",
-    "trust_score": 20.19,
-    "severity": "CRITICAL",
-    "status": "ALERT",
-    "flagged_by": [
-      "XGBoost"
-    ],
-    "reasons": [
-      "Multiple algorithm consensus indicates anomalous behavior"
-    ],
-    "deviating_features": [],
-    "metrics": {
-      "if_score": 74.46,
-      "xgb_score": 0.8,
-      "cusum_shift": true
-    }
-  },
-  {
-    "device_id": "192.168.1.195_w4420",
-    "trust_score": 20.63,
-    "severity": "CRITICAL",
-    "status": "ALERT",
-    "flagged_by": [
-      "XGBoost"
-    ],
-    "reasons": [
-      "Multiple algorithm consensus indicates anomalous behavior"
-    ],
-    "deviating_features": [],
-    "metrics": {
-      "if_score": 75.12,
-      "xgb_score": 1.15,
-      "cusum_shift": true
-    }
-  },
-  {
-    "device_id": "192.168.1.195_w4415",
-    "trust_score": 20.72,
-    "severity": "CRITICAL",
-    "status": "ALERT",
-    "flagged_by": [
-      "XGBoost"
-    ],
-    "reasons": [
-      "Multiple algorithm consensus indicates anomalous behavior"
-    ],
-    "deviating_features": [],
-    "metrics": {
-      "if_score": 75.36,
-      "xgb_score": 1.15,
+      "xgb_score": 8.29,
       "cusum_shift": true
     }
   },
   {
     "device_id": "192.168.1.195_w4413",
-    "trust_score": 20.85,
+    "trust_score": 20.55,
     "severity": "CRITICAL",
     "status": "ALERT",
     "flagged_by": [
@@ -518,51 +239,13 @@
     ],
     "metrics": {
       "if_score": 56.63,
-      "xgb_score": 16.41,
+      "xgb_score": 15.79,
       "cusum_shift": true
     }
   },
   {
-    "device_id": "192.168.1.195_w4386",
-    "trust_score": 21.7,
-    "severity": "CRITICAL",
-    "status": "ALERT",
-    "flagged_by": [
-      "XGBoost"
-    ],
-    "reasons": [
-      "Excessive number of connections (395.0 vs baseline 48.9, +707%)"
-    ],
-    "deviating_features": [
-      "connection_count"
-    ],
-    "metrics": {
-      "if_score": 72.39,
-      "xgb_score": 5.49,
-      "cusum_shift": true
-    }
-  },
-  {
-    "device_id": "192.168.1.195_w4416",
-    "trust_score": 21.7,
-    "severity": "CRITICAL",
-    "status": "ALERT",
-    "flagged_by": [
-      "XGBoost"
-    ],
-    "reasons": [
-      "Multiple algorithm consensus indicates anomalous behavior"
-    ],
-    "deviating_features": [],
-    "metrics": {
-      "if_score": 77.8,
-      "xgb_score": 1.15,
-      "cusum_shift": true
-    }
-  },
-  {
-    "device_id": "192.168.1.197_w5338",
-    "trust_score": 24.19,
+    "device_id": "192.168.1.195_w4409",
+    "trust_score": 20.63,
     "severity": "CRITICAL",
     "status": "ALERT",
     "flagged_by": [
@@ -570,21 +253,19 @@
       "XGBoost"
     ],
     "reasons": [
-      "Excessive number of connections (941.0 vs baseline 48.9, +1823%)"
+      "Multiple algorithm consensus indicates anomalous behavior"
     ],
-    "deviating_features": [
-      "connection_count"
-    ],
+    "deviating_features": [],
     "metrics": {
-      "if_score": 56.88,
-      "xgb_score": 22.87,
+      "if_score": 63.67,
+      "xgb_score": 10.33,
       "cusum_shift": true
     }
   },
   {
-    "device_id": "192.168.1.195_w4390",
-    "trust_score": 25.59,
-    "severity": "HIGH",
+    "device_id": "192.168.1.195_w4422",
+    "trust_score": 20.94,
+    "severity": "CRITICAL",
     "status": "ALERT",
     "flagged_by": [
       "XGBoost"
@@ -594,15 +275,127 @@
     ],
     "deviating_features": [],
     "metrics": {
-      "if_score": 69.7,
-      "xgb_score": 15.43,
+      "if_score": 66.99,
+      "xgb_score": 8.29,
+      "cusum_shift": true
+    }
+  },
+  {
+    "device_id": "192.168.1.195_w4380",
+    "trust_score": 21.04,
+    "severity": "CRITICAL",
+    "status": "ALERT",
+    "flagged_by": [
+      "Isolation Forest",
+      "XGBoost"
+    ],
+    "reasons": [
+      "Excessive number of connections (485.0 vs baseline 48.9, +891%)"
+    ],
+    "deviating_features": [
+      "connection_count"
+    ],
+    "metrics": {
+      "if_score": 66.28,
+      "xgb_score": 9.06,
+      "cusum_shift": true
+    }
+  },
+  {
+    "device_id": "192.168.1.195_w4424",
+    "trust_score": 21.48,
+    "severity": "CRITICAL",
+    "status": "ALERT",
+    "flagged_by": [
+      "XGBoost"
+    ],
+    "reasons": [
+      "Multiple algorithm consensus indicates anomalous behavior"
+    ],
+    "deviating_features": [],
+    "metrics": {
+      "if_score": 68.33,
+      "xgb_score": 8.29,
+      "cusum_shift": true
+    }
+  },
+  {
+    "device_id": "192.168.1.195_w4423",
+    "trust_score": 21.64,
+    "severity": "CRITICAL",
+    "status": "ALERT",
+    "flagged_by": [
+      "XGBoost"
+    ],
+    "reasons": [
+      "Multiple algorithm consensus indicates anomalous behavior"
+    ],
+    "deviating_features": [],
+    "metrics": {
+      "if_score": 66.98,
+      "xgb_score": 9.7,
+      "cusum_shift": true
+    }
+  },
+  {
+    "device_id": "192.168.1.195_w4421",
+    "trust_score": 22.11,
+    "severity": "CRITICAL",
+    "status": "ALERT",
+    "flagged_by": [
+      "XGBoost"
+    ],
+    "reasons": [
+      "Multiple algorithm consensus indicates anomalous behavior"
+    ],
+    "deviating_features": [],
+    "metrics": {
+      "if_score": 69.91,
+      "xgb_score": 8.29,
+      "cusum_shift": true
+    }
+  },
+  {
+    "device_id": "192.168.1.195_w4425",
+    "trust_score": 22.12,
+    "severity": "CRITICAL",
+    "status": "ALERT",
+    "flagged_by": [
+      "XGBoost"
+    ],
+    "reasons": [
+      "Multiple algorithm consensus indicates anomalous behavior"
+    ],
+    "deviating_features": [],
+    "metrics": {
+      "if_score": 68.48,
+      "xgb_score": 9.46,
+      "cusum_shift": true
+    }
+  },
+  {
+    "device_id": "192.168.1.195_w4407",
+    "trust_score": 22.8,
+    "severity": "CRITICAL",
+    "status": "ALERT",
+    "flagged_by": [
+      "Isolation Forest",
+      "XGBoost"
+    ],
+    "reasons": [
+      "Multiple algorithm consensus indicates anomalous behavior"
+    ],
+    "deviating_features": [],
+    "metrics": {
+      "if_score": 49.75,
+      "xgb_score": 25.8,
       "cusum_shift": true
     }
   },
   {
     "device_id": "192.168.1.199_w5352",
-    "trust_score": 33.54,
-    "severity": "HIGH",
+    "trust_score": 23.18,
+    "severity": "CRITICAL",
     "status": "ALERT",
     "flagged_by": [
       "Isolation Forest"
@@ -619,14 +412,33 @@
     ],
     "metrics": {
       "if_score": 2.63,
-      "xgb_score": 84.98,
+      "xgb_score": 64.25,
       "cusum_shift": true
     }
   },
   {
-    "device_id": "192.168.1.195_w4426",
-    "trust_score": 35.94,
-    "severity": "HIGH",
+    "device_id": "192.168.1.195_w4417",
+    "trust_score": 23.19,
+    "severity": "CRITICAL",
+    "status": "ALERT",
+    "flagged_by": [
+      "Isolation Forest",
+      "XGBoost"
+    ],
+    "reasons": [
+      "Multiple algorithm consensus indicates anomalous behavior"
+    ],
+    "deviating_features": [],
+    "metrics": {
+      "if_score": 45.55,
+      "xgb_score": 29.95,
+      "cusum_shift": true
+    }
+  },
+  {
+    "device_id": "192.168.1.195_w4414",
+    "trust_score": 24.05,
+    "severity": "CRITICAL",
     "status": "ALERT",
     "flagged_by": [
       "XGBoost"
@@ -636,34 +448,68 @@
     ],
     "deviating_features": [],
     "metrics": {
-      "if_score": 80.11,
-      "xgb_score": 27.78,
+      "if_score": 74.46,
+      "xgb_score": 8.53,
       "cusum_shift": true
     }
   },
   {
-    "device_id": "192.168.1.132_w1636",
-    "trust_score": 44.71,
-    "severity": "HIGH",
+    "device_id": "192.168.1.195_w4420",
+    "trust_score": 24.31,
+    "severity": "CRITICAL",
     "status": "ALERT",
     "flagged_by": [
-      "Isolation Forest"
+      "XGBoost"
     ],
     "reasons": [
-      "Unusual connection duration patterns (15877.1 vs baseline 203.9, +7688%)"
+      "Multiple algorithm consensus indicates anomalous behavior"
     ],
-    "deviating_features": [
-      "avg_connection_duration"
-    ],
+    "deviating_features": [],
     "metrics": {
-      "if_score": 19.81,
-      "xgb_score": 73.57,
-      "cusum_shift": false
+      "if_score": 75.12,
+      "xgb_score": 8.53,
+      "cusum_shift": true
+    }
+  },
+  {
+    "device_id": "192.168.1.195_w4415",
+    "trust_score": 24.41,
+    "severity": "CRITICAL",
+    "status": "ALERT",
+    "flagged_by": [
+      "XGBoost"
+    ],
+    "reasons": [
+      "Multiple algorithm consensus indicates anomalous behavior"
+    ],
+    "deviating_features": [],
+    "metrics": {
+      "if_score": 75.36,
+      "xgb_score": 8.53,
+      "cusum_shift": true
+    }
+  },
+  {
+    "device_id": "192.168.1.195_w4390",
+    "trust_score": 24.71,
+    "severity": "CRITICAL",
+    "status": "ALERT",
+    "flagged_by": [
+      "XGBoost"
+    ],
+    "reasons": [
+      "Multiple algorithm consensus indicates anomalous behavior"
+    ],
+    "deviating_features": [],
+    "metrics": {
+      "if_score": 69.7,
+      "xgb_score": 13.65,
+      "cusum_shift": true
     }
   },
   {
     "device_id": "192.168.2.3_w0",
-    "trust_score": 47.42,
+    "trust_score": 25.1,
     "severity": "HIGH",
     "status": "ALERT",
     "flagged_by": [
@@ -681,8 +527,366 @@
     ],
     "metrics": {
       "if_score": 0.0,
-      "xgb_score": 94.84,
+      "xgb_score": 50.19,
       "cusum_shift": false
+    }
+  },
+  {
+    "device_id": "192.168.1.195_w4416",
+    "trust_score": 25.39,
+    "severity": "HIGH",
+    "status": "ALERT",
+    "flagged_by": [
+      "XGBoost"
+    ],
+    "reasons": [
+      "Multiple algorithm consensus indicates anomalous behavior"
+    ],
+    "deviating_features": [],
+    "metrics": {
+      "if_score": 77.8,
+      "xgb_score": 8.53,
+      "cusum_shift": true
+    }
+  },
+  {
+    "device_id": "192.168.1.195_w4411",
+    "trust_score": 25.63,
+    "severity": "HIGH",
+    "status": "ALERT",
+    "flagged_by": [
+      "XGBoost"
+    ],
+    "reasons": [
+      "Multiple algorithm consensus indicates anomalous behavior"
+    ],
+    "deviating_features": [],
+    "metrics": {
+      "if_score": 68.53,
+      "xgb_score": 16.43,
+      "cusum_shift": true
+    }
+  },
+  {
+    "device_id": "192.168.1.195_w4384",
+    "trust_score": 26.3,
+    "severity": "HIGH",
+    "status": "ALERT",
+    "flagged_by": [
+      "XGBoost"
+    ],
+    "reasons": [
+      "Excessive number of connections (515.0 vs baseline 48.9, +953%)"
+    ],
+    "deviating_features": [
+      "connection_count"
+    ],
+    "metrics": {
+      "if_score": 67.31,
+      "xgb_score": 18.75,
+      "cusum_shift": true
+    }
+  },
+  {
+    "device_id": "192.168.1.195_w4386",
+    "trust_score": 29.39,
+    "severity": "HIGH",
+    "status": "ALERT",
+    "flagged_by": [
+      "XGBoost"
+    ],
+    "reasons": [
+      "Excessive number of connections (395.0 vs baseline 48.9, +707%)"
+    ],
+    "deviating_features": [
+      "connection_count"
+    ],
+    "metrics": {
+      "if_score": 72.39,
+      "xgb_score": 20.87,
+      "cusum_shift": true
+    }
+  },
+  {
+    "device_id": "192.168.1.199_w5348",
+    "trust_score": 29.59,
+    "severity": "HIGH",
+    "status": "ALERT",
+    "flagged_by": [
+      "Isolation Forest",
+      "XGBoost"
+    ],
+    "reasons": [
+      "Multiple algorithm consensus indicates anomalous behavior"
+    ],
+    "deviating_features": [],
+    "metrics": {
+      "if_score": 47.86,
+      "xgb_score": 40.9,
+      "cusum_shift": true
+    }
+  },
+  {
+    "device_id": "192.168.1.197_w5338",
+    "trust_score": 32.42,
+    "severity": "HIGH",
+    "status": "ALERT",
+    "flagged_by": [
+      "Isolation Forest",
+      "XGBoost"
+    ],
+    "reasons": [
+      "Excessive number of connections (941.0 vs baseline 48.9, +1823%)"
+    ],
+    "deviating_features": [
+      "connection_count"
+    ],
+    "metrics": {
+      "if_score": 56.88,
+      "xgb_score": 39.33,
+      "cusum_shift": true
+    }
+  },
+  {
+    "device_id": "192.168.1.197_w5337",
+    "trust_score": 33.03,
+    "severity": "HIGH",
+    "status": "ALERT",
+    "flagged_by": [
+      "Isolation Forest",
+      "XGBoost"
+    ],
+    "reasons": [
+      "Excessive number of connections (1010.0 vs baseline 48.9, +1964%)"
+    ],
+    "deviating_features": [
+      "connection_count"
+    ],
+    "metrics": {
+      "if_score": 52.45,
+      "xgb_score": 44.1,
+      "cusum_shift": true
+    }
+  },
+  {
+    "device_id": "192.168.2.3_w3",
+    "trust_score": 33.09,
+    "severity": "HIGH",
+    "status": "ALERT",
+    "flagged_by": [
+      "Isolation Forest",
+      "XGBoost"
+    ],
+    "reasons": [
+      "Contacted unusual number of external servers (33.0 vs baseline 6.2, +431%)",
+      "Connected to unusually many distinct ports (possible scanning) (7.0 vs baseline 2.4, +191%)"
+    ],
+    "deviating_features": [
+      "unique_dst_ips",
+      "unique_dst_ports"
+    ],
+    "metrics": {
+      "if_score": 27.72,
+      "xgb_score": 44.01,
+      "cusum_shift": false
+    }
+  },
+  {
+    "device_id": "192.168.1.197_w5335",
+    "trust_score": 34.08,
+    "severity": "HIGH",
+    "status": "ALERT",
+    "flagged_by": [
+      "Isolation Forest",
+      "XGBoost"
+    ],
+    "reasons": [
+      "Multiple algorithm consensus indicates anomalous behavior"
+    ],
+    "deviating_features": [],
+    "metrics": {
+      "if_score": 59.87,
+      "xgb_score": 40.26,
+      "cusum_shift": true
+    }
+  },
+  {
+    "device_id": "192.168.1.197_w5336",
+    "trust_score": 34.86,
+    "severity": "HIGH",
+    "status": "ALERT",
+    "flagged_by": [
+      "Isolation Forest",
+      "XGBoost"
+    ],
+    "reasons": [
+      "Excessive number of connections (1002.0 vs baseline 48.9, +1948%)"
+    ],
+    "deviating_features": [
+      "connection_count"
+    ],
+    "metrics": {
+      "if_score": 57.02,
+      "xgb_score": 44.1,
+      "cusum_shift": true
+    }
+  },
+  {
+    "device_id": "192.168.1.197_w5347",
+    "trust_score": 38.12,
+    "severity": "HIGH",
+    "status": "ALERT",
+    "flagged_by": [
+      "Isolation Forest"
+    ],
+    "reasons": [
+      "Contacted unusual number of external servers (32.0 vs baseline 6.2, +415%)"
+    ],
+    "deviating_features": [
+      "unique_dst_ips"
+    ],
+    "metrics": {
+      "if_score": 53.38,
+      "xgb_score": 53.54,
+      "cusum_shift": true
+    }
+  },
+  {
+    "device_id": "192.168.1.197_w5348",
+    "trust_score": 38.73,
+    "severity": "HIGH",
+    "status": "ALERT",
+    "flagged_by": [
+      "Isolation Forest"
+    ],
+    "reasons": [
+      "Contacted unusual number of external servers (32.0 vs baseline 6.2, +415%)"
+    ],
+    "deviating_features": [
+      "unique_dst_ips"
+    ],
+    "metrics": {
+      "if_score": 56.79,
+      "xgb_score": 52.02,
+      "cusum_shift": true
+    }
+  },
+  {
+    "device_id": "192.168.1.132_w1636",
+    "trust_score": 40.3,
+    "severity": "HIGH",
+    "status": "ALERT",
+    "flagged_by": [
+      "Isolation Forest"
+    ],
+    "reasons": [
+      "Unusual connection duration patterns (15877.1 vs baseline 203.9, +7688%)"
+    ],
+    "deviating_features": [
+      "avg_connection_duration"
+    ],
+    "metrics": {
+      "if_score": 19.81,
+      "xgb_score": 64.75,
+      "cusum_shift": false
+    }
+  },
+  {
+    "device_id": "192.168.1.132_w1641",
+    "trust_score": 41.65,
+    "severity": "HIGH",
+    "status": "ALERT",
+    "flagged_by": [
+      "Isolation Forest"
+    ],
+    "reasons": [
+      "Unusual connection duration patterns (7827.2 vs baseline 203.9, +3739%)"
+    ],
+    "deviating_features": [
+      "avg_connection_duration"
+    ],
+    "metrics": {
+      "if_score": 17.77,
+      "xgb_score": 69.08,
+      "cusum_shift": false
+    }
+  },
+  {
+    "device_id": "192.168.1.197_w5339",
+    "trust_score": 42.35,
+    "severity": "HIGH",
+    "status": "ALERT",
+    "flagged_by": [
+      "XGBoost"
+    ],
+    "reasons": [
+      "Excessive number of connections (432.0 vs baseline 48.9, +783%)"
+    ],
+    "deviating_features": [
+      "connection_count"
+    ],
+    "metrics": {
+      "if_score": 74.37,
+      "xgb_score": 45.19,
+      "cusum_shift": true
+    }
+  },
+  {
+    "device_id": "192.168.2.3_w2",
+    "trust_score": 42.65,
+    "severity": "HIGH",
+    "status": "ALERT",
+    "flagged_by": [
+      "Isolation Forest"
+    ],
+    "reasons": [
+      "Contacted unusual number of external servers (23.0 vs baseline 6.2, +270%)"
+    ],
+    "deviating_features": [
+      "unique_dst_ips"
+    ],
+    "metrics": {
+      "if_score": 43.88,
+      "xgb_score": 50.19,
+      "cusum_shift": false
+    }
+  },
+  {
+    "device_id": "192.168.2.1_w0",
+    "trust_score": 42.84,
+    "severity": "HIGH",
+    "status": "ALERT",
+    "flagged_by": [
+      "Isolation Forest"
+    ],
+    "reasons": [
+      "Unusual connection duration patterns (3918.1 vs baseline 203.9, +1822%)"
+    ],
+    "deviating_features": [
+      "avg_connection_duration"
+    ],
+    "metrics": {
+      "if_score": 30.04,
+      "xgb_score": 61.65,
+      "cusum_shift": false
+    }
+  },
+  {
+    "device_id": "192.168.1.195_w4426",
+    "trust_score": 45.23,
+    "severity": "HIGH",
+    "status": "ALERT",
+    "flagged_by": [
+      "XGBoost"
+    ],
+    "reasons": [
+      "Multiple algorithm consensus indicates anomalous behavior"
+    ],
+    "deviating_features": [],
+    "metrics": {
+      "if_score": 80.11,
+      "xgb_score": 46.36,
+      "cusum_shift": true
     }
   }
 ]
