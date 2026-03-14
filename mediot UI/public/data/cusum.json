@@ -1,1 +1,152 @@
-[]
+[
+  {
+    "deviceId": "0.0.0.0",
+    "changePointDetected": false,
+    "changePointTimestamp": "nan"
+  },
+  {
+    "deviceId": "192.168.2.1",
+    "changePointDetected": false,
+    "changePointTimestamp": "nan"
+  },
+  {
+    "deviceId": "fe80::80e6:50ff:fe12:1464",
+    "changePointDetected": true,
+    "changePointTimestamp": "2018-09-21 13:00:00"
+  },
+  {
+    "deviceId": "169.254.15.115",
+    "changePointDetected": true,
+    "changePointTimestamp": "2018-09-21 13:00:00"
+  },
+  {
+    "deviceId": "::",
+    "changePointDetected": false,
+    "changePointTimestamp": "nan"
+  },
+  {
+    "deviceId": "fe80::4eef:c0ff:fe27:561e",
+    "changePointDetected": false,
+    "changePointTimestamp": "nan"
+  },
+  {
+    "deviceId": "192.168.2.3",
+    "changePointDetected": false,
+    "changePointTimestamp": "nan"
+  },
+  {
+    "deviceId": "fe80::82e6:50ff:fe21:867c",
+    "changePointDetected": false,
+    "changePointTimestamp": "nan"
+  },
+  {
+    "deviceId": "fe80::482:6d20:b3e:adf4",
+    "changePointDetected": false,
+    "changePointTimestamp": "nan"
+  },
+  {
+    "deviceId": "192.168.69.129",
+    "changePointDetected": false,
+    "changePointTimestamp": "nan"
+  },
+  {
+    "deviceId": "fe80::ad:a9ad:1b82:2e67",
+    "changePointDetected": false,
+    "changePointTimestamp": "nan"
+  },
+  {
+    "deviceId": "fe80::1060:27a7:f64c:dec9",
+    "changePointDetected": false,
+    "changePointTimestamp": "nan"
+  },
+  {
+    "deviceId": "192.168.69.192",
+    "changePointDetected": false,
+    "changePointTimestamp": "nan"
+  },
+  {
+    "deviceId": "192.168.69.73",
+    "changePointDetected": false,
+    "changePointTimestamp": "nan"
+  },
+  {
+    "deviceId": "fe80::14c5:8f26:563a:f0cb",
+    "changePointDetected": false,
+    "changePointTimestamp": "nan"
+  },
+  {
+    "deviceId": "fe80::1847:a1bd:8d13:f43c",
+    "changePointDetected": false,
+    "changePointTimestamp": "nan"
+  },
+  {
+    "deviceId": "192.168.69.136",
+    "changePointDetected": false,
+    "changePointTimestamp": "nan"
+  },
+  {
+    "deviceId": "192.168.69.200",
+    "changePointDetected": false,
+    "changePointTimestamp": "nan"
+  },
+  {
+    "deviceId": "fe80::106c:9e5b:3af8:9cf",
+    "changePointDetected": false,
+    "changePointTimestamp": "nan"
+  },
+  {
+    "deviceId": "192.168.69.17",
+    "changePointDetected": false,
+    "changePointTimestamp": "nan"
+  },
+  {
+    "deviceId": "192.168.69.178",
+    "changePointDetected": false,
+    "changePointTimestamp": "nan"
+  },
+  {
+    "deviceId": "fe80::183b:7564:dbcc:3eca",
+    "changePointDetected": false,
+    "changePointTimestamp": "nan"
+  },
+  {
+    "deviceId": "192.168.69.241",
+    "changePointDetected": false,
+    "changePointTimestamp": "nan"
+  },
+  {
+    "deviceId": "fe80::1c5c:213d:7cf8:890",
+    "changePointDetected": false,
+    "changePointTimestamp": "nan"
+  },
+  {
+    "deviceId": "192.168.1.132",
+    "changePointDetected": false,
+    "changePointTimestamp": "nan"
+  },
+  {
+    "deviceId": "192.168.1.1",
+    "changePointDetected": false,
+    "changePointTimestamp": "nan"
+  },
+  {
+    "deviceId": "192.168.1.195",
+    "changePointDetected": true,
+    "changePointTimestamp": "2018-12-22 05:20:00"
+  },
+  {
+    "deviceId": "192.168.1.197",
+    "changePointDetected": true,
+    "changePointTimestamp": "2019-01-10 17:10:00"
+  },
+  {
+    "deviceId": "185.244.25.183",
+    "changePointDetected": false,
+    "changePointTimestamp": "nan"
+  },
+  {
+    "deviceId": "192.168.1.199",
+    "changePointDetected": true,
+    "changePointTimestamp": "2019-01-10 21:50:00"
+  }
+]
