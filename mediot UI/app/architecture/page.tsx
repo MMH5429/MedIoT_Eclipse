@@ -420,13 +420,153 @@ export default function ArchitecturePage() {
               <h3 className="mb-4 font-bold text-slate-900 dark:text-slate-100">
                 Feature Set (13 features)
               </h3>
+              <p className="mb-3 text-sm text-slate-500 dark:text-slate-400">
+                See detailed breakdown below
+              </p>
               <ul className="space-y-2 text-sm text-slate-700 dark:text-slate-300">
-                <li>• bytes_sent, bytes_received, packet_count</li>
-                <li>• connection_count, avg_connection_duration</li>
-                <li>• unique_dst_ips, unique_dst_ports</li>
-                <li>• failed_connection_ratio, external_ip_ratio</li>
-                <li>• avg_payload_size, port_entropy, dns_query_count, off_hours_ratio</li>
+                <li>• 3 volume features (bytes sent/received, packets)</li>
+                <li>• 3 connection features (count, duration, failed ratio)</li>
+                <li>• 3 network diversity features (unique IPs, ports, entropy)</li>
+                <li>• 4 behavioral features (external ratio, payload, DNS, off-hours)</li>
               </ul>
+            </div>
+          </div>
+        </div>
+
+        {/* 13 ML Features Breakdown */}
+        <div className="mb-12">
+          <h2 className="mb-8 text-2xl font-bold text-slate-900 dark:text-slate-100">
+            13 ML Features — Detailed Breakdown
+          </h2>
+          <p className="mb-6 text-sm text-slate-600 dark:text-slate-400">
+            Each feature is extracted per device over a 30-minute sliding window. Together they form
+            the input vector for both Isolation Forest and XGBoost models.
+          </p>
+
+          {/* Volume Features */}
+          <div className="mb-6">
+            <h3 className="mb-4 text-lg font-semibold text-blue-600 dark:text-blue-400">
+              Volume Features
+            </h3>
+            <div className="grid gap-4 md:grid-cols-3">
+              <div className="rounded-lg border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900">
+                <p className="text-sm font-bold text-slate-900 dark:text-slate-100">1. bytes_sent</p>
+                <p className="mt-1 text-xs text-slate-600 dark:text-slate-400">
+                  Total outbound bytes (orig_bytes) from the device within the window. High values may indicate
+                  data exfiltration or DDoS participation. DDoS devices averaged 126,459 bytes/connection.
+                </p>
+              </div>
+              <div className="rounded-lg border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900">
+                <p className="text-sm font-bold text-slate-900 dark:text-slate-100">2. bytes_received</p>
+                <p className="mt-1 text-xs text-slate-600 dark:text-slate-400">
+                  Total inbound bytes (resp_bytes) received by the device. C&C File Download attacks showed
+                  avg 128,613 bytes received per connection — orders of magnitude above normal.
+                </p>
+              </div>
+              <div className="rounded-lg border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900">
+                <p className="text-sm font-bold text-slate-900 dark:text-slate-100">3. packet_count</p>
+                <p className="mt-1 text-xs text-slate-600 dark:text-slate-400">
+                  Total number of packets exchanged in the window. Correlates with connection volume and
+                  helps distinguish short bursts (scans) from sustained traffic (C&C beaconing).
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Connection Features */}
+          <div className="mb-6">
+            <h3 className="mb-4 text-lg font-semibold text-green-600 dark:text-green-400">
+              Connection Features
+            </h3>
+            <div className="grid gap-4 md:grid-cols-3">
+              <div className="rounded-lg border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900">
+                <p className="text-sm font-bold text-slate-900 dark:text-slate-100">4. connection_count</p>
+                <p className="mt-1 text-xs text-slate-600 dark:text-slate-400">
+                  Number of individual TCP/UDP connections in the window. Port scanning devices showed 122
+                  connections with 100% failure rate. DDoS showed 14,395 rapid connections.
+                </p>
+              </div>
+              <div className="rounded-lg border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900">
+                <p className="text-sm font-bold text-slate-900 dark:text-slate-100">5. avg_connection_duration</p>
+                <p className="mt-1 text-xs text-slate-600 dark:text-slate-400">
+                  Mean duration (seconds) per connection. C&C connections averaged 18.77s (persistent beaconing),
+                  while DDoS averaged just 0.025s (rapid fire-and-forget).
+                </p>
+              </div>
+              <div className="rounded-lg border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900">
+                <p className="text-sm font-bold text-slate-900 dark:text-slate-100">6. failed_connection_ratio</p>
+                <p className="mt-1 text-xs text-slate-600 dark:text-slate-400">
+                  Proportion of connections in states S0 (no response), REJ (rejected), RSTO/RSTR (reset).
+                  Port scans had 100% S0 state. C&C showed 75.6% S0 (probing for C&C servers).
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Network Diversity Features */}
+          <div className="mb-6">
+            <h3 className="mb-4 text-lg font-semibold text-purple-600 dark:text-purple-400">
+              Network Diversity Features
+            </h3>
+            <div className="grid gap-4 md:grid-cols-3">
+              <div className="rounded-lg border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900">
+                <p className="text-sm font-bold text-slate-900 dark:text-slate-100">7. unique_dst_ips</p>
+                <p className="mt-1 text-xs text-slate-600 dark:text-slate-400">
+                  Count of distinct destination IPs contacted. Normal IoT devices talk to 1-3 servers.
+                  Scanning devices contacted 121+ unique IPs across the network.
+                </p>
+              </div>
+              <div className="rounded-lg border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900">
+                <p className="text-sm font-bold text-slate-900 dark:text-slate-100">8. unique_dst_ports</p>
+                <p className="mt-1 text-xs text-slate-600 dark:text-slate-400">
+                  Count of distinct destination ports targeted. Normal devices use 1-5 ports.
+                  DDoS focused on port 80 (14,394 connections), C&C on port 6667 (IRC protocol, 6,706 connections).
+                </p>
+              </div>
+              <div className="rounded-lg border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900">
+                <p className="text-sm font-bold text-slate-900 dark:text-slate-100">9. port_entropy</p>
+                <p className="mt-1 text-xs text-slate-600 dark:text-slate-400">
+                  Shannon entropy of destination port distribution. Low entropy = concentrated on few ports
+                  (DDoS on port 80). High entropy = spread across many ports (reconnaissance scanning).
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Behavioral Features */}
+          <div className="mb-6">
+            <h3 className="mb-4 text-lg font-semibold text-orange-600 dark:text-orange-400">
+              Behavioral Features
+            </h3>
+            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+              <div className="rounded-lg border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900">
+                <p className="text-sm font-bold text-slate-900 dark:text-slate-100">10. external_ip_ratio</p>
+                <p className="mt-1 text-xs text-slate-600 dark:text-slate-400">
+                  Fraction of connections going to non-RFC1918 (external) IPs. All 10 malicious destinations
+                  in the dataset were external. Benign devices mostly communicate internally.
+                </p>
+              </div>
+              <div className="rounded-lg border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900">
+                <p className="text-sm font-bold text-slate-900 dark:text-slate-100">11. avg_payload_size</p>
+                <p className="mt-1 text-xs text-slate-600 dark:text-slate-400">
+                  Mean payload bytes per connection (orig_bytes + resp_bytes). File downloads averaged
+                  65,065 bytes vs. DDoS at 126,459 bytes outbound with 0 bytes received.
+                </p>
+              </div>
+              <div className="rounded-lg border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900">
+                <p className="text-sm font-bold text-slate-900 dark:text-slate-100">12. dns_query_count</p>
+                <p className="mt-1 text-xs text-slate-600 dark:text-slate-400">
+                  Number of DNS resolution requests in the window. Elevated DNS queries can indicate
+                  domain generation algorithm (DGA) activity used by botnets for C&C server discovery.
+                </p>
+              </div>
+              <div className="rounded-lg border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900">
+                <p className="text-sm font-bold text-slate-900 dark:text-slate-100">13. off_hours_ratio</p>
+                <p className="mt-1 text-xs text-slate-600 dark:text-slate-400">
+                  Fraction of connections occurring outside business hours (8PM-6AM). Malware often operates
+                  during off-hours to avoid detection. High ratios flag suspicious nocturnal activity.
+                </p>
+              </div>
             </div>
           </div>
         </div>
