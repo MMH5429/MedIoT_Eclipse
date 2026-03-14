@@ -1,11 +1,14 @@
 'use client';
 
 import React, { useMemo } from 'react';
+import dynamic from 'next/dynamic';
 import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer,
   PieChart, Pie, Cell, AreaChart, Area, Legend, ScatterChart, Scatter,
 } from 'recharts';
 import { useFilters } from '@/contexts/filter-context';
+
+const LiveDeviceMonitor = dynamic(() => import('@/components/live-device-monitor').then(m => ({ default: m.LiveDeviceMonitor })), { ssr: false });
 
 const ATTACK_COLORS: Record<string, string> = {
   'DDoS Attack': '#ef4444',
@@ -432,6 +435,11 @@ export default function DashboardPage() {
             ))}
           </div>
         </div>
+      </div>
+
+      {/* Live Device Monitor */}
+      <div className="mt-8">
+        <LiveDeviceMonitor />
       </div>
     </div>
   );
