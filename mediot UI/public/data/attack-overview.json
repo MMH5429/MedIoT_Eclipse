@@ -1,256 +1,178 @@
 {
   "what": {
-    "total_connections": 150,
-    "total_malicious": 105,
-    "malicious_pct": 70.0,
+    "total_connections": 29634,
+    "total_malicious": 21254,
+    "malicious_pct": 71.72,
     "attack_types": [
       {
-        "attack_type": "C&C File Download",
-        "readable_name": "C&C File Download",
-        "count": 25,
-        "percentage": 23.81
-      },
-      {
-        "attack_type": "Command & Control",
-        "readable_name": "Command & Control",
-        "count": 30,
-        "percentage": 28.57
-      },
-      {
-        "attack_type": "DDoS Attack",
+        "attack_type": "DDoS",
         "readable_name": "DDoS Attack",
-        "count": 30,
-        "percentage": 28.57
+        "count": 14395,
+        "percentage": 48.58
       },
       {
-        "attack_type": "Horizontal Port Scan",
+        "attack_type": "C&C",
+        "readable_name": "Command & Control",
+        "count": 6720,
+        "percentage": 22.68
+      },
+      {
+        "attack_type": "PartOfAHorizontalPortScan",
         "readable_name": "Horizontal Port Scan",
-        "count": 20,
-        "percentage": 19.05
+        "count": 122,
+        "percentage": 0.41
+      },
+      {
+        "attack_type": "C&C-FileDownload",
+        "readable_name": "C&C File Download",
+        "count": 14,
+        "percentage": 0.05
+      },
+      {
+        "attack_type": "FileDownload",
+        "readable_name": "Malicious File Download",
+        "count": 3,
+        "percentage": 0.01
       }
     ]
   },
   "how": [
     {
-      "attack_type": "Adversarial balanced traffic",
-      "readable_name": "Adversarial balanced traffic",
-      "category": "Test Scenario",
-      "narrative": "0/10 correctly classified. Avg trust: 73.0",
+      "attack_type": "C&C",
+      "readable_name": "Command & Control",
+      "category": "c&c",
+      "narrative": "Command & Control traffic maintains communication between compromised devices and an attacker's server. Typically long-lived connections with periodic beaconing and moderate data exchange.",
       "stats": {
-        "count": 10,
-        "avg_duration": 0,
-        "avg_bytes_sent": 0,
-        "avg_bytes_received": 0,
-        "top_ports": {},
-        "top_conn_states": {}
+        "count": 6720,
+        "avg_duration": 18.7689,
+        "avg_bytes_sent": 20.6,
+        "avg_bytes_received": 69.7,
+        "top_ports": {
+          "6667": 6706,
+          "80": 13,
+          "23": 1
+        },
+        "top_conn_states": {
+          "S0": 5078,
+          "S3": 1584,
+          "RSTR": 53,
+          "S1": 5
+        }
       }
     },
     {
-      "attack_type": "Boundary extreme",
-      "readable_name": "Boundary extreme",
-      "category": "Test Scenario",
-      "narrative": "15/15 correctly classified. Avg trust: 64.7",
+      "attack_type": "PartOfAHorizontalPortScan",
+      "readable_name": "Horizontal Port Scan",
+      "category": "scan",
+      "narrative": "Scanning involves rapid probing of many ports/IPs to discover open services. Characterized by short-lived connections, high failure rates, and many unique destinations.",
       "stats": {
-        "count": 15,
-        "avg_duration": 0,
-        "avg_bytes_sent": 0,
-        "avg_bytes_received": 0,
-        "top_ports": {},
-        "top_conn_states": {}
+        "count": 122,
+        "avg_duration": 0.3035,
+        "avg_bytes_sent": 24139.5,
+        "avg_bytes_received": 0.0,
+        "top_ports": {
+          "63798": 121,
+          "256": 1
+        },
+        "top_conn_states": {
+          "S0": 122
+        }
       }
     },
     {
-      "attack_type": "Data exfiltration",
-      "readable_name": "Data exfiltration",
-      "category": "Test Scenario",
-      "narrative": "0/25 correctly classified. Avg trust: 78.0",
+      "attack_type": "DDoS",
+      "readable_name": "DDoS Attack",
+      "category": "ddos",
+      "narrative": "Distributed Denial-of-Service floods a target with traffic to exhaust resources. Marked by high volume, short durations, and repeated connections to few destinations.",
       "stats": {
-        "count": 25,
-        "avg_duration": 0,
-        "avg_bytes_sent": 0,
-        "avg_bytes_received": 0,
-        "top_ports": {},
-        "top_conn_states": {}
+        "count": 14395,
+        "avg_duration": 0.0253,
+        "avg_bytes_sent": 126459.0,
+        "avg_bytes_received": 0.0,
+        "top_ports": {
+          "80": 14394,
+          "5376": 1
+        },
+        "top_conn_states": {
+          "OTH": 14260,
+          "S0": 135
+        }
       }
     },
     {
-      "attack_type": "DoS packet flood",
-      "readable_name": "DoS packet flood",
-      "category": "Test Scenario",
-      "narrative": "0/30 correctly classified. Avg trust: 67.4",
+      "attack_type": "C&C-FileDownload",
+      "readable_name": "C&C File Download",
+      "category": "c&c",
+      "narrative": "Command & Control traffic maintains communication between compromised devices and an attacker's server. Typically long-lived connections with periodic beaconing and moderate data exchange.",
       "stats": {
-        "count": 30,
-        "avg_duration": 0,
-        "avg_bytes_sent": 0,
-        "avg_bytes_received": 0,
-        "top_ports": {},
-        "top_conn_states": {}
+        "count": 14,
+        "avg_duration": 1.9336,
+        "avg_bytes_sent": 149.4,
+        "avg_bytes_received": 128613.2,
+        "top_ports": {
+          "80": 14
+        },
+        "top_conn_states": {
+          "SF": 14
+        }
       }
     },
     {
-      "attack_type": "Gradual traffic drift",
-      "readable_name": "Gradual traffic drift",
-      "category": "Test Scenario",
-      "narrative": "0/20 correctly classified. Avg trust: 74.1",
+      "attack_type": "FileDownload",
+      "readable_name": "Malicious File Download",
+      "category": "exfiltration",
+      "narrative": "Data exfiltration transfers stolen data to external servers. Characterized by high outbound byte volume with connections to external IPs.",
       "stats": {
-        "count": 20,
-        "avg_duration": 0,
-        "avg_bytes_sent": 0,
-        "avg_bytes_received": 0,
-        "top_ports": {},
-        "top_conn_states": {}
-      }
-    },
-    {
-      "attack_type": "Normal IoT communication",
-      "readable_name": "Normal IoT communication",
-      "category": "Test Scenario",
-      "narrative": "30/30 correctly classified. Avg trust: 77.6",
-      "stats": {
-        "count": 30,
-        "avg_duration": 0,
-        "avg_bytes_sent": 0,
-        "avg_bytes_received": 0,
-        "top_ports": {},
-        "top_conn_states": {}
-      }
-    },
-    {
-      "attack_type": "Port scanning",
-      "readable_name": "Port scanning",
-      "category": "Test Scenario",
-      "narrative": "0/20 correctly classified. Avg trust: 88.4",
-      "stats": {
-        "count": 20,
-        "avg_duration": 0,
-        "avg_bytes_sent": 0,
-        "avg_bytes_received": 0,
-        "top_ports": {},
-        "top_conn_states": {}
+        "count": 3,
+        "avg_duration": 1.8953,
+        "avg_bytes_sent": 83.3,
+        "avg_bytes_received": 64982.0,
+        "top_ports": {
+          "80": 3
+        },
+        "top_conn_states": {
+          "SF": 3
+        }
       }
     }
   ],
   "where": {
     "compromised_sources": [
-      "TC031",
-      "TC032",
-      "TC033",
-      "TC034",
-      "TC035",
-      "TC036",
-      "TC037",
-      "TC038",
-      "TC039",
-      "TC040",
-      "TC041",
-      "TC042",
-      "TC043",
-      "TC044",
-      "TC045",
-      "TC046",
-      "TC047",
-      "TC048",
-      "TC049",
-      "TC050",
-      "TC051",
-      "TC052",
-      "TC053",
-      "TC054",
-      "TC055",
-      "TC056",
-      "TC057",
-      "TC058",
-      "TC059",
-      "TC060",
-      "TC061",
-      "TC062",
-      "TC063",
-      "TC064",
-      "TC065",
-      "TC066",
-      "TC067",
-      "TC068",
-      "TC069",
-      "TC070",
-      "TC071",
-      "TC072",
-      "TC073",
-      "TC074",
-      "TC075",
-      "TC076",
-      "TC077",
-      "TC078",
-      "TC079",
-      "TC080",
-      "TC081",
-      "TC082",
-      "TC083",
-      "TC084",
-      "TC085",
-      "TC086",
-      "TC087",
-      "TC088",
-      "TC089",
-      "TC090",
-      "TC091",
-      "TC092",
-      "TC093",
-      "TC094",
-      "TC095",
-      "TC096",
-      "TC097",
-      "TC098",
-      "TC099",
-      "TC100",
-      "TC101",
-      "TC102",
-      "TC103",
-      "TC104",
-      "TC105",
-      "TC106",
-      "TC107",
-      "TC108",
-      "TC109",
-      "TC110",
-      "TC111",
-      "TC112",
-      "TC113",
-      "TC114",
-      "TC115",
-      "TC116",
-      "TC117",
-      "TC118",
-      "TC119",
-      "TC120",
-      "TC121",
-      "TC122",
-      "TC123",
-      "TC124",
-      "TC125",
-      "TC141",
-      "TC142",
-      "TC143",
-      "TC144",
-      "TC145",
-      "TC146",
-      "TC147",
-      "TC148",
-      "TC149",
-      "TC150"
+      "192.168.1.195",
+      "192.168.1.197",
+      "192.168.1.199"
     ],
-    "num_compromised": 105,
-    "top_destinations": {},
-    "top_dst_ports": {},
-    "external_destinations": 0,
+    "num_compromised": 3,
+    "top_destinations": {
+      "123.59.209.185": 14260,
+      "185.244.25.235": 6706,
+      "71.61.66.148": 133,
+      "66.67.61.168": 121,
+      "46.101.251.172": 25
+    },
+    "top_dst_ports": {
+      "80": 14424,
+      "6667": 6706,
+      "63798": 121,
+      "256": 1,
+      "5376": 1
+    },
+    "external_destinations": 10,
     "internal_destinations": 0
   },
   "when": {
-    "first_malicious_ts": null,
-    "first_malicious_readable": "N/A (test cases)",
-    "last_malicious_ts": null,
-    "last_malicious_readable": "N/A (test cases)",
-    "attack_duration_seconds": 0,
-    "cusum_change_points": [],
-    "total_malicious_connections": 105
+    "first_malicious_ts": 1545404132.353979,
+    "first_malicious_readable": "2018-12-21 14:55:32 UTC",
+    "last_malicious_ts": 1547157068.286878,
+    "last_malicious_readable": "2019-01-10 21:51:08 UTC",
+    "attack_duration_seconds": 1752935.93,
+    "cusum_change_points": [
+      "2018-09-21 13:00:00",
+      "2018-09-21 13:00:00",
+      "2018-12-22 05:20:00",
+      "2019-01-10 17:10:00",
+      "2019-01-10 21:50:00"
+    ],
+    "total_malicious_connections": 21254
   }
 }
