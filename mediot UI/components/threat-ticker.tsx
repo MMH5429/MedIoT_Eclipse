@@ -13,60 +13,60 @@ interface Threat {
   icon?: React.ReactNode;
 }
 
-const MOCK_THREATS: Threat[] = [
+const THREATS: Threat[] = [
   {
     id: '1',
     level: 'critical',
-    message: 'CRITICAL: Device #32 abnormal DNS activity detected - 450+ queries/min',
+    message: 'CRITICAL: 192.168.1.195 — DDoS attack detected, 14,395 connections to port 80 (trust: 40.9)',
     timestamp: new Date(Date.now() - 2000),
     icon: <AlertOctagon className="w-4 h-4" />,
   },
   {
     id: '2',
-    level: 'alert',
-    message: 'ALERT: HVAC controller contacted unknown IP 192.168.100.245',
+    level: 'critical',
+    message: 'CRITICAL: 192.168.1.199 — C&C communication on port 6667 (IRC), 6,706 connections to 185.244.25.235',
     timestamp: new Date(Date.now() - 5000),
-    icon: <ShieldAlert className="w-4 h-4" />,
+    icon: <AlertOctagon className="w-4 h-4" />,
   },
   {
     id: '3',
-    level: 'warning',
-    message: 'WARNING: Traffic spike detected on Nurse Station - 340MB in 5 mins',
+    level: 'alert',
+    message: 'ALERT: 192.168.1.197 — Horizontal port scan detected, 122 connections with 100% S0 failure rate',
     timestamp: new Date(Date.now() - 8000),
-    icon: <Zap className="w-4 h-4" />,
+    icon: <ShieldAlert className="w-4 h-4" />,
   },
   {
     id: '4',
     level: 'critical',
-    message: 'CRITICAL: Patient Monitor #7 attempting lateral movement to network segment C',
+    message: 'CRITICAL: CUSUM change point detected — behavioral shift at 2019-01-10 17:10 on bytes_sent metric',
     timestamp: new Date(Date.now() - 11000),
-    icon: <AlertOctagon className="w-4 h-4" />,
+    icon: <Zap className="w-4 h-4" />,
   },
   {
     id: '5',
     level: 'alert',
-    message: 'ALERT: Infusion Pump #23 - Unauthorized protocol detected on port 9001',
+    message: 'ALERT: 192.168.1.195 — C&C File Download, avg 128,613 bytes received per connection on port 80',
     timestamp: new Date(Date.now() - 14000),
     icon: <ShieldAlert className="w-4 h-4" />,
   },
   {
     id: '6',
     level: 'warning',
-    message: 'WARNING: MRI Controller - Off-hours access attempt from unknown location',
+    message: 'WARNING: 192.168.1.199 — DDoS flood to 123.59.209.185, avg 126,459 bytes/connection, 0.025s duration',
     timestamp: new Date(Date.now() - 17000),
     icon: <AlertTriangle className="w-4 h-4" />,
   },
   {
     id: '7',
     level: 'critical',
-    message: 'CRITICAL: Network-wide port scan detected from internal device',
+    message: 'CRITICAL: 3 compromised source IPs detected — all destinations external (10 unique external IPs)',
     timestamp: new Date(Date.now() - 20000),
     icon: <AlertOctagon className="w-4 h-4" />,
   },
   {
     id: '8',
     level: 'warning',
-    message: 'WARNING: Unusual batch file execution on HVAC management station',
+    message: 'WARNING: 5 CUSUM change points detected across IoT-23 dataset timeline (Dec 2018 – Jan 2019)',
     timestamp: new Date(Date.now() - 23000),
     icon: <Activity className="w-4 h-4" />,
   },
@@ -114,26 +114,7 @@ export function ThreatTicker() {
   const [isAnimating, setIsAnimating] = useState(true);
 
   useEffect(() => {
-    setThreats(MOCK_THREATS);
-
-    // Simulate new threats arriving
-    const threatInterval = setInterval(() => {
-      const newThreats = [
-        {
-          id: Date.now().toString(),
-          level: (['critical', 'alert', 'warning'] as ThreatLevel[])[
-            Math.floor(Math.random() * 3)
-          ],
-          message: `New threat detected: Device ${Math.floor(Math.random() * 50)} showing anomalous behavior`,
-          timestamp: new Date(),
-          icon: <AlertCircle className="w-4 h-4" />,
-        },
-      ];
-
-      setThreats((prev) => [...newThreats, ...prev].slice(0, 15)); // Keep last 15 threats
-    }, 8000);
-
-    return () => clearInterval(threatInterval);
+    setThreats(THREATS);
   }, []);
 
   return (

@@ -18,7 +18,7 @@ const stages: StageInfo[] = [
     description: 'Real network traffic from Stratosphere Lab (Czech Technical University)',
     details: [
       '29,634 Zeek conn.log connections',
-      '30 IoT devices (19 unique IPs)',
+      '19 monitored devices (from 30 source IPs)',
       '21,254 malicious / 8,380 benign',
       '5 capture files (3 malware + 2 benign)',
       'Attack types: DDoS, C&C, Port Scan, File Download',

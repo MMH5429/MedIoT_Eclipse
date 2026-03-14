@@ -252,7 +252,7 @@ export default function AttackOverviewPage() {
 
   const malPct = filteredRows.length > 0 ? (malFiltered.length / filteredRows.length * 100) : 0;
   const avgTrust = filteredTrustScores.length > 0 ? filteredTrustScores.reduce((s, t) => s + t.trustScore, 0) / filteredTrustScores.length : 0;
-  const compromisedIps = new Set(malFiltered.map((r) => r.device_id)).size;
+  const compromisedIps = devices.filter((d) => d.isMalicious).length;
 
   return (
     <div className="min-h-screen bg-slate-950">
@@ -271,7 +271,7 @@ export default function AttackOverviewPage() {
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
           <KpiCard label="Connections" value={filteredRows.length.toLocaleString()} color="#3b82f6" />
           <KpiCard label="Malicious" value={malFiltered.length.toLocaleString()} sub={`${malPct.toFixed(1)}%`} color="#ef4444" />
-          <KpiCard label="Devices" value={String(new Set(filteredRows.map((r) => r.device_id)).size)} color="#a855f7" />
+          <KpiCard label="Devices" value={String(devices.length)} color="#a855f7" />
           <KpiCard label="Alerts" value={String(filteredAlerts.length)} color="#f59e0b" />
           <KpiCard label="Compromised" value={String(compromisedIps)} color="#ff6b81" />
           <KpiCard label="Avg Trust" value={avgTrust.toFixed(1)} color="#06d6a0" />
